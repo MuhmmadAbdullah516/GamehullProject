@@ -13,11 +13,11 @@ function AuthLayout({ children }: AuthLayoutProps) {
             className="group flex cursor-pointer items-center gap-[12px] no-underline"
             href="https://gamehull.com/"
           >
-            <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-primary shadow-[0_4px_12px_rgba(37,99,235,0.22)] transition-transform duration-200 group-hover:scale-105">
+            <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_4px_12px_rgba(37,99,235,0.22)] transition-transform duration-200 group-hover:scale-105">
               <svg
                 fill="none"
                 height="24"
-                stroke="white"
+                stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
@@ -27,8 +27,8 @@ function AuthLayout({ children }: AuthLayoutProps) {
                 <rect height="12" rx="6" width="20" x="2" y="6" />
                 <line x1="8" x2="10" y1="12" y2="12" />
                 <line x1="9" x2="9" y1="11" y2="13" />
-                <circle cx="15" cy="11" fill="white" r="1" stroke="none" />
-                <circle cx="17" cy="13" fill="white" r="1" stroke="none" />
+                <circle cx="15" cy="11" fill="currentColor" r="1" stroke="none" />
+                <circle cx="17" cy="13" fill="currentColor" r="1" stroke="none" />
               </svg>
             </div>
             <span className="text-[19px] font-black leading-none tracking-[-.03em] text-text dark:text-text-dark">

@@ -1,13 +1,66 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/geist";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
 
 @theme inline {
     --font-heading: var(--font-sans);
-    --font-sans: 'Geist Variable', sans-serif;
+    --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+    --font-montserrat: "Montserrat", "Montserrat Fallback", sans-serif;
+    --color-primary-hover: #1d4ed8;
+    --color-primary-dark-hover: #3b82f6;
+    --color-bg: #ffffff;
+    --color-bg-dark: #080d1c;
+    --color-bg-header: #ffffff;
+    --color-bg-dark-header: #080d1c;
+    --color-bg-muted: #f1f5f9;
+    --color-bg-dark-muted: rgb(255 255 255 / 0.06);
+    --color-bg-hover: #e2e8f0;
+    --color-bg-dark-hover: rgb(255 255 255 / 0.09);
+    --color-text: #0f172a;
+    --color-text-dark: #f1f5f9;
+    --color-text-muted: #64748b;
+    --color-text-dark-muted: rgb(255 255 255 / 0.55);
+    --color-text-subtle: #94a3b8;
+    --color-text-dark-subtle: rgb(255 255 255 / 0.28);
+    --color-text-heading: #0f172a;
+    --color-text-dark-heading: #ffffff;
+    --color-text-body: #475569;
+    --color-text-dark-body: #a1a1aa;
+    --color-text-dim: #94a3b8;
+    --color-text-dark-dim: #52525b;
+    --color-border-DEFAULT: rgb(15 23 42 / 0.09);
+    --color-border-dark: rgb(96 165 250 / 0.12);
+    --color-card-bg: #ffffff;
+    --color-card-dark-bg: #0e1629;
+    --color-card-border: rgb(15 23 42 / 0.09);
+    --color-card-dark-border: rgb(96 165 250 / 0.18);
+    --color-footer-bg: #f1f5f9;
+    --color-footer-dark-bg: #060f1f;
+    --color-footer-heading: #2563eb;
+    --color-footer-dark-heading: #2563eb;
+    --color-footer-text: #475569;
+    --color-footer-dark-text: #71717a;
+    --color-footer-link: #64748b;
+    --color-footer-dark-link: #71717a;
+    --color-footer-copy: #64748b;
+    --color-footer-border-top: rgb(15 23 42 / 0.08);
+    --color-footer-dark-border-top: rgb(96 165 250 / 0.15);
+    --color-footer-bottom-border: rgb(15 23 42 / 0.08);
+    --color-footer-dark-bottom-border: rgb(96 165 250 / 0.12);
+    --color-tag-bg: rgb(37 99 235 / 0.07);
+    --color-tag-dark-bg: rgb(37 99 235 / 0.12);
+    --color-tag-border: rgb(37 99 235 / 0.2);
+    --color-tag-dark-border: rgb(96 165 250 / 0.22);
+    --color-tag-text: #1d4ed8;
+    --color-tag-dark-text: #bfdbfe;
+    --shadow-header: 0 1px 3px rgb(0 0 0 / 0.07), 0 1px 0 rgb(0 0 0 / 0.04);
+    --shadow-header-dark: 0 1px 0 rgb(255 255 255 / 0.04);
+    --shadow-card: 0 2px 16px rgb(15 23 42 / 0.07);
+    --shadow-card-dark: 0 4px 24px rgb(0 0 0 / 0.4);
+    --shadow-card-hover: 0 24px 55px rgb(15 23 42 / 0.18);
+    --shadow-card-dark-hover: 0 22px 70px rgb(96 165 250 / 0.22), 0 10px 26px rgb(37 99 235 / 0.16);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -55,7 +108,7 @@
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
+    --primary: #2563eb;
     --primary-foreground: oklch(0.985 0 0);
     --secondary: oklch(0.97 0 0);
     --secondary-foreground: oklch(0.205 0 0);
@@ -90,8 +143,8 @@
     --card-foreground: oklch(0.985 0 0);
     --popover: oklch(0.205 0 0);
     --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
+    --primary: #2563eb;
+    --primary-foreground: #ffffff;
     --secondary: oklch(0.269 0 0);
     --secondary-foreground: oklch(0.985 0 0);
     --muted: oklch(0.269 0 0);
@@ -122,9 +175,85 @@
     @apply border-border outline-ring/50;
     }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-bg text-text transition-[background-color,color] duration-300 dark:bg-bg-dark dark:text-text-dark;
+    transition-property: background-color, color, background-image;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+    background-image: linear-gradient(180deg, #ffffff 0%, #f0f5ff 100%);
+    }
+  :where(.dark, [data-theme="dark"]) body {
+    background-image:
+      radial-gradient(
+        ellipse 85% 55% at 50% -5%,
+        rgb(29 78 216 / 0.48) 0%,
+        transparent 65%
+      ),
+      linear-gradient(#080d1c, #080d1c);
     }
   html {
     @apply font-sans;
     }
+}
+
+@layer utilities {
+  [x-cloak] {
+    display: none !important;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.gamehull-toast-container {
+  --toastify-color-dark: transparent;
+  --toastify-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  --toastify-toast-width: 340px;
+}
+
+.gamehull-toast {
+  min-height: 58px;
+  border: 1px solid rgb(59 130 246 / 0.25);
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    rgb(3 18 31 / 0.96) 0%,
+    rgb(15 9 69 / 0.97) 58%,
+    rgb(31 11 80 / 0.98) 100%
+  );
+  box-shadow: 0 24px 80px rgb(0 0 0 / 0.42);
+  color: rgb(255 255 255 / 0.92);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.gamehull-toast .Toastify__toast-icon {
+  width: 20px;
+  margin-inline-end: 12px;
+}
+
+.gamehull-toast .Toastify__close-button {
+  color: rgb(148 163 184);
+  opacity: 1;
+}
+
+.gamehull-toast-progress {
+  background: #2d75ff;
 }

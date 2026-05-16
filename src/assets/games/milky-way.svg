@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500" role="img" aria-label="Milky Way game artwork">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="75%">
+      <stop offset="0" stop-color="#8b5cf6"/><stop offset=".45" stop-color="#312e81"/><stop offset="1" stop-color="#020617"/>
+    </radialGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#000" flood-opacity=".55"/></filter>
+  </defs>
+  <rect width="1500" height="1500" fill="url(#bg)"/>
+  <g fill="#fff" opacity=".78">
+    <circle cx="160" cy="230" r="6"/><circle cx="310" cy="360" r="4"/><circle cx="1220" cy="260" r="7"/><circle cx="1130" cy="520" r="4"/><circle cx="250" cy="980" r="7"/><circle cx="1270" cy="1040" r="5"/>
+  </g>
+  <path d="M120 870c280-220 575-275 890-150 155 62 275 66 370 16-220 225-508 288-865 190-162-44-294-62-395-56Z" fill="#e0f2fe" opacity=".32"/>
+  <path d="M390 650 750 360l360 290-360 290Z" fill="#7c3aed" opacity=".7" stroke="#c4b5fd" stroke-width="18" filter="url(#shadow)"/>
+  <text x="750" y="760" text-anchor="middle" font-family="Arial Black, Montserrat, sans-serif" font-size="150" font-weight="900" fill="#f8fafc" stroke="#312e81" stroke-width="18" paint-order="stroke">MILKY</text>
+  <text x="750" y="925" text-anchor="middle" font-family="Arial Black, Montserrat, sans-serif" font-size="150" font-weight="900" fill="#fde68a" stroke="#312e81" stroke-width="18" paint-order="stroke">WAY</text>
+</svg>

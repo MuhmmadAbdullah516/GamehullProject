@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500" role="img" aria-label="Star Casino game artwork">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#111827"/><stop offset=".5" stop-color="#581c87"/><stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="22" stdDeviation="16" flood-color="#000" flood-opacity=".5"/></filter>
+  </defs>
+  <rect width="1500" height="1500" fill="url(#bg)"/>
+  <g fill="#fff" opacity=".72">
+    <circle cx="205" cy="205" r="7"/><circle cx="360" cy="420" r="5"/><circle cx="1180" cy="260" r="8"/><circle cx="1300" cy="880" r="6"/><circle cx="180" cy="1110" r="5"/>
+  </g>
+  <path d="M750 250 875 590 1235 605 955 825 1050 1170 750 970 450 1170 545 825 265 605 625 590Z" fill="#facc15" stroke="#f97316" stroke-width="20" filter="url(#shadow)"/>
+  <text x="750" y="720" text-anchor="middle" font-family="Arial Black, Montserrat, sans-serif" font-size="145" font-weight="900" fill="#ffffff" stroke="#2e1065" stroke-width="18" paint-order="stroke">STAR</text>
+  <text x="750" y="890" text-anchor="middle" font-family="Arial Black, Montserrat, sans-serif" font-size="135" font-weight="900" fill="#fde68a" stroke="#2e1065" stroke-width="18" paint-order="stroke">CASINO</text>
+</svg>

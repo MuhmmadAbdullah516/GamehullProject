@@ -19,6 +19,10 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
+        auth:
+          "bg-[#2f6dea] text-white shadow-[0_14px_24px_rgba(16,74,204,0.24)] hover:bg-[#3978ff] focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#100948]",
+        "auth-outline":
+          "border-blue-600 text-blue-600 hover:bg-blue-500/10 hover:text-blue-500 focus-visible:ring-2 focus-visible:ring-blue-300",
       },
       size: {
         default:
@@ -32,6 +36,7 @@ const buttonVariants = cva(
         "icon-sm":
           "size-7 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg",
         "icon-lg": "size-9",
+        auth: "h-12 w-full rounded-[28px] text-[15px] font-bold leading-[23px]",
       },
     },
     defaultVariants: {
@@ -64,4 +69,4 @@ function Button({
   )
 }
 
-export { Button, buttonVariants }
+export { Button }

@@ -1,6 +1,8 @@
-import type { InputHTMLAttributes, ReactNode } from 'react'
+import type {InputHTMLAttributes, ReactNode } from 'react'
 
-export type EmailFieldProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> & {
+export interface EmailFieldProps  extends Omit<InputHTMLAttributes<HTMLInputElement>,"type">  {
+  id?:string
+  className?: string
   iconClassName?: string
   inputClassName?: string
   label: string
@@ -8,7 +10,8 @@ export type EmailFieldProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'
   wrapperClassName?: string
 }
 
-export type PasswordFieldProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> & {
+export interface PasswordFieldProps extends Omit<InputHTMLAttributes<HTMLInputElement>,'type'> {
+  className?:string
   iconClassName?: string
   inputClassName?: string
   label: string
@@ -16,4 +19,26 @@ export type PasswordFieldProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'ty
   labelClassName?: string
   toggleClassName?: string
   wrapperClassName?: string
+}
+
+export interface AuthUser {
+  balance: number
+  email: string
+  name: string
+}
+
+export interface SignInPayload {
+  email: string
+  name?: string
+}
+
+export interface AuthContextValue {
+  isAuthenticated: boolean
+  signIn: (payload: SignInPayload) => void
+  signOut: () => void
+  user: AuthUser | null
+}
+
+export interface AuthProviderProps {
+  children: ReactNode
 }

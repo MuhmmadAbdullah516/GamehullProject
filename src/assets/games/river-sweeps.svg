@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500" role="img" aria-label="River Sweeps game artwork">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/><stop offset=".45" stop-color="#0891b2"/><stop offset="1" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="22" stdDeviation="16" flood-color="#000" flood-opacity=".5"/></filter>
+  </defs>
+  <rect width="1500" height="1500" fill="url(#bg)"/>
+  <path d="M-80 560c270-110 440-105 650 12 215 120 470 105 1010-70v280c-390 140-675 160-920 42-250-120-430-125-740-10Z" fill="#67e8f9" opacity=".55"/>
+  <path d="M-80 790c310-90 520-70 735 55 220 130 520 108 925-40v330H-80Z" fill="#0e7490" opacity=".68"/>
+  <g filter="url(#shadow)">
+    <circle cx="490" cy="520" r="90" fill="#facc15"/><circle cx="1020" cy="475" r="75" fill="#facc15"/><circle cx="1130" cy="980" r="88" fill="#facc15"/>
+  </g>
+  <text x="750" y="690" text-anchor="middle" font-family="Arial Black, Montserrat, sans-serif" font-size="145" font-weight="900" fill="#ffffff" stroke="#083344" stroke-width="18" paint-order="stroke">RIVER</text>
+  <text x="750" y="865" text-anchor="middle" font-family="Arial Black, Montserrat, sans-serif" font-size="145" font-weight="900" fill="#fde68a" stroke="#083344" stroke-width="18" paint-order="stroke">SWEEPS</text>
+</svg>

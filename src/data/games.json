@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "slug": "juwa",
+    "name": "Juwa",
+    "tag": "TOP",
+    "description": "Experience the ultimate slot gaming with Juwa.",
+    "imageKey": "juwa",
+    "status": "available",
+    "buttonText": "Login To Play"
+  },
+  {
+    "id": 2,
+    "slug": "orion-stars",
+    "name": "Orion Stars",
+    "tag": "TOP",
+    "description": "Reach for the stars with Orion Stars.",
+    "imageKey": "orion-stars",
+    "status": "available",
+    "buttonText": "Login To Play"
+  },
+  {
+    "id": 3,
+    "slug": "vegas-sweeps",
+    "name": "Vegas Sweeps",
+    "tag": "HOT",
+    "description": "Bring the Vegas experience to your fingertips.",
+    "imageKey": "vegas-sweeps",
+    "status": "available",
+    "buttonText": "Login To Play"
+  },
+  {
+    "id": 4,
+    "slug": "ultra-panda",
+    "name": "Ultra Panda",
+    "tag": "NEW",
+    "description": "Ultimate panda power gaming!",
+    "imageKey": "ultra-panda",
+    "status": "available",
+    "buttonText": "Login To Play"
+  },
+  {
+    "id": 5,
+    "slug": "fire-kirin",
+    "name": "Fire Kirin",
+    "tag": "HOT",
+    "description": "Fast fish-table action with bold arcade rewards.",
+    "imageKey": "fire-kirin",
+    "status": "available",
+    "buttonText": "Login To Play"
+  },
+  {
+    "id": 6,
+    "slug": "game-vault",
+    "name": "Game Vault",
+    "tag": "TOP",
+    "description": "A premium vault of slots, fish games, and sweepstakes.",
+    "imageKey": "game-vault",
+    "status": "available",
+    "buttonText": "Login To Play"
+  },
+  {
+    "id": 7,
+    "slug": "milky-way",
+    "name": "Milky Way",
+    "tag": "NEW",
+    "description": "Cosmic slot action with bright galaxy-style wins.",
+    "imageKey": "milky-way",
+    "status": "available",
+    "buttonText": "Login To Play"
+  },
+  {
+    "id": 8,
+    "slug": "pandamaster",
+    "name": "Panda Master",
+    "tag": "HOT",
+    "description": "Colorful panda-themed casino play with quick rewards.",
+    "imageKey": "pandamaster",
+    "status": "available",
+    "buttonText": "Login To Play"
+  },
+  {
+    "id": 9,
+    "slug": "cash-machine",
+    "name": "Cash Machine",
+    "tag": "NEW",
+    "description": "Spin into bright arcade-style prizes and bonus rounds.",
+    "imageKey": "cash-machine",
+    "status": "available",
+    "buttonText": "Login To Play"
+  },
+  {
+    "id": 10,
+    "slug": "river-sweeps",
+    "name": "River Sweeps",
+    "tag": "TOP",
+    "description": "Smooth sweepstakes gameplay with classic casino energy.",
+    "imageKey": "river-sweeps",
+    "status": "available",
+    "buttonText": "Login To Play"
+  },
+  {
+    "id": 11,
+    "slug": "golden-dragon",
+    "name": "Golden Dragon",
+    "tag": "HOT",
+    "description": "Dragon-themed slots packed with gold, fire, and jackpots.",
+    "imageKey": "golden-dragon",
+    "status": "available",
+    "buttonText": "Login To Play"
+  },
+  {
+    "id": 12,
+    "slug": "star-casino",
+    "name": "Star Casino",
+    "tag": "NEW",
+    "description": "A starry casino platform built for quick mobile play.",
+    "imageKey": "star-casino",
+    "status": "available",
+    "buttonText": "Login To Play"
+  },
+  {
+    "id": 13,
+    "slug": "lucky-tiger",
+    "name": "Lucky Tiger",
+    "tag": "TOP",
+    "description": "Bold tiger-themed gaming with bright jackpot moments.",
+    "imageKey": "lucky-tiger",
+    "status": "available",
+    "buttonText": "Login To Play"
+  }
+]
