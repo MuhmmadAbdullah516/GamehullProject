@@ -163,7 +163,7 @@ function GamePage() {
                     asChild
                     className="mt-auto !h-auto w-full rounded-full bg-primary py-2.5 text-[14px] font-bold text-white shadow-md shadow-primary/10 transition-all hover:-translate-y-0.5 hover:bg-primary-hover hover:shadow-lg hover:shadow-primary/20 dark:hover:bg-primary-dark-hover"
                   >
-                    <Link to={isAuthenticated ? "/games" : "/login"}>
+                    <Link to={`/games/${game.slug}`}>
                       <span>{isAuthenticated ? "Play Now" : "Login To Play"}</span>
                       <ArrowRight className="size-3.5" strokeWidth={2.5} />
                     </Link>

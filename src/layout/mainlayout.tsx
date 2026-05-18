@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 
 import Footer from '@/components/footer'
-import Header from '@/pages/header'
+import Header from '@/pages/brand/header'
 
 function MainLayout() {
   return (

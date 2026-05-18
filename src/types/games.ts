@@ -23,3 +23,20 @@ export type GameCard = {
   status: string;
   buttonText: string;
 };
+
+export type PlatformDetails = {
+  type: string;
+  payout: string;
+  difficulty: string;
+  jackpot: string;
+};
+
+export type RecentActivityProps = {
+  gameName: string;
+};
+
+export type DiscoverMoreProps = {
+  currentGameSlug: string;
+  gameImages: Record<GameImageKey, string>;
+  games: GameCard[];
+};

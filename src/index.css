@@ -192,6 +192,7 @@
     }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
     }
 }
 
@@ -217,6 +218,89 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  .smooth-section {
+    animation: sectionReveal 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .smooth-card {
+    transition-property: transform, box-shadow, border-color, background-color, color, opacity;
+    transition-duration: 280ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  .smooth-icon {
+    transition-property: transform, color, background-color, border-color;
+    transition-duration: 220ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition:
+      grid-template-rows 280ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 220ms ease;
+  }
+
+  .faq-answer[data-open="true"] {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+
+  .faq-answer-inner {
+    overflow: hidden;
+  }
+
+  @keyframes sectionReveal {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-review-scroll-1 {
+    animation: reviewScroll 28s linear infinite;
+  }
+
+  .animate-review-scroll-2 {
+    animation: reviewScroll 34s linear infinite;
+  }
+
+  .animate-review-scroll-3 {
+    animation: reviewScroll 31s linear infinite;
+  }
+
+  @keyframes reviewScroll {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .smooth-section {
+      animation: none;
+    }
+
+    .animate-review-scroll-1,
+    .animate-review-scroll-2,
+    .animate-review-scroll-3 {
+      animation: none;
     }
   }
 }
