@@ -1,0 +1,43 @@
+import { ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
+
+function ContactHero() {
+  return (
+    <section className="relative overflow-hidden py-12 pb-8 md:py-20 md:pb-13">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(37,99,235,0.05)_0%,transparent_70%)]" />
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
+        <nav className="mb-4.5 flex items-center gap-1.5 text-xs text-text-dim dark:text-text-dark-dim" aria-label="Breadcrumb">
+          <Link className="font-medium text-primary transition-colors hover:text-primary-hover" to="/">
+            Home
+          </Link>
+          <ChevronRight className="size-2.5" strokeWidth={2.5} />
+          <span className="font-medium">Contact</span>
+        </nav>
+
+        <div className="max-w-2xl">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-tag-border bg-tag-bg px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary transition-colors duration-200 dark:border-tag-dark-border dark:bg-tag-dark-bg dark:text-tag-dark-text">
+            <span className="relative flex size-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+              <span className="relative inline-flex size-2 rounded-full bg-primary" />
+            </span>
+            Get in Touch
+          </div>
+
+          <h1 className="mb-4 text-[clamp(32px,5vw,56px)] font-black leading-[1.1] tracking-[-.04em] text-text-heading transition-colors duration-200 dark:text-text-dark-heading">
+            Let's <span className="text-primary">talk</span>
+          </h1>
+
+          <p className="max-w-150 text-[15px] leading-relaxed text-text-body transition-colors duration-200 dark:text-text-dark-body md:text-base">
+            Have a question, business inquiry, or need technical support? We're here to help you 24/7. Fill out the
+            form and we'll get back to you shortly.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default ContactHero;

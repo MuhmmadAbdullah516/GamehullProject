@@ -17,7 +17,7 @@ function DropdownMenuContent({
       <DropdownMenuPrimitive.Content
         align={align}
         className={cn(
-          "z-50 min-w-[8rem] origin-[var(--radix-dropdown-menu-content-transform-origin)] overflow-hidden rounded-md border border-border-DEFAULT bg-bg-header p-1 text-text shadow-card transition-[background-color,border-color,color,box-shadow] duration-300 ease-out data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 dark:border-border-dark dark:bg-bg-dark-header dark:text-text-dark dark:shadow-card-dark",
+          "z-50 min-w-32 origin-[var(--radix-dropdown-menu-content-transform-origin)] overflow-hidden rounded-md border border-slate-900/10 bg-white p-1 text-slate-900 shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-[background-color,border-color,color,box-shadow] duration-300 ease-out data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 dark:border-blue-400/15 dark:bg-[#080d1c] dark:text-slate-100 dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)]",
           className,
         )}
         sideOffset={sideOffset}
@@ -34,7 +34,7 @@ function DropdownMenuItem({
   return (
     <DropdownMenuPrimitive.Item
       className={cn(
-        "relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-bg-muted focus:text-text data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-bg-dark-muted dark:focus:text-text-dark",
+        "relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-slate-100 focus:text-slate-900 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-white/[0.06] dark:focus:text-slate-100",
         className,
       )}
       {...props}

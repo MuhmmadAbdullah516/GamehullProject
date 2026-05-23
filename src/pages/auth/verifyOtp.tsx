@@ -11,7 +11,7 @@ function VerifyOtpPage() {
 
   return (
     <AuthLayout>
-      <section className="w-full max-w-[440px] rounded-[24px] border border-blue-500/25 bg-[linear-gradient(180deg,rgba(3,18,31,0.94)_0%,rgba(15,9,69,0.96)_58%,rgba(31,11,80,0.98)_100%)] p-[clamp(28px,5vw,44px)] shadow-[0_24px_80px_rgba(0,0,0,0.42)]">
+      <section className="w-full max-w-110 rounded-[24px] border border-blue-500/25 bg-[linear-gradient(180deg,rgba(3,18,31,0.94)_0%,rgba(15,9,69,0.96)_58%,rgba(31,11,80,0.98)_100%)] p-7 md:p-11 shadow-[0_24px_80px_rgba(0,0,0,0.42)]">
         <div className="text-center">
           <div className="mx-auto mb-5 grid size-12 place-items-center rounded-full bg-blue-500/18 text-[#2d75ff] ring-1 ring-blue-300/20">
             <Check aria-hidden="true" className="size-6" strokeWidth={2.4} />

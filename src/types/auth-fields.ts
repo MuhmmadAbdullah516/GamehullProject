@@ -3,10 +3,13 @@ import type {InputHTMLAttributes, ReactNode } from 'react'
 export interface EmailFieldProps  extends Omit<InputHTMLAttributes<HTMLInputElement>,"type">  {
   id?:string
   className?: string
+  filledInputClassName?: string
+  filledWrapperClassName?: string
   iconClassName?: string
   inputClassName?: string
-  label: string
+  label: ReactNode
   labelClassName?: string
+  showIcon?: boolean
   wrapperClassName?: string
 }
 

@@ -7,10 +7,13 @@ import type { EmailFieldProps } from '@/types/auth-fields'
 function EmailField({
    
   className,
+  filledInputClassName,
+  filledWrapperClassName,
   iconClassName,
   inputClassName,
   label,
   labelClassName,
+  showIcon = true,
   wrapperClassName,
   ...props
 }: EmailFieldProps) {
@@ -42,22 +45,26 @@ function EmailField({
           isFilled &&
             'border-transparent bg-[#e7effc] text-slate-950 shadow-none focus-within:border-transparent focus-within:ring-0',
           wrapperClassName,
+          isFilled && filledWrapperClassName,
         )}
       >
-        <Mail
-          aria-hidden="true"
-          className={cn(
-            'mr-4 size-5 shrink-0 text-slate-400 transition-colors group-focus-within:text-blue-500',
-            isFilled && 'group-focus-within:text-slate-400',
-            iconClassName,
-          )}
-          strokeWidth={1.9}
-        />
+        {showIcon ? (
+          <Mail
+            aria-hidden="true"
+            className={cn(
+              'mr-4 size-5 shrink-0 text-slate-400 transition-colors group-focus-within:text-blue-500',
+              isFilled && 'group-focus-within:text-slate-400',
+              iconClassName,
+            )}
+            strokeWidth={1.9}
+          />
+        ) : null}
         <input
           className={cn(
             'h-full min-w-0 flex-1 bg-transparent pl-3 text-sm font-normal leading-[21px] text-slate-200 outline-none placeholder:text-slate-300',
             isFilled && 'text-black placeholder:text-slate-500',
             inputClassName,
+            isFilled && filledInputClassName,
           )}
           type="email"
           {...props}

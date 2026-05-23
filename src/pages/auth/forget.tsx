@@ -11,7 +11,7 @@ function ForgetPasswordPage() {
 
   return (
     <AuthLayout>
-      <section className="w-full max-w-[440px] rounded-[24px] border border-blue-500/25 bg-[linear-gradient(180deg,rgba(3,18,31,0.94)_0%,rgba(15,9,69,0.96)_58%,rgba(31,11,80,0.98)_100%)] p-[clamp(28px,5vw,44px)] shadow-[0_24px_80px_rgba(0,0,0,0.42)]">
+      <section className="w-full max-w-110 rounded-[24px] border border-blue-500/25 bg-[linear-gradient(180deg,rgba(3,18,31,0.94)_0%,rgba(15,9,69,0.96)_58%,rgba(31,11,80,0.98)_100%)] p-7 md:p-11 shadow-[0_24px_80px_rgba(0,0,0,0.42)]">
         <div>
           <div className="text-center">
             <h1 className="text-[22px] font-extrabold leading-[33px] tracking-normal text-white">

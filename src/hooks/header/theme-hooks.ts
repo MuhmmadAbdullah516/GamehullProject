@@ -41,7 +41,7 @@ export function useThemeSelector() {
 
   useEffect(() => {
     localStorage.setItem(THEME_STORAGE_KEY, themePreference);
-    setEffectiveTheme(applyThemePreference(themePreference));
+    applyThemePreference(themePreference);
 
     if (themePreference !== "system") {
       return undefined;
@@ -64,6 +64,7 @@ export function useThemeSelector() {
   }
 
   function handleThemeSelect(nextThemePreference: ThemePreference) {
+    setEffectiveTheme(getEffectiveTheme(nextThemePreference));
     setThemePreference(nextThemePreference);
     setIsThemeMenuOpen(false);
   }
