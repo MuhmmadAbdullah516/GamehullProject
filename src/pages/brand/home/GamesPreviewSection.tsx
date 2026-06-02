@@ -3,17 +3,13 @@ import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import { gameImages, gameTagStyles } from "@/data/game-assets";
-import type { GameCard } from "@/types/games";
+import type { GamesPreviewSectionProps } from "@/types/home";
 import { sectionRevealClass, smoothCardClass } from "./home-styles";
-
-type GamesPreviewSectionProps = {
-  games: GameCard[];
-};
 
 function GamesPreviewSection({ games }: GamesPreviewSectionProps) {
   return (
     <section className={`${sectionRevealClass} relative overflow-hidden border-t border-slate-900/10 bg-[#f8fbff] py-14 md:py-24 transition-colors duration-300 ease-out dark:border-blue-400/15 dark:bg-[#06101f]`}>
-      <div className="pointer-events-none absolute left-1/2 top-[-100px] h-100 w-225 -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(37,99,235,0.1)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse,rgba(59,130,246,0.12)_0%,transparent_70%)]" />
+      <div className="pointer-events-none absolute left-1/2 top-[-100px] h-[400px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(37,99,235,0.1)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse,rgba(59,130,246,0.12)_0%,transparent_70%)]" />
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         <div className="mb-9 flex flex-wrap items-end justify-between gap-5">
           <div>
@@ -37,7 +33,7 @@ function GamesPreviewSection({ games }: GamesPreviewSectionProps) {
 
         <div className="grid grid-cols-1 gap-5 min-[420px]:grid-cols-2 min-[760px]:grid-cols-3 min-[1024px]:grid-cols-4">
           {games.map((game) => (
-            <article className={`${smoothCardClass} group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-slate-900/10 bg-gradient-to-b from-white to-slate-100 shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] hover:-translate-y-1.5 hover:shadow-[0_24px_55px_rgb(15_23_42_/_0.18)] dark:border-blue-400/20 dark:bg-gradient-to-br dark:from-[#021020] dark:to-[#140540]`} key={game.id}>
+            <article className={`${smoothCardClass} group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-900/10 bg-gradient-to-b from-white to-slate-100 shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] hover:-translate-y-1.5 hover:shadow-[0_24px_55px_rgb(15_23_42_/_0.18)] dark:border-blue-400/20 dark:bg-gradient-to-br dark:from-[#021020] dark:to-[#140540]`} key={game.id}>
               <span className={`absolute left-3 top-3 z-10 rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-lg ${gameTagStyles[game.tag]}`}>{game.tag}</span>
               <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-white/[0.06]">
                 <img alt={game.name} className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.08]" loading="lazy" src={gameImages[game.imageKey]} />

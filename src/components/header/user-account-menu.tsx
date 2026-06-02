@@ -39,7 +39,7 @@ function UserAccountMenu({ className, onAction, user }: UserAccountMenuProps) {
       <DropdownMenuTrigger asChild>
         <Button
           className={cn(
-            "h-10.5 items-center gap-2.5 rounded-full border border-slate-900/10 bg-slate-100 px-4 text-[15px] font-bold text-slate-500 transition hover:bg-slate-200 aria-expanded:bg-slate-200 data-[state=open]:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-white/55 dark:hover:bg-white/[0.09] dark:aria-expanded:bg-white/[0.09] dark:data-[state=open]:bg-white/[0.09]",
+            "h-[42px] items-center gap-2.5 rounded-full border border-slate-900/10 bg-slate-100 px-4 text-[15px] font-bold text-slate-500 transition hover:bg-slate-200 aria-expanded:bg-slate-200 data-[state=open]:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-white/55 dark:hover:bg-white/[0.09] dark:aria-expanded:bg-white/[0.09] dark:data-[state=open]:bg-white/[0.09]",
             className,
           )}
           type="button"
@@ -48,13 +48,13 @@ function UserAccountMenu({ className, onAction, user }: UserAccountMenuProps) {
           <span className="truncate text-sm font-bold leading-[21px] text-slate-500 dark:text-white/55">
             {user.name}
           </span>
-          <Menu className="size-4.5 shrink-0" strokeWidth={2} />
+          <Menu className="size-[18px] shrink-0" strokeWidth={2} />
         </Button>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent
         align="end"
-        className="mt-2 w-70 max-w-[calc(100vw-28px)] rounded-[22px] border-slate-900/10 bg-white p-0 shadow-2xl dark:border-blue-400/15 dark:bg-[#0e1629]"
+        className="mt-2 w-70 max-w-[calc(100vw-28px)] rounded-3xl border-slate-900/10 bg-white p-0 shadow-2xl dark:border-blue-400/15 dark:bg-[#0e1629]"
         sideOffset={0}
       >
         <div className="p-5">
@@ -94,10 +94,10 @@ function UserAccountMenu({ className, onAction, user }: UserAccountMenuProps) {
 
         <div className="p-2.5">
           <DropdownMenuItem
-            className="h-12 justify-center gap-4 rounded-xl border border-destructive/20 bg-destructive/10 px-5 py-0 text-[15px] font-medium leading-[23px] text-destructive hover:bg-[#3D2134] hover:text-destructive focus:bg-[#3D2134] focus:text-destructive"
+            className="h-12 justify-center gap-4 rounded-full border border-destructive/20 bg-destructive/10 px-5 py-0 text-[15px] font-medium leading-[23px] text-destructive hover:!bg-[#ef4444]/20 focus:!bg-[#ef4444]/20 focus:!text-destructive data-[highlighted]:!bg-[#ef4444]/20 data-[highlighted]:!text-destructive"
             onSelect={handleSignOut}
           >
-            <LogOut className="size-5.5" strokeWidth={2} />
+            <LogOut className="size-[22px]" strokeWidth={2} />
             <span>Sign Out</span>
           </DropdownMenuItem>
         </div>

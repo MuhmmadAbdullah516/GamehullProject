@@ -1,11 +1,7 @@
-import type { FormEvent } from "react";
 import { ArrowRight } from "lucide-react";
 
 import EmailField from "@/components/auth/email-field";
-
-type ContactFormProps = {
-  onSubmit: (event: FormEvent<HTMLFormElement>) => void;
-};
+import type { ContactFormProps } from "@/types/contact";
 
 function ContactForm({ onSubmit }: ContactFormProps) {
   return (
@@ -73,7 +69,7 @@ function ContactForm({ onSubmit }: ContactFormProps) {
         type="submit"
       >
         Send Message
-        <ArrowRight className="size-4.5" strokeWidth={3} />
+        <ArrowRight className="size-[18px]" strokeWidth={3} />
       </button>
     </form>
   );

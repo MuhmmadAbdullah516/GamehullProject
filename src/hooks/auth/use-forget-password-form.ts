@@ -2,7 +2,8 @@ import { type FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import { forgetPasswordSchema, type ForgetPasswordErrors } from "@/schemas/auth-schema";
+import { forgetPasswordSchema } from "@/schemas/auth-schema";
+import type { ForgetPasswordErrors } from "@/types/validation";
 
 export function useForgetPasswordForm() {
   const [errors, setErrors] = useState<ForgetPasswordErrors>({});

@@ -12,6 +12,7 @@ export const registerSchema = z
     email: z.email("Enter a valid email address"),
     password: z.string().min(8, "Password must be at least 8 characters"),
     confirmPassword: z.string().min(1, "Confirm your password"),
+    captcha: z.string().trim().min(1, "Captcha is required"),
     terms: z.literal("on", {
       error: "You must accept the terms",
     }),
@@ -28,10 +29,3 @@ export const forgetPasswordSchema = z.object({
 export const verifyOtpSchema = z.object({
   otp: z.string().regex(/^\d{4}$/, "Enter the 4-digit code"),
 });
-
-export type LoginErrors = Partial<Record<keyof z.infer<typeof loginSchema>, string>>;
-export type RegisterErrors = Partial<Record<keyof z.infer<typeof registerSchema>, string>>;
-export type ForgetPasswordErrors = Partial<
-  Record<keyof z.infer<typeof forgetPasswordSchema>, string>
->;
-export type VerifyOtpErrors = Partial<Record<keyof z.infer<typeof verifyOtpSchema>, string>>;

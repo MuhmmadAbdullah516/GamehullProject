@@ -9,7 +9,8 @@ import {
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import { verifyOtpSchema, type VerifyOtpErrors } from "@/schemas/auth-schema";
+import { verifyOtpSchema } from "@/schemas/auth-schema";
+import type { VerifyOtpErrors } from "@/types/validation";
 
 export const OTP_LENGTH = 4;
 

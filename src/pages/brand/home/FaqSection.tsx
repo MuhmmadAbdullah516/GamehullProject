@@ -1,18 +1,14 @@
 import { Plus } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import type { FaqSectionProps } from "@/types/home";
 import { faqItems } from "./home-data";
 import { faqAnswerClass, sectionRevealClass, smoothIconClass } from "./home-styles";
-
-type FaqSectionProps = {
-  onToggle: (index: number) => void;
-  openIndex: number | null;
-};
 
 function FaqSection({ onToggle, openIndex }: FaqSectionProps) {
   return (
     <section className={`${sectionRevealClass} relative overflow-hidden border-t border-slate-900/10 bg-[#f4f7ff] py-14 md:py-24 transition-colors duration-300 ease-out dark:border-blue-400/15 dark:bg-[linear-gradient(180deg,#10032a_0%,#080d1c_100%)]`}>
-      <div className="relative z-10 mx-auto w-full max-w-180 px-6">
+      <div className="relative z-10 mx-auto w-full max-w-[720px] px-6">
         <div className="mb-12 text-center">
           <h2 className="text-[clamp(24px,3.5vw,38px)] font-black leading-[1.15] text-slate-900 transition-colors dark:text-white">
             Frequently Asked Questions

@@ -3,12 +3,7 @@ import { Link } from "react-router-dom";
 import ThemeSelector from "@/components/header/theme-selector";
 import UserAccountMenu from "@/components/header/user-account-menu";
 import WalletPopup from "@/components/header/wallet-popup";
-import type { AuthUser } from "@/types/auth-fields";
-
-type HeaderActionsProps = {
-  isAuthenticated: boolean;
-  user?: AuthUser | null;
-};
+import type { HeaderActionsProps } from "@/types/header";
 
 function HeaderActions({ isAuthenticated, user }: HeaderActionsProps) {
   const walletBalance = user
@@ -28,10 +23,10 @@ function HeaderActions({ isAuthenticated, user }: HeaderActionsProps) {
         </>
       ) : (
         <>
-          <Link className="hidden h-10.5 items-center justify-center rounded-full border border-slate-900/10 px-5 text-[15px] font-semibold text-slate-500 no-underline transition hover:bg-slate-100 dark:border-blue-400/15 dark:text-white/55 dark:hover:bg-white/[0.06] lg:inline-flex" to="/login">
+          <Link className="hidden h-[42px] items-center justify-center rounded-full border border-slate-900/10 px-5 text-[15px] font-semibold text-slate-500 no-underline transition hover:bg-slate-100 dark:border-blue-400/15 dark:text-white/55 dark:hover:bg-white/[0.06] lg:inline-flex" to="/login">
             Log In
           </Link>
-          <Link className="hidden h-10.5 items-center justify-center rounded-full bg-blue-600 px-6 text-[15px] font-bold text-white no-underline shadow-lg transition hover:bg-blue-700 lg:inline-flex" to="/register">
+          <Link className="hidden h-[42px] items-center justify-center rounded-full bg-blue-600 px-6 text-[15px] font-bold text-white no-underline shadow-lg transition hover:bg-blue-700 lg:inline-flex" to="/register">
             Play Now
           </Link>
         </>

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import MyProfile from "@/pages/brand/profile/MyProfile";
 import ActiveDevices from "@/pages/brand/profile/ActiveDevices";
 import {useSearchParams}  from "react-router-dom";
-type ProfileTab = "profile" | "devices";
+import type { ProfileTab } from "@/types/profile";
 
 function ProfilePage() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -23,7 +23,7 @@ function ProfilePage() {
           Account Center
         </h1>
 
-        <p className="mx-auto max-w-125 text-[15px] leading-relaxed text-slate-600 transition-colors dark:text-zinc-400 md:text-base">
+        <p className="mx-auto max-w-[500px] text-[15px] leading-relaxed text-slate-600 transition-colors dark:text-zinc-400 md:text-base">
           Your profile and settings in one place
         </p>
       </div>

@@ -1,23 +1,9 @@
-import type { FormEvent } from "react";
 import { Plus, Wallet } from "lucide-react";
 
 import CashoutWalletForm from "./CashoutWalletForm";
-import type { SavedWallet, WalletFormState, WalletMethodOption } from "./cashout-types";
+import type { CashoutWalletsTabProps } from "@/types/cashout";
 import EmptyWalletState from "./EmptyWalletState";
 import SavedWalletList from "./SavedWalletList";
-
-type CashoutWalletsTabProps = {
-  formState: WalletFormState;
-  onAddFirstWallet: () => void;
-  onAddressChange: (value: string) => void;
-  onLabelChange: (value: string) => void;
-  onOpenDeleteModal: (wallet: SavedWallet) => void;
-  onSaveWallet: (event: FormEvent<HTMLFormElement>) => void;
-  onSelectWalletMethod: (method: WalletMethodOption) => void;
-  onToggleAddWalletForm: () => void;
-  onToggleMethodList: () => void;
-  savedWallets: SavedWallet[];
-};
 
 function CashoutWalletsTab({
   formState,

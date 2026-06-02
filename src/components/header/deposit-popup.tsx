@@ -1,13 +1,7 @@
 import { ChevronLeft, CircleDollarSign, Coins, Shield, X, Zap } from "lucide-react";
 
 import { DialogClose } from "@/components/ui/dialog";
-
-export type DepositMethodName = "CashApp" | "Crypto" | "Chime" | "Meld";
-
-type DepositPopupProps = {
-  onBack: () => void;
-  onSelectMethod: (method: DepositMethodName) => void;
-};
+import type { DepositPopupProps } from "@/types/header";
 
 function DepositPopup({ onBack, onSelectMethod }: DepositPopupProps) {
   return (
@@ -35,7 +29,7 @@ function DepositPopup({ onBack, onSelectMethod }: DepositPopupProps) {
       </div>
 
       <div className="grid grid-cols-2 gap-4">
-        <button className="group relative flex flex-col items-start gap-4 p-5 rounded-[24px] bg-white/5 border border-white/10 hover:bg-white/[0.08] hover:border-primary/40 transition-all text-left cursor-pointer" onClick={() => onSelectMethod("CashApp")} type="button">
+        <button className="group relative flex flex-col items-start gap-4 p-5 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/[0.08] hover:border-primary/40 transition-all text-left cursor-pointer" onClick={() => onSelectMethod("CashApp")} type="button">
           <div className="absolute -top-2 -left-2 w-7 h-7 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/30">
             <Zap className="size-3.5 text-white" fill="currentColor" strokeWidth={0} />
           </div>
@@ -45,7 +39,7 @@ function DepositPopup({ onBack, onSelectMethod }: DepositPopupProps) {
           <span className="text-base font-bold text-white">CashApp</span>
         </button>
 
-        <button className="group relative flex flex-col items-start gap-4 p-5 rounded-[24px] bg-white/5 border border-white/10 hover:bg-white/[0.08] hover:border-primary/40 transition-all text-left cursor-pointer" onClick={() => onSelectMethod("Crypto")} type="button">
+        <button className="group relative flex flex-col items-start gap-4 p-5 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/[0.08] hover:border-primary/40 transition-all text-left cursor-pointer" onClick={() => onSelectMethod("Crypto")} type="button">
           <div className="absolute -top-2 -left-2 w-7 h-7 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/30">
             <Zap className="size-3.5 text-white" fill="currentColor" strokeWidth={0} />
           </div>
@@ -55,14 +49,14 @@ function DepositPopup({ onBack, onSelectMethod }: DepositPopupProps) {
           <span className="text-base font-bold text-white">Crypto</span>
         </button>
 
-        <button className="group flex flex-col items-start gap-4 p-5 rounded-[24px] bg-white/5 border border-white/10 hover:bg-white/[0.08] hover:border-primary/40 transition-all text-left cursor-pointer" onClick={() => onSelectMethod("Chime")} type="button">
+        <button className="group flex flex-col items-start gap-4 p-5 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/[0.08] hover:border-primary/40 transition-all text-left cursor-pointer" onClick={() => onSelectMethod("Chime")} type="button">
           <div className="w-12 h-12 rounded-xl bg-[#00d632]/10 border border-[#00d632]/20 flex items-center justify-center group-hover:scale-110 transition-transform">
             <Shield className="size-6 text-[#00d632]" strokeWidth={2.2} />
           </div>
           <span className="text-base font-bold text-white">Chime</span>
         </button>
 
-        <button className="group flex flex-col items-start gap-4 p-5 rounded-[24px] bg-white/5 border border-white/10 hover:bg-white/[0.08] hover:border-primary/40 transition-all text-left cursor-pointer" onClick={() => onSelectMethod("Meld")} type="button">
+        <button className="group flex flex-col items-start gap-4 p-5 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/[0.08] hover:border-primary/40 transition-all text-left cursor-pointer" onClick={() => onSelectMethod("Meld")} type="button">
           <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
             <Zap className="size-6 text-[#facc15]" fill="currentColor" strokeWidth={0} />
           </div>

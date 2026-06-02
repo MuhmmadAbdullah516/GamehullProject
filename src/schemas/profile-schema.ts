@@ -10,6 +10,3 @@ export const passwordUpdateSchema = z
     message: "New password and confirm password do not match",
     path: ["confirmPassword"],
   });
-
-export type PasswordUpdateFields = z.infer<typeof passwordUpdateSchema>;
-export type PasswordUpdateErrors = Partial<Record<keyof PasswordUpdateFields, string>>;

@@ -26,7 +26,7 @@ function ThemeSelector() {
         <Button
           aria-label="Choose theme"
           className={cn(
-            "size-10.5 shrink-0 cursor-pointer rounded-full border-[1.5px] border-slate-900/10 bg-slate-100 p-0 text-slate-500 hover:bg-slate-200 aria-expanded:bg-slate-200 data-[state=open]:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-white/55 dark:hover:bg-white/[0.09] dark:aria-expanded:bg-white/[0.09] dark:data-[state=open]:bg-white/[0.09]",
+            "size-[42px] shrink-0 cursor-pointer rounded-full border-[1.5px] border-slate-900/10 bg-slate-100 p-0 text-slate-500 hover:bg-slate-200 aria-expanded:bg-slate-200 data-[state=open]:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-white/55 dark:hover:bg-white/[0.09] dark:aria-expanded:bg-white/[0.09] dark:data-[state=open]:bg-white/[0.09]",
             isThemeMenuOpen && "bg-slate-200 dark:bg-white/[0.09]",
           )}
           title="Choose theme"
@@ -34,9 +34,9 @@ function ThemeSelector() {
           variant="outline"
         >
           {effectiveTheme === "dark" ? (
-            <Moon aria-hidden="true" className="size-4.5" strokeWidth={2} />
+            <Moon aria-hidden="true" className="size-[18px]" strokeWidth={2} />
           ) : (
-            <Sun aria-hidden="true" className="size-4.5" strokeWidth={2} />
+            <Sun aria-hidden="true" className="size-[18px]" strokeWidth={2} />
           )}
         </Button>
       </DropdownMenuTrigger>
@@ -80,7 +80,7 @@ function ThemeSelector() {
             Dark
           </span>
           {themePreference === "dark" ? (
-            <Check className="size-4.5" strokeWidth={2} />
+            <Check className="size-[18px]" strokeWidth={2} />
           ) : null}
         </DropdownMenuItem>
 
@@ -101,7 +101,7 @@ function ThemeSelector() {
             System
           </span>
           {themePreference === "system" ? (
-            <Check className="size-4.5" strokeWidth={2} />
+            <Check className="size-[18px]" strokeWidth={2} />
           ) : null}
         </DropdownMenuItem>
 

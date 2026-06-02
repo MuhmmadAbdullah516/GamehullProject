@@ -1,20 +1,7 @@
 import { Check, ChevronDown, ExternalLink, Gamepad2 } from "lucide-react";
-import type { RefObject } from "react";
 
 import { gameImages } from "@/data/game-assets";
-import type { GameCard } from "@/types/games";
-
-type GameAccountSelectorProps = {
-  filteredGames: GameCard[];
-  gameDropdownRef: RefObject<HTMLDivElement | null>;
-  gameSearch: string;
-  onGameSearchChange: (value: string) => void;
-  onRedirectToGame: () => void;
-  onSelectGame: (game: GameCard) => void;
-  onToggleGameList: () => void;
-  selectedGame: GameCard | null;
-  showGameList: boolean;
-};
+import type { GameAccountSelectorProps } from "@/types/cashout";
 
 function GameAccountSelector({
   filteredGames,
@@ -65,7 +52,7 @@ function GameAccountSelector({
                   value={gameSearch}
                 />
               </div>
-              <div className="wallet-scrollbar max-h-75 overflow-y-auto p-1.5">
+              <div className="wallet-scrollbar max-h-[300px] overflow-y-auto p-1.5">
                 {filteredGames.map((game) => (
                   <button
                     className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-all ${
@@ -84,7 +71,7 @@ function GameAccountSelector({
                       <div className="truncate text-sm font-bold">{game.name}</div>
                       <div className="truncate text-[11px] opacity-60">@abdullah</div>
                     </div>
-                    {selectedGame?.slug === game.slug ? <Check className="size-4.5 shrink-0" strokeWidth={3} /> : null}
+                    {selectedGame?.slug === game.slug ? <Check className="size-[18px] shrink-0" strokeWidth={3} /> : null}
                   </button>
                 ))}
                 {filteredGames.length === 0 ? (

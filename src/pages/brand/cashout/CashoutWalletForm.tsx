@@ -1,17 +1,7 @@
 import { ChevronDown } from "lucide-react";
-import type { FormEvent } from "react";
 
 import { walletMethods } from "./cashout-data";
-import type { WalletFormState, WalletMethodOption } from "./cashout-types";
-
-type CashoutWalletFormProps = {
-  formState: WalletFormState;
-  onAddressChange: (value: string) => void;
-  onLabelChange: (value: string) => void;
-  onSaveWallet: (event: FormEvent<HTMLFormElement>) => void;
-  onSelectWalletMethod: (method: WalletMethodOption) => void;
-  onToggleMethodList: () => void;
-};
+import type { CashoutWalletFormProps } from "@/types/cashout";
 
 function CashoutWalletForm({
   formState,

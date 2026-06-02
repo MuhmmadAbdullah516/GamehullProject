@@ -12,9 +12,9 @@ function HomeHero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_0%,rgba(37,99,235,0.16)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse_70%_55%_at_50%_0%,rgba(37,99,235,0.36)_0%,transparent_70%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-180 flex-col items-center text-center">
-        <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-600/20 bg-blue-600/[0.07] px-4.5 py-1.75 text-[13px] font-semibold text-blue-700 shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-colors dark:border-blue-400/25 dark:bg-blue-600/10 dark:text-blue-200">
-          <span className="h-1.75 w-1.75 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(74,222,128,.7)]" />
+      <div className="relative z-10 mx-auto flex w-full max-w-[720px] flex-col items-center text-center">
+        <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-600/20 bg-blue-600/[0.07] px-[18px] py-[7px] text-[13px] font-semibold text-blue-700 shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-colors dark:border-blue-400/25 dark:bg-blue-600/10 dark:text-blue-200">
+          <span className="h-[7px] w-[7px] shrink-0 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(74,222,128,.7)]" />
           50,000+ players online worldwide
         </div>
 
@@ -40,9 +40,9 @@ function HomeHero() {
       </div>
 
       <div className="relative z-10 -mx-6 border-t border-slate-900/10 bg-white transition-colors dark:border-blue-400/15 dark:bg-[#0e1629]">
-        <div className="mx-auto grid w-full max-w-225 grid-cols-2 transition-colors md:grid-cols-4">
+        <div className="mx-auto grid w-full max-w-[900px] grid-cols-2 transition-colors md:grid-cols-4">
           {heroStats.map((stat) => (
-            <div className="border-slate-900/10 py-5.5 px-4 text-center transition-colors dark:border-blue-400/15 md:border-r md:last:border-r-0" key={stat.label}>
+            <div className="border-slate-900/10 py-[22px] px-4 text-center transition-colors dark:border-blue-400/15 md:border-r md:last:border-r-0" key={stat.label}>
               <p className={`text-2xl font-black leading-none ${stat.featured ? "text-[#f59e0b]" : "text-slate-900 dark:text-white"}`}>{stat.value}</p>
               <p className="mt-2 text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-white/55">{stat.label}</p>
             </div>

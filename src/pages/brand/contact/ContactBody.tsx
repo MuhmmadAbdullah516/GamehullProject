@@ -1,11 +1,6 @@
-import type { FormEvent } from "react";
-
+import type { ContactBodyProps } from "@/types/contact";
 import ContactForm from "./ContactForm";
 import ContactSidebar from "./ContactSidebar";
-
-type ContactBodyProps = {
-  onSubmit: (event: FormEvent<HTMLFormElement>) => void;
-};
 
 function ContactBody({ onSubmit }: ContactBodyProps) {
   return (

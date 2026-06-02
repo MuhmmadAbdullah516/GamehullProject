@@ -1,16 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { formatCurrency, type PrizeHistoryItem } from "./free-spin-data";
-
-type PrizeHistoryProps = {
-  history: PrizeHistoryItem[];
-  show: boolean;
-};
+import type { PrizeHistoryProps } from "@/types/free-spin";
+import { formatCurrency } from "./free-spin-data";
 
 function PrizeHistory({ history, show }: PrizeHistoryProps) {
   if (!show) return null;
 
   return (
-    <section className="mt-12 rounded-[32px] border border-slate-900/10 bg-white p-8 shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition duration-300 hover:border-blue-600/20 dark:border-blue-400/20 dark:bg-[#0e1629] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)] max-sm:rounded-[24px] max-sm:p-6">
+    <section className="mt-12 rounded-4xl border border-slate-900/10 bg-white p-8 shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition duration-300 hover:border-blue-600/20 dark:border-blue-400/20 dark:bg-[#0e1629] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)] max-sm:rounded-3xl max-sm:p-6">
       <div className="mb-8 flex items-center justify-between gap-5">
         <h2 className="text-[22px] font-black tracking-normal text-[#0F172A] dark:!text-[#FFFFFF]">
           Prize History
@@ -49,7 +45,7 @@ function PrizeHistory({ history, show }: PrizeHistoryProps) {
           </table>
         </div>
       ) : (
-        <div className="flex min-h-55 flex-col items-center justify-center rounded-2xl text-center text-sm text-[#64748B] dark:!text-white/55">
+        <div className="flex min-h-[220px] flex-col items-center justify-center rounded-2xl text-center text-sm text-[#64748B] dark:!text-white/55">
           <p>No prize history yet. Spin the wheel to win!</p>
         </div>
       )}

@@ -1,6 +1,4 @@
-type SpinStatsProps = {
-  stats: Array<{ label: string; value: number | string }>;
-};
+import type { SpinStatsProps } from "@/types/free-spin";
 
 function SpinStats({ stats }: SpinStatsProps) {
   return (

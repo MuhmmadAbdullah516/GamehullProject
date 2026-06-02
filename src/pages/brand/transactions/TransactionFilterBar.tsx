@@ -7,23 +7,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import type { FilterSelectProps } from "./transaction-types";
+import type { FilterSelectProps, TransactionFilterBarProps } from "@/types/transactions";
 import {
   gameOptions,
   statusOptions,
   transactionTypeOptions,
-} from "./transaction-types";
-
-type TransactionFilterBarProps = {
-  filterGame: string;
-  filterStatus: string;
-  filterType: string;
-  isFiltered: boolean;
-  onGameChange: (value: string) => void;
-  onReset: () => void;
-  onStatusChange: (value: string) => void;
-  onTypeChange: (value: string) => void;
-};
+} from "./transaction-data";
 
 function FilterSelect({ icon: Icon, label, onChange, options, value }: FilterSelectProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,10 +22,10 @@ function FilterSelect({ icon: Icon, label, onChange, options, value }: FilterSel
       <DropdownMenuTrigger asChild>
         <button
           aria-label={label}
-          className="flex h-10.5 w-full cursor-pointer items-center justify-between gap-2.5 rounded-full border border-slate-900/10 bg-slate-100 px-4 text-[13px] font-semibold text-slate-600 transition hover:border-blue-600/20 hover:bg-blue-600/5 hover:text-blue-600 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-zinc-400 md:w-auto md:justify-start"
+          className="flex h-[42px] w-full cursor-pointer items-center justify-between gap-2.5 rounded-full border border-slate-900/10 bg-slate-100 px-4 text-[13px] font-semibold text-slate-600 transition hover:border-blue-600/20 hover:bg-blue-600/5 hover:text-blue-600 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-zinc-400 md:w-auto md:justify-start"
           type="button"
         >
-          <Icon className="size-3.75" strokeWidth={2} />
+          <Icon className="size-[15px]" strokeWidth={2} />
           <span>{value}</span>
           <ChevronDown
             aria-hidden="true"
@@ -93,7 +82,7 @@ function TransactionFilterBar({
         </div>
         {isFiltered ? (
           <button
-            className="flex h-10.5 w-full shrink-0 cursor-pointer items-center justify-center rounded-full border border-slate-900/10 bg-slate-100 text-slate-500 transition hover:border-blue-600/20 hover:text-blue-600 dark:border-blue-400/15 dark:bg-white/[0.06] md:ml-auto md:w-10.5"
+            className="flex h-[42px] w-full shrink-0 cursor-pointer items-center justify-center rounded-full border border-slate-900/10 bg-slate-100 text-slate-500 transition hover:border-blue-600/20 hover:text-blue-600 dark:border-blue-400/15 dark:bg-white/[0.06] md:ml-auto md:w-[42px]"
             onClick={onReset}
             type="button"
           >

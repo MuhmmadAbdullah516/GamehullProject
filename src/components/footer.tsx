@@ -5,9 +5,9 @@ const footerColumns = [
   {
     heading: "Games",
     links: [
-      { label: "Fire Kirin", to: "/games" },
-      { label: "Juwa", to: "/games" },
-      { label: "Game Vault", to: "/games" },
+      { label: "Fire Kirin", to: "/games/fire-kirin" },
+      { label: "Juwa", to: "/games/juwa" },
+      { label: "Game Vault", to: "/games/game-vault" },
       { label: "View All ->", to: "/games", featured: true },
     ],
   },
@@ -25,8 +25,8 @@ const footerColumns = [
     links: [
       { label: "Privacy", to: "/privacy" },
       { label: "Terms", to: "/terms" },
-      { label: "Responsible", to: "/" },
-      { label: "Support", to: "/contact" },
+      { label: "Responsible", to: "/responsible" },
+      { label: "Support", to: "/support" },
     ],
   },
 ];
@@ -46,13 +46,17 @@ function Footer() {
       <div className="mx-auto w-full max-w-6xl px-6 pb-12 pt-14">
         <div className="flex flex-col gap-12">
           <div className="grid grid-cols-1 items-start gap-8 md:gap-20 md:grid-cols-[1fr_auto]">
-            <div className="flex max-w-75 flex-col gap-4">
+            <div className="flex max-w-[300px] flex-col gap-4">
               <Link
                 className="flex cursor-pointer items-center gap-2.5 no-underline"
                 to="/"
+                onClick={()=>window.scrollTo({left:0,top:0,behavior:"smooth"})}
               >
-                <div className="flex size-10.5 shrink-0 items-center justify-center rounded-full bg-primary shadow-[0_4px_12px_rgba(37,99,235,0.22)] transition-shadow duration-200 dark:shadow-[0_4px_12px_rgba(59,130,246,0.25)]">
-                  <Gamepad2 className="size-5.5 text-white" strokeWidth={2} />
+                <div className="flex size-[42px] shrink-0 items-center justify-center rounded-full bg-primary shadow-[0_4px_12px_rgba(37,99,235,0.22)] transition-shadow duration-200 dark:shadow-[0_4px_12px_rgba(59,130,246,0.25)]">
+                  <Gamepad2
+                    className="size-[22px] text-white"
+                    strokeWidth={2}
+                  />
                 </div>
                 <div className="flex flex-col leading-[1.15]">
                   <span className="text-lg font-extrabold tracking-[-.02em] text-text-heading transition-colors duration-200 dark:text-text-dark-heading">
@@ -69,8 +73,11 @@ function Footer() {
                 withdraw with confidence.
               </p>
 
-              <div className="inline-flex w-fit items-center gap-1.75 rounded-xl border border-tag-border bg-tag-bg px-3 py-1.75 transition-colors duration-200 dark:border-blue-500/30 dark:bg-blue-500/10">
-                <Shield className="size-3.5 shrink-0 text-tag-text dark:text-blue-400" strokeWidth={2} />
+              <div className="inline-flex w-fit items-center gap-[7px] rounded-xl border border-tag-border bg-tag-bg px-3 py-[7px] transition-colors duration-200 dark:border-blue-500/30 dark:bg-blue-500/10">
+                <Shield
+                  className="size-3.5 shrink-0 text-tag-text dark:text-blue-400"
+                  strokeWidth={2}
+                />
                 <span className="text-[11px] font-semibold text-tag-text dark:text-blue-400">
                   Responsible Gaming
                 </span>
@@ -83,7 +90,7 @@ function Footer() {
                   <h3 className="m-0 text-xs font-bold uppercase tracking-[.1em] text-footer-heading transition-colors duration-200 dark:text-footer-dark-heading">
                     {column.heading}
                   </h3>
-                  <nav className="flex flex-col gap-2.75">
+                  <nav className="flex flex-col gap-[11px]">
                     {column.links.map((link) => (
                       <Link
                         className={`cursor-pointer text-[13.5px] no-underline transition-colors duration-150 ${

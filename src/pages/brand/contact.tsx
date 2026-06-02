@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import ContactBody from "./contact/ContactBody";
 import ContactFaq from "./contact/ContactFaq";
 import ContactHero from "./contact/ContactHero";
-import type { ContactFormValues } from "./contact/contact-types";
+import type { ContactFormValues } from "@/types/contact";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

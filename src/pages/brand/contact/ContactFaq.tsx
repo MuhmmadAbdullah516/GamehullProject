@@ -1,11 +1,7 @@
 import { ChevronDown } from "lucide-react";
 
+import type { ContactFaqProps } from "@/types/contact";
 import { faqItems } from "./contact-data";
-
-type ContactFaqProps = {
-  onToggle: (index: number) => void;
-  openFaqIndex: number | null;
-};
 
 function ContactFaq({ onToggle, openFaqIndex }: ContactFaqProps) {
   return (
@@ -30,7 +26,7 @@ function ContactFaq({ onToggle, openFaqIndex }: ContactFaqProps) {
               >
                 {item.question}
                 <ChevronDown
-                  className={`size-4.5 shrink-0 text-text-dim transition-transform duration-200 ${
+                  className={`size-[18px] shrink-0 text-text-dim transition-transform duration-200 ${
                     isOpen ? "rotate-180 text-primary" : ""
                   }`}
                   strokeWidth={2.4}

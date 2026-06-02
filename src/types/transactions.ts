@@ -28,20 +28,26 @@ export type FilterSelectProps = {
   onChange: (value: string) => void;
 };
 
-export const transactionTypeOptions = [
-  { label: "All Types", value: "All Types" },
-  { label: "Deposit", value: "Deposit" },
-  { label: "Cash In", value: "Cash In" },
-  { label: "Cash Out", value: "Cash Out" },
-];
+export type TransactionEmptyStateProps = {
+  isFiltered: boolean;
+};
 
-export const gameOptions = [{ label: "All Games", value: "All Games" }];
+export type TransactionFilterBarProps = {
+  filterGame: string;
+  filterStatus: string;
+  filterType: string;
+  isFiltered: boolean;
+  onGameChange: (value: string) => void;
+  onReset: () => void;
+  onStatusChange: (value: string) => void;
+  onTypeChange: (value: string) => void;
+};
 
-export const statusOptions = [
-  { label: "All Status", value: "All Status" },
-  { label: "Completed", value: "Completed" },
-  { label: "Pending", value: "Pending" },
-  { label: "Failed", value: "Failed" },
-];
-
-export const transactions: Transaction[] = [];
+export type TransactionTableProps = {
+  currentPage: number;
+  onPageChange: (page: number) => void;
+  perPage: number;
+  transactions: Transaction[];
+  totalCount: number;
+  totalPages: number;
+};

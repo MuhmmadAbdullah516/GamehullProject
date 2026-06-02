@@ -1,15 +1,6 @@
 import { CreditCard, LockKeyhole, Zap } from "lucide-react";
 
-import type { Transaction } from "./transaction-types";
-
-type TransactionTableProps = {
-  currentPage: number;
-  onPageChange: (page: number) => void;
-  perPage: number;
-  transactions: Transaction[];
-  totalCount: number;
-  totalPages: number;
-};
+import type { Transaction, TransactionTableProps } from "@/types/transactions";
 
 function statusClass(status: Transaction["status"]) {
   if (status === "Completed") return "border-green-500/20 bg-green-500/10 text-green-500";
@@ -21,7 +12,7 @@ function TransactionIcon({ type }: { type: Transaction["type"] }) {
   const Icon = type === "Deposit" ? LockKeyhole : type === "Cash In" ? Zap : CreditCard;
   return (
     <div className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-blue-600/20 bg-blue-600/10 text-blue-600">
-      <Icon className="size-4.5" strokeWidth={2.5} />
+      <Icon className="size-[18px]" strokeWidth={2.5} />
     </div>
   );
 }

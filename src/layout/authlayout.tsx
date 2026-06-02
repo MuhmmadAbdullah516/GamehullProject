@@ -1,10 +1,7 @@
 import { Gamepad2 } from 'lucide-react'
-import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 
-type AuthLayoutProps = {
-  children: ReactNode
-}
+import type { AuthLayoutProps } from '@/types/layout'
 
 function AuthLayout({ children }: AuthLayoutProps) {
   return (
@@ -15,7 +12,7 @@ function AuthLayout({ children }: AuthLayoutProps) {
             className="group flex cursor-pointer items-center gap-3 no-underline"
             to="https://gamehull.com/"
           >
-            <div className="flex h-10.5 w-10.5 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white shadow-[0_4px_12px_rgba(37,99,235,0.22)] transition-transform duration-200 group-hover:scale-105">
+            <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-blue-600 text-white shadow-[0_4px_12px_rgba(37,99,235,0.22)] transition-transform duration-200 group-hover:scale-105">
               <Gamepad2 className="size-6" strokeWidth={2} />
             </div>
             <span className="text-[19px] font-black leading-none tracking-[-.03em] text-slate-900 dark:text-slate-100">

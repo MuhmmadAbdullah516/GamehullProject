@@ -1,4 +1,4 @@
-import type { WalletMethodOption } from "./cashout-types";
+import type { WalletMethodOption } from "@/types/cashout";
 
 export const walletMethods: WalletMethodOption[] = [
   { label: "CashApp", value: "cashapp" },

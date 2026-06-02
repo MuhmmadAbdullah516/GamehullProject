@@ -3,15 +3,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Dialog, DialogClose, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import type { DepositMethodName, WalletPopupProps, WalletStep } from "@/types/header";
 import DepositPaymentPopup from "./deposit-payment-popup";
-import DepositPopup, { type DepositMethodName } from "./deposit-popup";
-
-type WalletPopupProps = {
-  balance: string;
-  compact?: boolean;
-};
-
-type WalletStep = "wallet" | "deposit" | "depositPayment";
+import DepositPopup from "./deposit-popup";
 
 function WalletPopup({ balance, compact = false }: WalletPopupProps) {
   const [refreshRotation, setRefreshRotation] = useState(0);
@@ -40,17 +34,17 @@ function WalletPopup({ balance, compact = false }: WalletPopupProps) {
         {compact ? (
           <button
             aria-label="Open wallet"
-            className="flex size-10.5 items-center justify-center rounded-full border-[1.5px] border-slate-900/10 bg-slate-100 p-0 text-[#f59e0b] transition-all hover:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:hover:bg-white/[0.09] lg:hidden"
+            className="flex size-[42px] items-center justify-center rounded-full border-[1.5px] border-slate-900/10 bg-slate-100 p-0 text-[#f59e0b] transition-all hover:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:hover:bg-white/[0.09] lg:hidden"
             type="button"
           >
-            <AppWindowMac className="size-3.75" strokeWidth={2.2} />
+            <AppWindowMac className="size-[15px]" strokeWidth={2.2} />
           </button>
         ) : (
           <button
-            className="hidden h-10.5 items-center justify-center gap-2 rounded-full border border-slate-900/10 bg-slate-100 px-4 text-[15px] font-bold text-[#f59e0b] transition hover:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:hover:bg-white/[0.09] lg:inline-flex"
+            className="hidden h-[42px] items-center justify-center gap-2 rounded-full border border-slate-900/10 bg-slate-100 px-4 text-[15px] font-bold text-[#f59e0b] transition hover:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:hover:bg-white/[0.09] lg:inline-flex"
             type="button"
           >
-            <AppWindowMac className="size-3.75" strokeWidth={2.2} />
+            <AppWindowMac className="size-[15px]" strokeWidth={2.2} />
             <span className="text-sm font-bold leading-[21px]">{balance}</span>
           </button>
         )}
@@ -59,10 +53,10 @@ function WalletPopup({ balance, compact = false }: WalletPopupProps) {
       <DialogContent
         className={
           walletStep === "deposit"
-            ? "wallet-scrollbar relative w-full max-w-135 max-h-[calc(100vh-40px)] overflow-y-auto bg-[#0f172a] border border-white/10 rounded-[32px] shadow-2xl p-6 md:p-8"
+            ? "wallet-scrollbar relative w-full max-w-[540px] max-h-[calc(100vh-40px)] overflow-y-auto bg-[#0f172a] border border-white/10 rounded-4xl shadow-2xl p-6 md:p-8"
             : walletStep === "depositPayment"
-              ? "wallet-scrollbar relative w-full max-w-135 max-h-[calc(100vh-40px)] overflow-y-auto bg-[#0f172a] border border-white/10 rounded-[32px] shadow-2xl p-6 md:p-8"
-            : "wallet-scrollbar relative w-full max-w-135 max-h-[calc(100vh-40px)] overflow-y-auto bg-[#0f172a] border border-white/10 rounded-[32px] shadow-2xl p-6 md:p-8 overflow-hidden transition-colors"
+              ? "wallet-scrollbar relative w-full max-w-[540px] max-h-[calc(100vh-40px)] overflow-y-auto bg-[#0f172a] border border-white/10 rounded-4xl shadow-2xl p-6 md:p-8"
+            : "wallet-scrollbar relative w-full max-w-[540px] max-h-[calc(100vh-40px)] overflow-y-auto bg-[#0f172a] border border-white/10 rounded-4xl shadow-2xl p-6 md:p-8 overflow-hidden transition-colors"
         }
       >
         {walletStep === "deposit" ? (

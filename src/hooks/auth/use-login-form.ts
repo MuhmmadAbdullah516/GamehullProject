@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { useAuth } from "@/hooks/auth/use-auth";
-import { loginSchema, type LoginErrors } from "@/schemas/auth-schema";
+import { loginSchema } from "@/schemas/auth-schema";
+import type { LoginErrors } from "@/types/validation";
 
 export function useLoginForm() {
   const [errors, setErrors] = useState<LoginErrors>({});

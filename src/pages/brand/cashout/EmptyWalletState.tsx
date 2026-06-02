@@ -1,8 +1,6 @@
 import { Plus, Wallet } from "lucide-react";
 
-type EmptyWalletStateProps = {
-  onAddFirstWallet: () => void;
-};
+import type { EmptyWalletStateProps } from "@/types/cashout";
 
 function EmptyWalletState({ onAddFirstWallet }: EmptyWalletStateProps) {
   return (

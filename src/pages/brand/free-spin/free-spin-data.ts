@@ -1,14 +1,4 @@
-export type Prize = {
-  label: string;
-  value: number;
-};
-
-export type PrizeHistoryItem = {
-  createdAt: Date;
-  id: number;
-  prize: Prize;
-  type: "Free" | "Deposit";
-};
+import type { Prize } from "@/types/free-spin";
 
 export const prizes: Prize[] = [
   { label: "$2", value: 2 },

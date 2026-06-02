@@ -139,7 +139,7 @@ function ActiveDevices() {
                 <h2 className="mb-1.5 text-lg font-bold text-slate-900 transition-colors dark:text-white">
                   Security Tip
                 </h2>
-                <p className="max-w-160 text-sm leading-relaxed text-slate-600 transition-colors dark:text-zinc-400">
+                <p className="max-w-[640px] text-sm leading-relaxed text-slate-600 transition-colors dark:text-zinc-400">
                   If you notice any unfamiliar devices, log them out immediately
                   and consider changing your password. Logged out devices will
                   need to sign in again to access your account.

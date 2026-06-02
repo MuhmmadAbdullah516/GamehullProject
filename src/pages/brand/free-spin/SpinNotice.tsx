@@ -1,9 +1,5 @@
+import type { SpinNoticeProps } from "@/types/free-spin";
 import { formatCountdown } from "./free-spin-data";
-
-type SpinNoticeProps = {
-  countdown: number;
-  show: boolean;
-};
 
 function SpinNotice({ countdown, show }: SpinNoticeProps) {
   if (!show) return null;
@@ -19,7 +15,7 @@ function SpinNotice({ countdown, show }: SpinNoticeProps) {
           Come back in <span className="font-bold text-[#B45309] dark:!text-[#FACC15]">{formatCountdown(countdown)}</span> for your next free spin.
         </p>
       </div>
-      <div className="min-w-30 shrink-0 text-center">
+      <div className="min-w-[120px] shrink-0 text-center">
         <p className="mb-1 text-[11px] font-bold uppercase tracking-wider text-[#92400E] dark:!text-[#FACC15]">Next free spin</p>
         <p className="text-[22px] font-black tabular-nums text-[#B45309] dark:!text-[#FACC15]">{formatCountdown(countdown)}</p>
       </div>

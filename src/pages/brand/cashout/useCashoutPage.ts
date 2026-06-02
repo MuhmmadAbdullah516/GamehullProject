@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 import games from "@/data/games.json";
 import type { GameCard } from "@/types/games";
-import type { CashoutTab, SavedWallet, WalletMethod, WalletMethodOption } from "./cashout-types";
+import type { CashoutTab, SavedWallet, WalletMethod, WalletMethodOption } from "@/types/cashout";
 
 function makeWalletLabel(methodLabel: string) {
   return `${methodLabel.replace(/[^a-z0-9]/gi, "").toUpperCase()} WALLET`;

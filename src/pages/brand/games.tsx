@@ -34,12 +34,13 @@ function GamePage() {
 
   return (
     <div className="min-h-[calc(100vh-72px)] bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] text-slate-900 transition-[background-color,color] duration-300 dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080d1c,#080d1c)] dark:text-slate-100">
-      <section className="relative overflow-hidden border-b border-slate-900/10 bg-white py-12 md:py-20 pb-8 md:pb-13 transition-colors duration-200 dark:border-blue-400/15 dark:bg-[#080d1c]">
-        <div className="pointer-events-none absolute left-1/2 top-0 h-full w-full -translate-x-1/2 bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080d1c,#080d1c)]" />
-        <div className="pointer-events-none absolute left-1/2 top-[-80px] h-87.5 w-200 -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(37,99,235,0.15)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse,rgba(59,130,246,0.2)_0%,transparent_70%)]" />
+      <section className="relative overflow-hidden border-b border-slate-900/10 bg-white bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] py-12 pb-8 transition-colors duration-300 ease-out dark:border-blue-400/15 dark:bg-[#080d1c] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080d1c,#080d1c)] md:py-20 md:pb-13">
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+          <div className="absolute inset-0 bg-transparent" />
+        </div>
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
-          <nav className="mb-4.5 flex items-center gap-1.5 text-xs text-slate-400 dark:text-zinc-600">
+          <nav className="mb-[18px] flex items-center gap-1.5 text-xs text-slate-400 dark:text-zinc-600">
               <Link
                 className="font-medium text-blue-600 no-underline transition-colors hover:text-blue-700"
                 to="/"
@@ -76,7 +77,7 @@ function GamePage() {
                 onClick={handlePlayNowClick}
                 type="button"
               >
-                <Zap className="h-3.75 w-3.75 fill-white" />
+                <Zap className="h-[15px] w-[15px] fill-white" />
                 Play Now
               </Button>
             ) : (
@@ -85,7 +86,7 @@ function GamePage() {
                 className="!h-auto w-full rounded-full bg-blue-600 px-8 !py-3.5 text-[15px] font-bold text-white shadow-[0_4px_18px_rgba(37,99,235,0.22)] transition-all hover:-translate-y-0.5 hover:bg-blue-700 dark:shadow-[0_4px_18px_rgba(59,130,246,0.25)] sm:w-auto"
               >
                 <Link to="/register">
-                  <Zap className="size-3.75 fill-white" />
+                  <Zap className="size-[15px] fill-white" />
                   Play Now - Join Free
                 </Link>
               </Button>
@@ -95,13 +96,13 @@ function GamePage() {
       </section>
 
       <section className="relative overflow-hidden border-t border-slate-900/10 bg-white py-14 md:py-24 transition-colors duration-200 dark:border-blue-400/15 dark:bg-[#080d1c]">
-        <div className="pointer-events-none absolute left-1/2 top-[-100px] h-100 w-225 -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(37,99,235,0.1)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse,rgba(59,130,246,0.12)_0%,transparent_70%)]" />
+        <div className="pointer-events-none absolute left-1/2 top-[-100px] h-[400px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(37,99,235,0.1)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse,rgba(59,130,246,0.12)_0%,transparent_70%)]" />
         <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
           <div className="grid grid-cols-1 gap-5 min-[420px]:grid-cols-2 min-[700px]:grid-cols-3 min-[1024px]:grid-cols-4">
             {games.map((game) => (
               <article
                 key={game.id}
-                className="group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-slate-900/10 bg-gradient-to-b from-white to-[#f0f5ff] shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_55px_rgb(15_23_42_/_0.18)] dark:border-blue-400/20 dark:bg-gradient-to-br dark:from-[#021020] dark:to-[#140540] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)] dark:hover:shadow-[0_22px_70px_rgb(96_165_250_/_0.22),0_10px_26px_rgb(37_99_235_/_0.16)]"
+                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-900/10 bg-white bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_55px_rgb(15_23_42_/_0.18)] dark:border-blue-400/20 dark:bg-gradient-to-br dark:from-[#021020] dark:to-[#140540] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)] dark:hover:shadow-[0_22px_70px_rgb(96_165_250_/_0.22),0_10px_26px_rgb(37_99_235_/_0.16)]"
               >
                 <span
                   className={`absolute left-3 top-3 z-10 rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-lg ${gameTagStyles[game.tag]}`}

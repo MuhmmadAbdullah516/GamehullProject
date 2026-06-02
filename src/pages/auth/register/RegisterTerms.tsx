@@ -1,11 +1,6 @@
 import { Link } from "react-router-dom";
-import type { ChangeEvent } from "react";
 
-type RegisterTermsProps = {
-  accepted: boolean;
-  error?: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-};
+import type { RegisterTermsProps } from "@/types/auth-register";
 
 function RegisterTerms({ accepted, error, onChange }: RegisterTermsProps) {
   return (

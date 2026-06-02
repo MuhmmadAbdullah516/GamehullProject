@@ -69,18 +69,11 @@ function PasswordField({
         </label>
         {labelAction}
       </div>
-      <div
-        className={cn(
-          'group flex h-12 items-center rounded-xl border border-slate-700/70 bg-[#171a3d] px-4 text-slate-200 transition focus-within:border-blue-600 focus-within:ring-2 focus-within:ring-blue-600',
-          isFilled &&
-            'border-transparent bg-[#e7effc] text-slate-950 shadow-none focus-within:border-transparent focus-within:ring-0',
-          wrapperClassName,
-        )}
-      >
+      <div className={cn('group relative', wrapperClassName)}>
         <LockKeyhole
           aria-hidden="true"
           className={cn(
-            'mr-4 size-4 shrink-0 text-slate-400 transition-colors group-focus-within:text-blue-500',
+            'pointer-events-none absolute left-4 top-1/2 z-10 size-4 -translate-y-1/2 text-slate-400 transition-colors group-focus-within:text-blue-500',
             isFilled && 'group-focus-within:text-slate-400',
             iconClassName,
           )}
@@ -88,8 +81,9 @@ function PasswordField({
         />
         <input
           className={cn(
-            'h-full min-w-0 flex-1 bg-transparent text-sm font-normal leading-[21px] text-slate-200 outline-none placeholder:text-slate-300',
-            isFilled && 'text-black placeholder:text-slate-500',
+            'h-[48px] w-full rounded-xl border border-slate-700/70 bg-[#171a3d] px-4 pl-12 pr-12 text-sm font-normal leading-[21px] text-slate-200 outline-none transition placeholder:text-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-600',
+            isFilled &&
+              'border-transparent bg-[#e7effc] text-black placeholder:text-slate-500 focus:border-transparent focus:ring-0',
             inputClassName,
           )}
           key={`${props.id ?? props.name ?? 'password'}-${isPasswordVisible ? 'visible' : 'hidden'}`}
@@ -103,7 +97,7 @@ function PasswordField({
           aria-label={`${isPasswordVisible ? 'Hide' : 'Show'} ${label.toLowerCase()}`}
           aria-pressed={isPasswordVisible}
           className={cn(
-            'ml-4 grid size-8 shrink-0 place-items-center rounded-full text-slate-400 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500',
+            'absolute right-2 top-2 z-10 grid size-8 place-items-center rounded-full text-slate-400 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 active:translate-y-0',
             toggleClassName,
           )}
           onClick={handleTogglePasswordVisibility}

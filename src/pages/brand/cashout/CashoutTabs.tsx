@@ -1,11 +1,6 @@
 import { ArrowRight, Wallet } from "lucide-react";
 
-import type { CashoutTab } from "./cashout-types";
-
-type CashoutTabsProps = {
-  activeTab: CashoutTab;
-  onTabChange: (tab: CashoutTab) => void;
-};
+import type { CashoutTabsProps } from "@/types/cashout";
 
 function CashoutTabs({ activeTab, onTabChange }: CashoutTabsProps) {
   return (

@@ -2,12 +2,7 @@ import { LogOut, User } from "lucide-react";
 
 import EmailField from "@/components/auth/email-field";
 import { Button } from "@/components/ui/button";
-import type { AuthUser } from "@/types/auth-fields";
-
-type ProfileInfoSectionProps = {
-  onSignOut: () => void;
-  user: AuthUser | null;
-};
+import type { ProfileInfoSectionProps } from "@/types/profile";
 
 function getUsername(name?: string) {
   return `@${name?.toLowerCase().replaceAll(" ", "") || "player"}`;

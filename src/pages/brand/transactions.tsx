@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import TransactionEmptyState from "@/pages/brand/transactions/TransactionEmptyState";
 import TransactionFilterBar from "@/pages/brand/transactions/TransactionFilterBar";
 import TransactionTable from "@/pages/brand/transactions/TransactionTable";
-import { transactions } from "@/pages/brand/transactions/transaction-types";
+import { transactions } from "@/pages/brand/transactions/transaction-data";
 
 const perPage = 10;
 
@@ -58,7 +58,7 @@ function TransactionsPage() {
         <h1 className="mb-3 text-[clamp(32px,5vw,48px)] font-black leading-none tracking-normal text-slate-900 transition-colors dark:text-white">
           Transactions
         </h1>
-        <p className="mx-auto max-w-125 text-[15px] leading-relaxed text-slate-600 transition-colors dark:text-zinc-400 md:text-base">
+        <p className="mx-auto max-w-[500px] text-[15px] leading-relaxed text-slate-600 transition-colors dark:text-zinc-400 md:text-base">
           View your deposit, cash in, and cash out history in one place
         </p>
       </div>

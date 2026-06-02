@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 function AboutPage() {
   return (
     <main className="flex-grow bg-[#080d1c] text-slate-100 transition-colors">
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#f0f5ff] py-12 pb-8 transition-colors duration-300 ease-out dark:bg-[#080d1c] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080d1c,#080d1c)] md:py-20 md:pb-13">
+      <section className="relative overflow-hidden bg-white bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] py-12 pb-8 transition-colors duration-300 ease-out dark:bg-[#080d1c] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080d1c,#080d1c)] md:py-20 md:pb-13">
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_0%,rgba(37,99,235,0.16)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse_70%_55%_at_50%_0%,rgba(37,99,235,0.36)_0%,transparent_70%)]" />
+          <div className="absolute inset-0 bg-transparent" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
-          <nav className="mb-4.5 flex items-center gap-1.5 text-xs text-text-dim dark:text-text-dark-dim" aria-label="Breadcrumb">
+          <nav className="mb-[18px] flex items-center gap-1.5 text-xs text-text-dim dark:text-text-dark-dim" aria-label="Breadcrumb">
             <Link className="font-medium text-primary transition-colors hover:text-primary-hover" to="/">
               Home
             </Link>
@@ -31,7 +31,7 @@ function AboutPage() {
               Redefining the <span className="text-primary">Gaming</span> experience
             </h1>
 
-            <p className="max-w-150 text-base leading-relaxed text-text-dark-body transition-colors duration-200">
+            <p className="max-w-[600px] text-base leading-relaxed text-text-dark-body transition-colors duration-200">
               GameHull is more than just a platform. It's a community dedicated to providing the most exciting, secure,
               and rewarding fish games and slots in the industry.
             </p>
@@ -43,7 +43,7 @@ function AboutPage() {
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8">
           <article className="group rounded-4xl border border-card-dark-border bg-card-dark-bg p-6 text-center transition-all duration-200 hover:shadow-lg hover:shadow-primary/5 md:p-8">
             <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-primary/10 transition-transform duration-300 group-hover:scale-110">
-              <Users className="size-5.5 text-primary" strokeWidth={2} />
+              <Users className="size-[22px] text-primary" strokeWidth={2} />
             </div>
             <p className="mb-1 text-2xl font-black text-white transition-colors md:text-3xl">
               50K+
@@ -55,7 +55,7 @@ function AboutPage() {
 
           <article className="group rounded-4xl border border-card-dark-border bg-card-dark-bg p-6 text-center transition-all duration-200 hover:shadow-lg hover:shadow-primary/5 md:p-8">
             <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-primary/10 transition-transform duration-300 group-hover:scale-110">
-              <CircleDollarSign className="size-5.5 text-primary" strokeWidth={2} />
+              <CircleDollarSign className="size-[22px] text-primary" strokeWidth={2} />
             </div>
             <p className="mb-1 text-2xl font-black text-white transition-colors md:text-3xl">
               $1.2M+
@@ -67,7 +67,7 @@ function AboutPage() {
 
           <article className="group rounded-4xl border border-card-dark-border bg-card-dark-bg p-6 text-center transition-all duration-200 hover:shadow-lg hover:shadow-primary/5 md:p-8">
             <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-primary/10 transition-transform duration-300 group-hover:scale-110">
-              <Gamepad2 className="size-5.5 text-primary" strokeWidth={2} />
+              <Gamepad2 className="size-[22px] text-primary" strokeWidth={2} />
             </div>
             <p className="mb-1 text-2xl font-black text-white transition-colors md:text-3xl">
               13+
@@ -79,7 +79,7 @@ function AboutPage() {
 
           <article className="group rounded-4xl border border-card-dark-border bg-card-dark-bg p-6 text-center transition-all duration-200 hover:shadow-lg hover:shadow-primary/5 md:p-8">
             <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-primary/10 transition-transform duration-300 group-hover:scale-110">
-              <Zap className="size-5.5 text-primary" strokeWidth={2} />
+              <Zap className="size-[22px] text-primary" strokeWidth={2} />
             </div>
             <p className="mb-1 text-2xl font-black text-white transition-colors md:text-3xl">
               99.9%
@@ -137,7 +137,7 @@ function AboutPage() {
 
           <aside className="space-y-8 lg:col-span-5">
             <section className="relative overflow-hidden rounded-4xl border border-white/5 bg-[linear-gradient(160deg,#021020_0%,#140540_100%)] p-10 text-white shadow-2xl shadow-primary/30 transition-all duration-200">
-              <Layers className="absolute right-0 top-0 size-75 -translate-y-1/4 translate-x-1/4 text-white opacity-10" fill="currentColor" strokeWidth={0} />
+              <Layers className="absolute right-0 top-0 size-[300px] -translate-y-1/4 translate-x-1/4 text-white opacity-10" fill="currentColor" strokeWidth={0} />
 
               <h3 className="relative z-10 mb-4 text-2xl font-black text-white transition-colors">
                 Join the Hull

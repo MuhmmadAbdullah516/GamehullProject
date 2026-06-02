@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { toast } from "react-toastify";
 
 import { useAuth } from "@/hooks/auth/use-auth";
-import { formatCountdown, formatCurrency, prizes, type PrizeHistoryItem } from "./free-spin-data";
+import type { PrizeHistoryItem } from "@/types/free-spin";
+import { formatCountdown, formatCurrency, prizes } from "./free-spin-data";
 
 export function useFreeSpin() {
   const { isAuthenticated } = useAuth();

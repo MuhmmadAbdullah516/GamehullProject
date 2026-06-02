@@ -1,16 +1,7 @@
 import { Link } from "react-router-dom";
 import {useAuth} from "@/hooks/auth/use-auth"
 import { Button } from "@/components/ui/button";
-
-type AffiliateStat = {
-  label: string;
-  value: string;
-};
-
-type AffiliateStep = {
-  description: string;
-  title: string;
-};
+import type { AffiliateStat, AffiliateStep } from "@/types/brand-pages";
 
 const affiliateStats: AffiliateStat[] = [
   { label: "Commission Rate", value: "20%" },
@@ -44,11 +35,12 @@ function AffiliatePage() {
   
   return (
     <main className="m-0 flex-grow bg-white p-0 text-[#0F172A] transition-colors dark:bg-[#080D1C] dark:!text-[#F1F5F9]">
-      <section className="relative overflow-hidden bg-white px-6 py-16 text-center transition-colors duration-200 dark:bg-[#080D1C]">
-        <div className="pointer-events-none absolute left-1/2 top-0 h-full w-full -translate-x-1/2 bg-[linear-gradient(180deg,#FFFFFF_0%,#F0F5FF_100%)] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080D1C,#080D1C)]" />
-        <div className="pointer-events-none absolute left-1/2 top-0 h-75 w-150 -translate-x-1/2 rounded-full dark:bg-[radial-gradient(ellipse,rgba(37,99,235,0.12)_0%,transparent_70%)]" />
+      <section className="relative overflow-hidden bg-white bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] px-6 py-16 text-center transition-colors duration-300 ease-out dark:bg-[#080D1C] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080D1C,#080D1C)]">
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+          <div className="absolute inset-0 bg-transparent" />
+        </div>
 
-        <div className="relative z-[1] mx-auto flex w-full max-w-180 flex-col items-center">
+        <div className="relative z-[1] mx-auto flex w-full max-w-[720px] flex-col items-center">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-600/20 bg-blue-600/[0.07] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#1D4ED8] transition-colors duration-200 dark:border-blue-400/25 dark:bg-blue-600/10 dark:!text-[#BFDBFE]">
             <span className="relative flex size-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
@@ -68,7 +60,7 @@ function AffiliatePage() {
 
           <Button
             asChild
-            className="h-12.5 rounded-full bg-[#2563EB] px-8 text-[15px] font-extrabold text-white no-underline transition-all duration-150 hover:-translate-y-px hover:bg-[#1D4ED8] hover:shadow-[0_4px_14px_rgba(37,99,235,0.22)] dark:hover:shadow-[0_4px_14px_rgba(59,130,246,0.25)]"
+            className="h-[50px] rounded-full bg-[#2563EB] px-8 text-[15px] font-extrabold text-white no-underline transition-all duration-150 hover:-translate-y-px hover:bg-[#1D4ED8] hover:shadow-[0_4px_14px_rgba(37,99,235,0.22)] dark:hover:shadow-[0_4px_14px_rgba(59,130,246,0.25)]"
           >
             <Link to={affiliateLinkTarget}>
               Join as Affiliate
@@ -78,7 +70,7 @@ function AffiliatePage() {
       </section>
 
       <div className="bg-white py-12 transition-colors duration-200 dark:bg-[#080d1c]">
-        <div className="mx-auto max-w-215 px-6">
+        <div className="mx-auto max-w-[860px] px-6">
           <section
             aria-label="Affiliate statistics"
             className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-3"
@@ -104,10 +96,10 @@ function AffiliatePage() {
           >
             {affiliateSteps.map((step, index) => (
               <article
-                className="rounded-[18px] border border-slate-900/10 bg-white p-7 text-center shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-colors duration-200 dark:border-blue-400/20 dark:bg-[#0E1629] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)]"
+                className="rounded-2xl border border-slate-900/10 bg-white p-7 text-center shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-colors duration-200 dark:border-blue-400/20 dark:bg-[#0E1629] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)]"
                 key={step.title}
               >
-                <div className="mx-auto mb-4 flex size-11 items-center justify-center rounded-[14px] bg-[#2563EB] text-lg font-black text-white shadow-[0_4px_12px_rgba(37,99,235,0.22)] transition-colors duration-200 dark:shadow-[0_4px_12px_rgba(59,130,246,0.25)]">
+                <div className="mx-auto mb-4 flex size-11 items-center justify-center rounded-xl bg-[#2563EB] text-lg font-black text-white shadow-[0_4px_12px_rgba(37,99,235,0.22)] transition-colors duration-200 dark:shadow-[0_4px_12px_rgba(59,130,246,0.25)]">
                   {index + 1}
                 </div>
 
@@ -122,7 +114,7 @@ function AffiliatePage() {
             ))}
           </section>
 
-          <section className="rounded-[24px] border border-slate-900/10 bg-white p-10 px-8 text-center shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-colors duration-200 dark:border-blue-400/20 dark:bg-[#0E1629] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)]">
+          <section className="rounded-3xl border border-slate-900/10 bg-white p-10 px-8 text-center shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-colors duration-200 dark:border-blue-400/20 dark:bg-[#0E1629] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)]">
             <h2 className="mb-3 text-2xl font-black tracking-normal text-[#0F172A] transition-colors duration-200 dark:!text-[#FFFFFF]">
               Ready to start earning?
             </h2>
@@ -135,7 +127,7 @@ function AffiliatePage() {
 
             <Button
               asChild
-              className="h-12.5 rounded-full bg-[#2563EB] px-8 text-[15px] font-extrabold text-white no-underline transition-all duration-150 hover:-translate-y-px hover:bg-[#1D4ED8]"
+              className="h-[50px] rounded-full bg-[#2563EB] px-8 text-[15px] font-extrabold text-white no-underline transition-all duration-150 hover:-translate-y-px hover:bg-[#1D4ED8]"
             >
               <Link to={affiliateLinkTarget}>
                 {referralButtonText}

@@ -1,19 +1,8 @@
 import { User } from "lucide-react";
-import type { ChangeEvent } from "react";
 
 import PasswordField from "@/components/auth/password-field";
 import { Button } from "@/components/ui/button";
-
-type PasswordFields = {
-  confirm: string;
-  current_password: string;
-  new_password: string;
-};
-
-type PasswordChangeSectionProps = {
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  values: PasswordFields;
-};
+import type { PasswordChangeSectionProps } from "@/types/profile";
 
 const fields = [
   { id: "current_password", label: "Current Password" },

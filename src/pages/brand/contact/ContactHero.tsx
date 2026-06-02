@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 function ContactHero() {
   return (
-    <section className="relative overflow-hidden py-12 pb-8 md:py-20 md:pb-13">
+    <section className="relative overflow-hidden bg-white bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] py-12 pb-8 transition-colors duration-300 ease-out dark:bg-[#080d1c] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080d1c,#080d1c)] md:py-20 md:pb-13">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(37,99,235,0.05)_0%,transparent_70%)]" />
+        <div className="absolute inset-0 bg-transparent" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
-        <nav className="mb-4.5 flex items-center gap-1.5 text-xs text-text-dim dark:text-text-dark-dim" aria-label="Breadcrumb">
+        <nav className="mb-[18px] flex items-center gap-1.5 text-xs text-text-dim dark:text-text-dark-dim" aria-label="Breadcrumb">
           <Link className="font-medium text-primary transition-colors hover:text-primary-hover" to="/">
             Home
           </Link>
@@ -30,7 +30,7 @@ function ContactHero() {
             Let's <span className="text-primary">talk</span>
           </h1>
 
-          <p className="max-w-150 text-[15px] leading-relaxed text-text-body transition-colors duration-200 dark:text-text-dark-body md:text-base">
+          <p className="max-w-[600px] text-[15px] leading-relaxed text-text-body transition-colors duration-200 dark:text-text-dark-body md:text-base">
             Have a question, business inquiry, or need technical support? We're here to help you 24/7. Fill out the
             form and we'll get back to you shortly.
           </p>

@@ -3,12 +3,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 
 import { DialogClose } from "@/components/ui/dialog";
-import type { DepositMethodName } from "./deposit-popup";
-
-type DepositPaymentPopupProps = {
-  method: DepositMethodName;
-  onBack: () => void;
-};
+import type { DepositPaymentPopupProps } from "@/types/header";
 
 const depositAmounts = [15, 20, 25, 30, 50, 100, 250, 500];
 
@@ -58,7 +53,7 @@ function DepositPaymentPopup({ method, onBack }: DepositPaymentPopupProps) {
         <p className="text-sm text-white/40">Enter amount to deposit</p>
       </div>
 
-      <div className="flex items-start gap-4 p-5 rounded-[20px] bg-primary/10 border border-primary/20 mb-8">
+      <div className="flex items-start gap-4 p-5 rounded-2xl bg-primary/10 border border-primary/20 mb-8">
         <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center shrink-0">
           <Zap className="size-5 text-[#3b82f6]" fill="currentColor" strokeWidth={0} />
         </div>
@@ -75,7 +70,7 @@ function DepositPaymentPopup({ method, onBack }: DepositPaymentPopupProps) {
           <div className="relative">
             <span className="absolute left-5 top-1/2 -translate-y-1/2 text-lg font-bold text-white/30">$</span>
             <input
-              className="w-full h-17 pl-10 pr-6 bg-white/5 border border-white/10 rounded-[22px] text-xl font-bold text-white outline-none focus:border-primary/50 focus:ring-4 focus:ring-primary/10 transition-all placeholder:text-white/10"
+              className="w-full h-[68px] pl-10 pr-6 bg-white/5 border border-white/10 rounded-3xl text-xl font-bold text-white outline-none focus:border-primary/50 focus:ring-4 focus:ring-primary/10 transition-all placeholder:text-white/10"
               id="deposit-amount"
               inputMode="numeric"
               max={500}
@@ -105,7 +100,7 @@ function DepositPaymentPopup({ method, onBack }: DepositPaymentPopupProps) {
       </div>
 
       <button
-        className="w-full h-17 bg-primary hover:bg-primary-hover text-white text-lg font-bold rounded-full transition-all hover:-translate-y-1 shadow-lg shadow-primary/20 mb-6 cursor-pointer"
+        className="w-full h-[68px] bg-primary hover:bg-primary-hover text-white text-lg font-bold rounded-full transition-all hover:-translate-y-1 shadow-lg shadow-primary/20 mb-6 cursor-pointer"
         onClick={handlePayNow}
         type="button"
       >

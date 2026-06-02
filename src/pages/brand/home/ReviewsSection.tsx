@@ -22,18 +22,18 @@ function ReviewsSection() {
           <p className="mt-3 text-sm text-slate-600 transition-colors dark:text-zinc-400">Join thousands of satisfied players who trust GameHull.</p>
         </div>
 
-        <div className="grid max-h-120 grid-cols-1 gap-4 overflow-hidden md:grid-cols-3">
+        <div className="grid max-h-[480px] grid-cols-1 gap-4 overflow-hidden md:grid-cols-3">
           {reviewColumns.map((column, columnIndex) => (
             <div className={columnIndex === 0 ? "overflow-hidden" : "hidden overflow-hidden md:block"} key={`review-column-${columnIndex}`}>
               <div className={`flex flex-col gap-3.5 hover:[animation-play-state:paused] ${scrollClasses[columnIndex]}`}>
                 {column.map((review, reviewIndex) => (
-                  <article className={`${smoothCardClass} rounded-[18px] border border-slate-900/10 bg-white p-4.5 shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] dark:border-blue-400/20 dark:bg-[linear-gradient(135deg,#021020_0%,#140540_100%)]`} key={`${review.author}-${reviewIndex}`}>
+                  <article className={`${smoothCardClass} rounded-2xl border border-slate-900/10 bg-white p-[18px] shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] dark:border-blue-400/20 dark:bg-[linear-gradient(135deg,#021020_0%,#140540_100%)]`} key={`${review.author}-${reviewIndex}`}>
                     <div className="mb-2.5 flex gap-0.5 text-[#f59e0b]">
                       {Array.from({ length: 5 }).map((_, starIndex) => <span key={starIndex}>★</span>)}
                     </div>
                     <p className="mb-3.5 text-[13px] leading-[1.7] text-slate-600 transition-colors dark:text-zinc-400">"{review.quote}"</p>
                     <div className="flex items-center gap-2.5">
-                      <div className="flex size-8.5 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#1d4ed8] to-[#6d28d9] text-[13px] font-bold text-white">{review.initial}</div>
+                      <div className="flex size-[34px] shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#1d4ed8] to-[#6d28d9] text-[13px] font-bold text-white">{review.initial}</div>
                       <div>
                         <p className="text-[13px] font-bold text-slate-900 transition-colors dark:text-white">{review.author}</p>
                         <p className="text-[11px] text-slate-400 transition-colors dark:text-zinc-600">Player</p>

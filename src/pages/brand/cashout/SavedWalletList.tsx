@@ -1,11 +1,6 @@
 import { X } from "lucide-react";
 
-import type { SavedWallet } from "./cashout-types";
-
-type SavedWalletListProps = {
-  onOpenDeleteModal: (wallet: SavedWallet) => void;
-  savedWallets: SavedWallet[];
-};
+import type { SavedWalletListProps } from "@/types/cashout";
 
 function SavedWalletList({ onOpenDeleteModal, savedWallets }: SavedWalletListProps) {
   return (

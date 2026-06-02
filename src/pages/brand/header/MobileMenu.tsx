@@ -1,15 +1,8 @@
 import { useNavigate, Link } from "react-router-dom";
 
 import { useAuth } from "@/hooks/auth/use-auth";
-import type { AuthUser } from "@/types/auth-fields";
+import type { MobileMenuProps } from "@/types/header";
 import { navigationItems } from "./header-data";
-
-type MobileMenuProps = {
-  isAuthenticated: boolean;
-  isOpen: boolean;
-  onClose: () => void;
-  user?: AuthUser | null;
-};
 
 function MobileMenu({ isAuthenticated, isOpen, onClose }: MobileMenuProps) {
   const navigate = useNavigate();

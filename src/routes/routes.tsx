@@ -18,6 +18,8 @@ import ProtectedRoute from './protected-route'
 import ProfilePage from '@/pages/brand/profile'
 import TransactionsPage from '@/pages/brand/transactions'
 import CashoutPage from '@/pages/brand/cashout'
+import ResponsiblePage from '@/pages/brand/responsible'
+import SupportPage from '@/pages/brand/support'
 
 function AppRoutes() {
   return (
@@ -27,6 +29,8 @@ function AppRoutes() {
         <Route path="games" element={<GamePage />} />
         <Route path='free-spin' element={<FreeSpinPage/>}/>
         <Route path="affiliate" element={<AffiliatePage />} />
+        <Route path="responsible" element={<ResponsiblePage/>}/>
+        <Route path="support" element={<SupportPage/>}/>
         <Route path="about" element={<AboutPage />} />
         <Route path="privacy" element={<PrivacyPage />} />
         <Route path="terms" element={<TermsPage />} />

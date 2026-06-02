@@ -3,7 +3,7 @@ import { contactInfo, supportTopics } from "./contact-data";
 function ContactSidebar() {
   return (
     <aside className="space-y-6 lg:col-span-2">
-      <section className="rounded-[32px] border border-card-border bg-white p-8 shadow-card transition-all duration-200 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark">
+      <section className="rounded-4xl border border-card-border bg-white p-8 shadow-card transition-all duration-200 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark">
         <h2 className="mb-6 text-base font-bold text-text-heading dark:text-text-dark-heading">Support Info</h2>
         <div className="space-y-6">
           {contactInfo.map((item) => {
@@ -11,7 +11,7 @@ function ContactSidebar() {
             return (
               <div className="group flex cursor-pointer items-start gap-4" key={item.label}>
                 <div className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-primary/10 bg-primary/5 transition-colors group-hover:bg-primary/10">
-                  <Icon className="size-4.5 text-primary" strokeWidth={2} />
+                  <Icon className="size-[18px] text-primary" strokeWidth={2} />
                 </div>
                 <div>
                   <p className="mb-0.5 text-[11px] font-bold uppercase tracking-wider text-text-muted dark:text-text-dark-muted">
@@ -27,7 +27,7 @@ function ContactSidebar() {
         </div>
       </section>
 
-      <section className="rounded-[32px] border border-card-border bg-white p-8 shadow-card transition-all duration-200 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark">
+      <section className="rounded-4xl border border-card-border bg-white p-8 shadow-card transition-all duration-200 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark">
         <h2 className="mb-6 text-base font-bold text-text-heading dark:text-text-dark-heading">How we can help</h2>
         <div className="space-y-4">
           {supportTopics.map((topic) => {

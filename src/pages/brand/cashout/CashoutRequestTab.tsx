@@ -1,24 +1,9 @@
 import { BookOpen, Gamepad2 } from "lucide-react";
-import type { RefObject } from "react";
 import { Link } from "react-router-dom";
 
-import type { GameCard } from "@/types/games";
 import { cashoutSteps } from "./cashout-data";
-import type { CashoutTab } from "./cashout-types";
+import type { CashoutRequestTabProps } from "@/types/cashout";
 import GameAccountSelector from "./GameAccountSelector";
-
-type CashoutRequestTabProps = {
-  filteredGames: GameCard[];
-  gameDropdownRef: RefObject<HTMLDivElement | null>;
-  gameSearch: string;
-  onGameSearchChange: (value: string) => void;
-  onRedirectToGame: () => void;
-  onSelectGame: (game: GameCard) => void;
-  onSetTab: (tab: CashoutTab) => void;
-  onToggleGameList: () => void;
-  selectedGame: GameCard | null;
-  showGameList: boolean;
-};
 
 function CashoutRequestTab({
   filteredGames,
