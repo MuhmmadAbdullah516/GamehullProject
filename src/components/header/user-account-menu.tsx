@@ -39,16 +39,16 @@ function UserAccountMenu({ className, onAction, user }: UserAccountMenuProps) {
       <DropdownMenuTrigger asChild>
         <Button
           className={cn(
-            "h-[42px] items-center gap-2.5 rounded-full border border-slate-900/10 bg-slate-100 px-4 text-[15px] font-bold text-slate-500 transition hover:bg-slate-200 aria-expanded:bg-slate-200 data-[state=open]:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-white/55 dark:hover:bg-white/[0.09] dark:aria-expanded:bg-white/[0.09] dark:data-[state=open]:bg-white/[0.09]",
+            "h-10 items-center gap-2.5 rounded-full border border-slate-900/10 bg-slate-100 px-4 text-base font-bold text-slate-500 transition hover:bg-slate-200 aria-expanded:bg-slate-200 data-[state=open]:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-white/55 dark:hover:bg-white/[0.09] dark:aria-expanded:bg-white/[0.09] dark:data-[state=open]:bg-white/[0.09]",
             className,
           )}
           type="button"
           variant="outline"
         >
-          <span className="truncate text-sm font-bold leading-[21px] text-slate-500 dark:text-white/55">
+          <span className="truncate text-sm font-bold leading-5 text-slate-500 dark:text-white/55">
             {user.name}
           </span>
-          <Menu className="size-[18px] shrink-0" strokeWidth={2} />
+          <Menu className="size-4 shrink-0" strokeWidth={2} />
         </Button>
       </DropdownMenuTrigger>
 
@@ -58,10 +58,10 @@ function UserAccountMenu({ className, onAction, user }: UserAccountMenuProps) {
         sideOffset={0}
       >
         <div className="p-5">
-          <p className="text-[17px] font-bold leading-[26px] text-slate-900 dark:text-white">
+          <p className="text-lg font-bold leading-7 text-slate-900 dark:text-white">
             {user.name}
           </p>
-          <p className="mt-0.5 truncate text-xs font-normal leading-[18px] text-slate-400 dark:text-zinc-600">
+          <p className="mt-0.5 truncate text-xs font-normal leading-5 text-slate-400 dark:text-zinc-600">
             {user.email}
           </p>
         </div>
@@ -70,7 +70,7 @@ function UserAccountMenu({ className, onAction, user }: UserAccountMenuProps) {
 
         <div className="space-y-0.5 p-2.5">
           <DropdownMenuItem
-            className="gap-3 rounded-xl p-3 text-[15px] font-medium leading-[23px] text-slate-500 hover:text-blue-600 focus:bg-slate-100 focus:text-blue-600 dark:text-white/55 dark:hover:text-blue-600 dark:focus:bg-white/[0.06] dark:focus:text-blue-600"
+            className="gap-3 rounded-xl p-3 text-base font-medium leading-6 text-slate-500 hover:text-blue-600 focus:bg-slate-100 focus:text-blue-600 dark:text-white/55 dark:hover:text-blue-600 dark:focus:bg-white/[0.06] dark:focus:text-blue-600"
             onSelect={() => {
               handleMenuAction("/profile");
             }}
@@ -80,7 +80,7 @@ function UserAccountMenu({ className, onAction, user }: UserAccountMenuProps) {
           </DropdownMenuItem>
 
           <DropdownMenuItem
-            className="gap-3 rounded-xl p-3 text-[15px] font-medium leading-[23px] text-slate-500 hover:text-blue-600 focus:bg-slate-100 focus:text-blue-600 dark:text-white/55 dark:hover:text-blue-600 dark:focus:bg-white/[0.06] dark:focus:text-blue-600"
+            className="gap-3 rounded-xl p-3 text-base font-medium leading-6 text-slate-500 hover:text-blue-600 focus:bg-slate-100 focus:text-blue-600 dark:text-white/55 dark:hover:text-blue-600 dark:focus:bg-white/[0.06] dark:focus:text-blue-600"
             onSelect={() => {
               handleMenuAction("/transactions");
             }}
@@ -94,10 +94,10 @@ function UserAccountMenu({ className, onAction, user }: UserAccountMenuProps) {
 
         <div className="p-2.5">
           <DropdownMenuItem
-            className="h-12 justify-center gap-4 rounded-full border border-destructive/20 bg-destructive/10 px-5 py-0 text-[15px] font-medium leading-[23px] text-destructive hover:!bg-[#ef4444]/20 focus:!bg-[#ef4444]/20 focus:!text-destructive data-[highlighted]:!bg-[#ef4444]/20 data-[highlighted]:!text-destructive"
+            className="h-12 justify-center gap-4 rounded-full border border-destructive/20 bg-destructive/10 px-5 py-0 text-base font-medium leading-6 text-destructive hover:!bg-[#ef4444]/20 focus:!bg-[#ef4444]/20 focus:!text-destructive data-[highlighted]:!bg-[#ef4444]/20 data-[highlighted]:!text-destructive"
             onSelect={handleSignOut}
           >
-            <LogOut className="size-[22px]" strokeWidth={2} />
+            <LogOut className="size-5" strokeWidth={2} />
             <span>Sign Out</span>
           </DropdownMenuItem>
         </div>

@@ -12,10 +12,10 @@ function FreeSpinHero() {
           </span>
           Daily Reward Available
         </div>
-        <h1 className="mb-4 text-[clamp(32px,5vw,56px)] font-black leading-[1.1] tracking-normal text-[#0F172A] dark:!text-[#FFFFFF]">
+        <h1 className="mb-4 text-4xl md:text-6xl font-black leading-tight tracking-normal text-[#0F172A] dark:!text-[#FFFFFF]">
           Free Daily <span className="text-[#2563EB] dark:!text-[#3B82F6]">Spin</span>
         </h1>
-        <p className="mx-auto max-w-[600px] text-base leading-relaxed text-[#475569] dark:!text-[#A1A1AA] md:text-lg">
+        <p className="mx-auto max-w-150 text-base leading-relaxed text-[#475569] dark:!text-[#A1A1AA] md:text-lg">
           Spin the wheel once every 24 hours to win free play credits, bonuses, and other rewards.
         </p>
       </div>

@@ -9,12 +9,12 @@ function RecentActivity({ gameName }: RecentActivityProps) {
       <div className="mx-auto max-w-5xl px-6">
         <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-blue-600/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-blue-600">
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-blue-600/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-600">
               <span className="size-1.5 rounded-full bg-blue-600 animate-pulse" />
               Live Updates
             </div>
 
-            <h2 className="text-[clamp(24px,4vw,32px)] font-black leading-none tracking-normal text-slate-900 transition-colors dark:text-white">
+            <h2 className="text-2xl md:text-3xl font-black leading-none tracking-normal text-slate-900 transition-colors dark:text-white">
               Recent Activity
             </h2>
 
@@ -42,7 +42,7 @@ function RecentActivity({ gameName }: RecentActivityProps) {
                 <tr className="border-b border-slate-900/10 bg-slate-100/50 dark:border-blue-400/15 dark:bg-white/[0.06]">
                   {["Type", "Details", "Amount", "Date", "Status"].map((heading) => (
                     <th
-                      className="px-8 py-5 text-left text-[11px] font-bold uppercase tracking-widest text-slate-500 transition-colors dark:text-white/55"
+                      className="px-8 py-5 text-left text-xs font-bold uppercase tracking-widest text-slate-500 transition-colors dark:text-white/55"
                       key={heading}
                     >
                       {heading}

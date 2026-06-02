@@ -96,18 +96,18 @@ function ActiveDevices() {
                         <Monitor className="size-6" />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className="flex flex-wrap items-center gap-2 break-words text-[15px] font-bold text-slate-900 dark:text-white">
+                        <p className="flex flex-wrap items-center gap-2 break-words text-base font-bold text-slate-900 dark:text-white">
                           {device.browser} <span aria-hidden="true">&middot;</span> {device.os}
                           {device.current ? (
-                            <span className="rounded-full bg-primary px-2 py-0.5 text-[10px] font-black uppercase tracking-normal text-white">
+                            <span className="rounded-full bg-primary px-2 py-0.5 text-xs font-black uppercase tracking-normal text-white">
                               Current
                             </span>
                           ) : null}
                         </p>
-                        <p className="mt-1 break-all font-mono text-[13px] text-slate-500 dark:text-white/55">
+                        <p className="mt-1 break-all font-mono text-sm text-slate-500 dark:text-white/55">
                           {device.ip}
                         </p>
-                        <p className="mt-1 text-[13px] text-slate-500 dark:text-white/55">
+                        <p className="mt-1 text-sm text-slate-500 dark:text-white/55">
                           Last active {device.lastActive}
                         </p>
                       </div>
@@ -139,7 +139,7 @@ function ActiveDevices() {
                 <h2 className="mb-1.5 text-lg font-bold text-slate-900 transition-colors dark:text-white">
                   Security Tip
                 </h2>
-                <p className="max-w-[640px] text-sm leading-relaxed text-slate-600 transition-colors dark:text-zinc-400">
+                <p className="max-w-160 text-sm leading-relaxed text-slate-600 transition-colors dark:text-zinc-400">
                   If you notice any unfamiliar devices, log them out immediately
                   and consider changing your password. Logged out devices will
                   need to sign in again to access your account.

@@ -37,13 +37,13 @@ function GameAccountPanel({ game }: GameAccountPanelProps) {
     <article className="rounded-4xl border border-slate-900/10 bg-white p-8 shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-all duration-200 dark:border-blue-400/20 dark:bg-[#0e1629] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)] md:p-10">
       <div className="mb-8 flex items-center gap-5">
         <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-          <User className="size-[22px]" strokeWidth={2.5} />
+          <User className="size-5" strokeWidth={2.5} />
         </div>
         <div>
-          <h2 className="text-[19px] font-black tracking-normal text-slate-900 transition-colors dark:text-white">
+          <h2 className="text-xl font-black tracking-normal text-slate-900 transition-colors dark:text-white">
             Game Account
           </h2>
-          <p className="text-[13px] text-slate-500 transition-colors dark:text-white/55">
+          <p className="text-sm text-slate-500 transition-colors dark:text-white/55">
             {hasGameAccount ? "Your platform credentials" : "Ready to start playing?"}
           </p>
         </div>
@@ -75,16 +75,21 @@ function GameAccountPanel({ game }: GameAccountPanelProps) {
               Cashout
             </Button>
           </div>
-          <Link className="mt-3 flex h-[52px] w-full items-center justify-center rounded-2xl bg-primary text-sm font-black text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 hover:bg-blue-700" to="/games">
+          <Link
+            className="mt-3 flex h-13 w-full items-center justify-center rounded-2xl bg-primary text-sm font-black text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 hover:bg-blue-700"
+            rel="noopener noreferrer"
+            target="_blank"
+            to="/games"
+          >
             Play Now
           </Link>
         </div>
       ) : (
         <div className="space-y-6">
-          <p className="text-[15px] leading-relaxed text-slate-600 transition-colors dark:text-zinc-400">
+          <p className="text-base leading-relaxed text-slate-600 transition-colors dark:text-zinc-400">
             Click the button below to instantly generate your <strong className="text-slate-900 dark:text-white">{game.name}</strong> account.
           </p>
-          <Button className="!h-13 w-full rounded-2xl bg-primary text-[15px] font-bold text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 hover:bg-blue-700 active:scale-[0.98]" onClick={handleCreateAccount} type="button">
+          <Button className="!h-13 w-full rounded-2xl bg-primary text-base font-bold text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 hover:bg-blue-700 active:scale-[0.98]" onClick={handleCreateAccount} type="button">
             Create Account Instantly
           </Button>
         </div>

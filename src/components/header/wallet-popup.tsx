@@ -11,6 +11,8 @@ function WalletPopup({ balance, compact = false }: WalletPopupProps) {
   const [refreshRotation, setRefreshRotation] = useState(0);
   const [selectedDepositMethod, setSelectedDepositMethod] = useState<DepositMethodName>("CashApp");
   const [walletStep, setWalletStep] = useState<WalletStep>("wallet");
+  const walletDialogClass =
+    "wallet-scrollbar relative !max-h-[calc(100dvh-20px)] !w-[calc(100vw-20px)] max-w-135 overflow-y-scroll !rounded-2xl border border-white/10 bg-[#0f172a] !p-4 shadow-2xl sm:!max-h-[calc(100vh-40px)] sm:!w-full sm:!rounded-4xl sm:!p-6 md:!p-8";
 
   function handleRefreshClick() {
     setRefreshRotation((currentRotation) => currentRotation + 360);
@@ -34,18 +36,18 @@ function WalletPopup({ balance, compact = false }: WalletPopupProps) {
         {compact ? (
           <button
             aria-label="Open wallet"
-            className="flex size-[42px] items-center justify-center rounded-full border-[1.5px] border-slate-900/10 bg-slate-100 p-0 text-[#f59e0b] transition-all hover:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:hover:bg-white/[0.09] lg:hidden"
+            className="flex size-10 items-center justify-center rounded-full border-2 border-slate-900/10 bg-slate-100 p-0 text-[#f59e0b] transition-all hover:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:hover:bg-white/[0.09] lg:hidden"
             type="button"
           >
-            <AppWindowMac className="size-[15px]" strokeWidth={2.2} />
+            <AppWindowMac className="size-4" strokeWidth={2.2} />
           </button>
         ) : (
           <button
-            className="hidden h-[42px] items-center justify-center gap-2 rounded-full border border-slate-900/10 bg-slate-100 px-4 text-[15px] font-bold text-[#f59e0b] transition hover:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:hover:bg-white/[0.09] lg:inline-flex"
+            className="hidden h-10 items-center justify-center gap-2 rounded-full border border-slate-900/10 bg-slate-100 px-4 text-base font-bold text-[#f59e0b] transition hover:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:hover:bg-white/[0.09] lg:inline-flex"
             type="button"
           >
-            <AppWindowMac className="size-[15px]" strokeWidth={2.2} />
-            <span className="text-sm font-bold leading-[21px]">{balance}</span>
+            <AppWindowMac className="size-4" strokeWidth={2.2} />
+            <span className="text-sm font-bold leading-5">{balance}</span>
           </button>
         )}
       </DialogTrigger>
@@ -53,10 +55,10 @@ function WalletPopup({ balance, compact = false }: WalletPopupProps) {
       <DialogContent
         className={
           walletStep === "deposit"
-            ? "wallet-scrollbar relative w-full max-w-[540px] max-h-[calc(100vh-40px)] overflow-y-auto bg-[#0f172a] border border-white/10 rounded-4xl shadow-2xl p-6 md:p-8"
+            ? walletDialogClass
             : walletStep === "depositPayment"
-              ? "wallet-scrollbar relative w-full max-w-[540px] max-h-[calc(100vh-40px)] overflow-y-auto bg-[#0f172a] border border-white/10 rounded-4xl shadow-2xl p-6 md:p-8"
-            : "wallet-scrollbar relative w-full max-w-[540px] max-h-[calc(100vh-40px)] overflow-y-auto bg-[#0f172a] border border-white/10 rounded-4xl shadow-2xl p-6 md:p-8 overflow-hidden transition-colors"
+              ? walletDialogClass
+            : `${walletDialogClass} transition-colors`
         }
       >
         {walletStep === "deposit" ? (
@@ -65,13 +67,13 @@ function WalletPopup({ balance, compact = false }: WalletPopupProps) {
           <DepositPaymentPopup method={selectedDepositMethod} onBack={() => setWalletStep("deposit")} />
         ) : (
           <>
-            <div className="flex items-center justify-between mb-8">
+            <div className="mb-6 flex items-center justify-between sm:mb-8">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                  <AppWindowMac className="size-6" stroke="#3b82f6" strokeWidth={2} />
+                <div className="flex size-11 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 sm:size-12">
+                  <AppWindowMac className="size-5 sm:size-6" stroke="#3b82f6" strokeWidth={2} />
                 </div>
 
-                <h2 className="text-2xl font-bold text-white tracking-tight">
+                <h2 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
                   Wallet
                 </h2>
               </div>
@@ -79,20 +81,20 @@ function WalletPopup({ balance, compact = false }: WalletPopupProps) {
               <DialogClose asChild>
                 <button
                   aria-label="Close wallet"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-white/60 transition-colors cursor-pointer"
+                  className="flex size-9 cursor-pointer items-center justify-center rounded-full bg-white/5 text-white/60 transition-colors hover:bg-white/10 sm:size-10"
                   type="button"
                 >
-                  <X className="size-5" strokeWidth={2.5} />
+                  <X className="size-4 sm:size-5" strokeWidth={2.5} />
                 </button>
               </DialogClose>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              <div className="relative p-6 rounded-3xl bg-white/5 border border-white/10 overflow-hidden group">
+            <div className="mb-6 grid grid-cols-1 gap-3 sm:mb-8 sm:grid-cols-2 sm:gap-4">
+              <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4 sm:rounded-3xl sm:p-6">
                 <div className="absolute top-4 right-4 opacity-40 group-hover:opacity-100 transition-opacity">
                   <button
                     aria-label="Refresh balance"
-                    className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-all cursor-pointer"
+                    className="flex size-8 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-white/20"
                     onClick={handleRefreshClick}
                     type="button"
                   >
@@ -106,27 +108,27 @@ function WalletPopup({ balance, compact = false }: WalletPopupProps) {
                   </button>
                 </div>
 
-                <p className="text-[13px] font-medium text-white/40 mb-2">
+                <p className="mb-2 text-sm font-medium text-white/40">
                   Available Balance
                 </p>
-                <p className="text-[28px] font-bold text-white tracking-tight">
+                <p className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
                   {balance}
                 </p>
               </div>
 
-              <div className="p-6 rounded-3xl bg-white/5 border border-white/10">
-                <p className="text-[13px] font-medium text-white/40 mb-2">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 sm:rounded-3xl sm:p-6">
+                <p className="mb-2 text-sm font-medium text-white/40">
                   Freeplay Balance
                 </p>
-                <p className="text-[28px] font-bold text-white tracking-tight">
+                <p className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
                   $0.00
                 </p>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div className="mb-5 grid grid-cols-1 gap-3 sm:mb-6 sm:grid-cols-2 sm:gap-4">
               <button
-                className="flex items-center justify-center gap-3 h-15 bg-white/5 border border-white/10 hover:bg-primary hover:border-primary text-white text-[17px] font-bold rounded-full transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20 cursor-pointer"
+                className="flex h-13 cursor-pointer items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 text-base font-bold text-white transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-lg hover:shadow-primary/20 sm:h-15 sm:text-lg"
                 onClick={() => setWalletStep("deposit")}
                 type="button"
               >
@@ -136,7 +138,7 @@ function WalletPopup({ balance, compact = false }: WalletPopupProps) {
 
               <DialogClose asChild>
                 <Link
-                  className="flex items-center justify-center gap-3 h-15 bg-white/5 border border-white/10 hover:bg-primary hover:border-primary text-white text-[17px] font-bold rounded-full transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20 cursor-pointer no-underline"
+                  className="flex h-13 cursor-pointer items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 text-base font-bold text-white no-underline transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-lg hover:shadow-primary/20 sm:h-15 sm:text-lg"
                   state={{ fromWithdraw: true }}
                   to="/cashout"
                 >
@@ -146,7 +148,7 @@ function WalletPopup({ balance, compact = false }: WalletPopupProps) {
               </DialogClose>
             </div>
 
-            <p className="text-center text-[13px] text-white/30 font-medium">
+            <p className="text-center text-sm text-white/30 font-medium">
               Visit game pages to check game balances
             </p>
           </>

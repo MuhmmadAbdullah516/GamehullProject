@@ -11,7 +11,7 @@ function FreeSpinPage() {
   return (
     <main className="flex-grow bg-white text-[#0F172A] transition-colors dark:bg-[#080d1c] dark:!text-[#F1F5F9]">
       <FreeSpinHero />
-      <div className="mx-auto mt-8 w-[calc(100%_-_48px)] max-w-[1140px] pb-12 max-sm:w-[calc(100%_-_20px)] md:pb-16">
+      <div className="mx-auto mt-8 w-[calc(100%_-_48px)] max-w-285 pb-12 max-sm:w-[calc(100%_-_20px)] md:pb-16">
         <SpinNotice countdown={spin.countdown} show={spin.isAuthenticated && spin.freeSpinUsedToday} />
         <SpinWheelCard
           countdown={spin.countdown}

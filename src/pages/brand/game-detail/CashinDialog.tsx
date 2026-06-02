@@ -36,10 +36,10 @@ function CashinDialog({ gameName, onComplete }: CashinDialogProps) {
   }
 
   return (
-    <DialogContent className="wallet-scrollbar max-h-[calc(100vh-40px)] max-w-[440px] overflow-y-auto rounded-[28px] border border-white/10 bg-[#0f172a] p-6 text-center text-white shadow-2xl dark:bg-[#020617] md:p-8">
+    <DialogContent className="wallet-scrollbar max-h-[calc(100vh-40px)] max-w-110 overflow-y-auto rounded-3xl border border-white/10 bg-[#0f172a] p-6 text-center text-white shadow-2xl dark:bg-[#020617] md:p-8">
       {step === "amount" ? (
         <button className="absolute left-6 top-6 flex cursor-pointer items-center gap-2 text-sm font-semibold text-white/60 transition-colors hover:text-white" onClick={() => setStep("source")} type="button">
-          <ChevronLeft className="size-[18px]" strokeWidth={2.5} />
+          <ChevronLeft className="size-4" strokeWidth={2.5} />
           Back
         </button>
       ) : null}
@@ -51,7 +51,7 @@ function CashinDialog({ gameName, onComplete }: CashinDialogProps) {
       </DialogClose>
 
       <div className="flex flex-col items-center text-center">
-        <div className="mb-6 flex size-16 items-center justify-center rounded-[20px] border border-primary/20 bg-primary/10 text-primary">
+        <div className="mb-6 flex size-16 items-center justify-center rounded-5 border border-primary/20 bg-primary/10 text-primary">
           <Download className="size-8" strokeWidth={2} />
         </div>
         <h2 className="mb-1 text-2xl font-bold leading-tight text-white">Cashin</h2>
@@ -70,7 +70,7 @@ function CashinDialog({ gameName, onComplete }: CashinDialogProps) {
               </span>
               <span className="flex-grow">
                 <span className="block text-base font-bold leading-tight text-white">GameHull Wallet</span>
-                <span className="mt-1 block text-[13px] leading-tight text-white/50">
+                <span className="mt-1 block text-sm leading-tight text-white/50">
                   Available: ${walletBalance.toFixed(2)}
                 </span>
               </span>
@@ -82,31 +82,31 @@ function CashinDialog({ gameName, onComplete }: CashinDialogProps) {
               </span>
               <span className="flex-grow">
                 <span className="block text-base font-bold leading-tight text-white">Freeplay Bonus</span>
-                <span className="mt-1 block text-[13px] leading-tight text-white/50">Available: $0.00</span>
+                <span className="mt-1 block text-sm leading-tight text-white/50">Available: $0.00</span>
               </span>
             </button>
           </div>
         </div>
       ) : (
         <div className="mt-8 space-y-4 text-left">
-          <div className="mb-8 rounded-[20px] border border-white/10 bg-white/5 p-6 text-center">
-            <p className="mb-1 text-[13px] font-semibold uppercase tracking-wider text-white/40">Wallet Balance</p>
+          <div className="mb-8 rounded-5 border border-white/10 bg-white/5 p-6 text-center">
+            <p className="mb-1 text-sm font-semibold uppercase tracking-wider text-white/40">Wallet Balance</p>
             <p className="text-4xl font-black leading-none text-white">${walletBalance.toFixed(2)}</p>
           </div>
 
           <div>
-            <label className="mb-2 ml-1 block text-[13px] font-bold text-white/60" htmlFor="cashin-amount">
+            <label className="mb-2 ml-1 block text-sm font-bold text-white/60" htmlFor="cashin-amount">
               Amount to Cashin
             </label>
             <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[18px] font-bold text-white/40">$</span>
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-lg font-bold text-white/40">$</span>
               <input className="h-14 w-full appearance-none rounded-xl border border-white/10 bg-white/5 pl-10 pr-4 text-xl font-bold text-white outline-none transition-colors placeholder:text-white/40 focus:border-primary" id="cashin-amount" inputMode="numeric" min={1} onChange={(event) => setAmount(event.target.value)} placeholder="0" type="number" value={amount} />
             </div>
           </div>
 
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
             {cashinPresetAmounts.map((presetAmount) => (
-              <button className={cn("h-[38px] cursor-pointer rounded-lg border border-white/10 bg-white/5 text-[13px] font-bold text-white/60 transition-all hover:bg-white/10 hover:text-white", Number(amount) === presetAmount && "border-primary/40 bg-primary/20 text-white")} key={presetAmount} onClick={() => setAmount(String(presetAmount))} type="button">
+              <button className={cn("h-10 cursor-pointer rounded-lg border border-white/10 bg-white/5 text-sm font-bold text-white/60 transition-all hover:bg-white/10 hover:text-white", Number(amount) === presetAmount && "border-primary/40 bg-primary/20 text-white")} key={presetAmount} onClick={() => setAmount(String(presetAmount))} type="button">
                 ${presetAmount}
               </button>
             ))}
@@ -117,7 +117,7 @@ function CashinDialog({ gameName, onComplete }: CashinDialogProps) {
             Cashin
           </Button>
 
-          <p className="mx-auto mt-6 max-w-[280px] text-center text-[13px] leading-relaxed text-white/40">
+          <p className="mx-auto mt-6 max-w-70 text-center text-sm leading-relaxed text-white/40">
             Funds will be deducted from your wallet and added to your {gameName} account.
           </p>
         </div>

@@ -28,24 +28,24 @@ function DepositPaymentPopup({ method, onBack }: DepositPaymentPopupProps) {
 
   return (
     <>
-      <div className="text-center mb-6">
+      <div className="mb-5 text-center sm:mb-6">
         <div className="flex items-center justify-between mb-2">
           <button
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors cursor-pointer"
+            className="flex size-9 cursor-pointer items-center justify-center rounded-full bg-white/5 text-white transition-colors hover:bg-white/10 sm:size-10"
             onClick={onBack}
             type="button"
           >
-            <ChevronLeft className="size-5" strokeWidth={2.5} />
+            <ChevronLeft className="size-4 sm:size-5" strokeWidth={2.5} />
           </button>
 
-          <h3 className="text-2xl font-bold text-white tracking-tight">{method}</h3>
+          <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">{method}</h3>
 
           <DialogClose asChild>
             <button
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-white/60 transition-colors cursor-pointer"
+              className="flex size-9 cursor-pointer items-center justify-center rounded-full bg-white/5 text-white/60 transition-colors hover:bg-white/10 sm:size-10"
               type="button"
             >
-              <X className="size-5" strokeWidth={2.5} />
+              <X className="size-4 sm:size-5" strokeWidth={2.5} />
             </button>
           </DialogClose>
         </div>
@@ -53,7 +53,7 @@ function DepositPaymentPopup({ method, onBack }: DepositPaymentPopupProps) {
         <p className="text-sm text-white/40">Enter amount to deposit</p>
       </div>
 
-      <div className="flex items-start gap-4 p-5 rounded-2xl bg-primary/10 border border-primary/20 mb-8">
+      <div className="mb-6 flex items-start gap-3 rounded-2xl border border-primary/20 bg-primary/10 p-4 sm:mb-8 sm:gap-4 sm:rounded-5 sm:p-5">
         <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center shrink-0">
           <Zap className="size-5 text-[#3b82f6]" fill="currentColor" strokeWidth={0} />
         </div>
@@ -62,15 +62,15 @@ function DepositPaymentPopup({ method, onBack }: DepositPaymentPopupProps) {
         </p>
       </div>
 
-      <div className="space-y-5 mb-8">
+      <div className="mb-6 space-y-5 sm:mb-8">
         <div>
-          <label className="block text-[13px] font-semibold text-white/40 mb-3 ml-1" htmlFor="deposit-amount">
+          <label className="block text-sm font-semibold text-white/40 mb-3 ml-1" htmlFor="deposit-amount">
             Deposit Amount ($15 - $500)
           </label>
           <div className="relative">
             <span className="absolute left-5 top-1/2 -translate-y-1/2 text-lg font-bold text-white/30">$</span>
             <input
-              className="w-full h-[68px] pl-10 pr-6 bg-white/5 border border-white/10 rounded-3xl text-xl font-bold text-white outline-none focus:border-primary/50 focus:ring-4 focus:ring-primary/10 transition-all placeholder:text-white/10"
+              className="h-14 w-full rounded-2xl border border-white/10 bg-white/5 pl-10 pr-6 text-lg font-bold text-white outline-none transition-all placeholder:text-white/10 focus:border-primary/50 focus:ring-4 focus:ring-primary/10 sm:h-17 sm:rounded-5.5 sm:text-xl"
               id="deposit-amount"
               inputMode="numeric"
               max={500}
@@ -83,7 +83,7 @@ function DepositPaymentPopup({ method, onBack }: DepositPaymentPopupProps) {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 gap-2 min-[380px]:grid-cols-4">
           {depositAmounts.map((depositAmount) => (
             <button
               className={`h-12 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 text-sm font-bold text-white transition-all cursor-pointer ${
@@ -100,14 +100,14 @@ function DepositPaymentPopup({ method, onBack }: DepositPaymentPopupProps) {
       </div>
 
       <button
-        className="w-full h-[68px] bg-primary hover:bg-primary-hover text-white text-lg font-bold rounded-full transition-all hover:-translate-y-1 shadow-lg shadow-primary/20 mb-6 cursor-pointer"
+        className="mb-5 h-14 w-full cursor-pointer rounded-full bg-primary text-base font-bold text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 hover:bg-primary-hover sm:mb-6 sm:h-17 sm:text-lg"
         onClick={handlePayNow}
         type="button"
       >
         Pay Now
       </button>
 
-      <p className="text-center text-[13px] text-white/30 font-medium tracking-wide">
+      <p className="text-center text-sm text-white/30 font-medium tracking-wide">
         Secure payment. Instant credit to wallet.
       </p>
     </>

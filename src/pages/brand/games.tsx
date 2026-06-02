@@ -40,7 +40,7 @@ function GamePage() {
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
-          <nav className="mb-[18px] flex items-center gap-1.5 text-xs text-slate-400 dark:text-zinc-600">
+          <nav className="mb-4 flex items-center gap-1.5 text-xs text-slate-400 dark:text-zinc-600">
               <Link
                 className="font-medium text-blue-600 no-underline transition-colors hover:text-blue-700"
                 to="/"
@@ -57,12 +57,12 @@ function GamePage() {
             <div>
               <div className="mb-3.5 inline-flex items-center gap-1.5 rounded-full border border-blue-600/20 bg-blue-600/[0.07] px-3.5 py-1 transition-colors dark:border-blue-400/25 dark:bg-blue-600/10">
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-blue-600" />
-                <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 dark:text-blue-200">
+                <span className="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-200">
                   {games.length || 13} Games Available
                 </span>
               </div>
 
-              <h1 className="m-0 mb-2 text-[clamp(26px,4vw,42px)] font-black leading-[1.1] tracking-normal text-slate-900 transition-colors dark:text-white">
+              <h1 className="m-0 mb-2 text-3xl md:text-4xl font-black leading-tight tracking-normal text-slate-900 transition-colors dark:text-white">
                 All Games
               </h1>
 
@@ -73,20 +73,20 @@ function GamePage() {
 
             {isAuthenticated ? (
               <Button
-                className="!h-auto w-fit rounded-full bg-blue-600 px-8 !py-3.5 text-[15px] font-bold text-white shadow-[0_4px_18px_rgba(37,99,235,0.22)] transition-all hover:-translate-y-0.5 hover:bg-blue-700 dark:shadow-[0_4px_18px_rgba(59,130,246,0.25)]"
+                className="!h-auto w-fit rounded-full bg-blue-600 px-8 !py-3.5 text-base font-bold text-white shadow-[0_4px_18px_rgba(37,99,235,0.22)] transition-all hover:-translate-y-0.5 hover:bg-blue-700 dark:shadow-[0_4px_18px_rgba(59,130,246,0.25)]"
                 onClick={handlePlayNowClick}
                 type="button"
               >
-                <Zap className="h-[15px] w-[15px] fill-white" />
+                <Zap className="h-4 w-4 fill-white" />
                 Play Now
               </Button>
             ) : (
               <Button
                 asChild
-                className="!h-auto w-full rounded-full bg-blue-600 px-8 !py-3.5 text-[15px] font-bold text-white shadow-[0_4px_18px_rgba(37,99,235,0.22)] transition-all hover:-translate-y-0.5 hover:bg-blue-700 dark:shadow-[0_4px_18px_rgba(59,130,246,0.25)] sm:w-auto"
+                className="!h-auto w-full rounded-full bg-blue-600 px-8 !py-3.5 text-base font-bold text-white shadow-[0_4px_18px_rgba(37,99,235,0.22)] transition-all hover:-translate-y-0.5 hover:bg-blue-700 dark:shadow-[0_4px_18px_rgba(59,130,246,0.25)] sm:w-auto"
               >
                 <Link to="/register">
-                  <Zap className="size-[15px] fill-white" />
+                  <Zap className="size-4 fill-white" />
                   Play Now - Join Free
                 </Link>
               </Button>
@@ -96,7 +96,7 @@ function GamePage() {
       </section>
 
       <section className="relative overflow-hidden border-t border-slate-900/10 bg-white py-14 md:py-24 transition-colors duration-200 dark:border-blue-400/15 dark:bg-[#080d1c]">
-        <div className="pointer-events-none absolute left-1/2 top-[-100px] h-[400px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(37,99,235,0.1)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse,rgba(59,130,246,0.12)_0%,transparent_70%)]" />
+        <div className="pointer-events-none absolute left-1/2 -top-25 h-100 w-225 -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(37,99,235,0.1)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse,rgba(59,130,246,0.12)_0%,transparent_70%)]" />
         <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
           <div className="grid grid-cols-1 gap-5 min-[420px]:grid-cols-2 min-[700px]:grid-cols-3 min-[1024px]:grid-cols-4">
             {games.map((game) => (
@@ -105,7 +105,7 @@ function GamePage() {
                 className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-900/10 bg-white bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_55px_rgb(15_23_42_/_0.18)] dark:border-blue-400/20 dark:bg-gradient-to-br dark:from-[#021020] dark:to-[#140540] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)] dark:hover:shadow-[0_22px_70px_rgb(96_165_250_/_0.22),0_10px_26px_rgb(37_99_235_/_0.16)]"
               >
                 <span
-                  className={`absolute left-3 top-3 z-10 rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-lg ${gameTagStyles[game.tag]}`}
+                  className={`absolute left-3 top-3 z-10 rounded-full px-3 py-1 text-xs font-black uppercase tracking-widest text-white shadow-lg ${gameTagStyles[game.tag]}`}
                 >
                   {game.tag}
                 </span>
@@ -124,7 +124,7 @@ function GamePage() {
                     {game.name}
                   </h2>
 
-                  <p className="m-0 mb-4 line-clamp-2 text-[12.5px] leading-relaxed text-slate-600 opacity-80 transition-colors dark:text-zinc-400">
+                  <p className="m-0 mb-4 line-clamp-2 text-xs leading-relaxed text-slate-600 opacity-80 transition-colors dark:text-zinc-400">
                     {game.description}
                   </p>
 

@@ -46,54 +46,54 @@ function Footer() {
       <div className="mx-auto w-full max-w-6xl px-6 pb-12 pt-14">
         <div className="flex flex-col gap-12">
           <div className="grid grid-cols-1 items-start gap-8 md:gap-20 md:grid-cols-[1fr_auto]">
-            <div className="flex max-w-[300px] flex-col gap-4">
+            <div className="flex max-w-75 flex-col gap-4">
               <Link
                 className="flex cursor-pointer items-center gap-2.5 no-underline"
                 to="/"
-                onClick={()=>window.scrollTo({left:0,top:0,behavior:"smooth"})}
+                onClick={() => window.scrollTo({ left: 0, top: 0, behavior: "smooth" })}
               >
-                <div className="flex size-[42px] shrink-0 items-center justify-center rounded-full bg-primary shadow-[0_4px_12px_rgba(37,99,235,0.22)] transition-shadow duration-200 dark:shadow-[0_4px_12px_rgba(59,130,246,0.25)]">
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary shadow-[0_4px_12px_rgba(37,99,235,0.22)] transition-shadow duration-200 dark:shadow-[0_4px_12px_rgba(59,130,246,0.25)]">
                   <Gamepad2
-                    className="size-[22px] text-white"
+                    className="size-5 text-white"
                     strokeWidth={2}
                   />
                 </div>
-                <div className="flex flex-col leading-[1.15]">
-                  <span className="text-lg font-extrabold tracking-[-.02em] text-text-heading transition-colors duration-200 dark:text-text-dark-heading">
+                <div className="flex flex-col leading-tight">
+                  <span className="text-lg font-extrabold tracking-tight text-text-heading transition-colors duration-200 dark:text-text-dark-heading">
                     GameHull
                   </span>
-                  <span className="text-[10px] font-bold uppercase tracking-[.1em] text-primary">
+                  <span className="text-xs font-bold uppercase tracking-widest text-primary">
                     Play & Win
                   </span>
                 </div>
               </Link>
 
-              <p className="m-0 text-[13.5px] leading-[1.75] text-footer-text transition-colors duration-200 dark:text-footer-dark-text">
+              <p className="m-0 text-sm leading-relaxed text-footer-text transition-colors duration-200 dark:text-footer-dark-text">
                 Your trusted platform for premium gaming. Play, win, and
                 withdraw with confidence.
               </p>
 
-              <div className="inline-flex w-fit items-center gap-[7px] rounded-xl border border-tag-border bg-tag-bg px-3 py-[7px] transition-colors duration-200 dark:border-blue-500/30 dark:bg-blue-500/10">
+              <div className="inline-flex w-fit items-center gap-2 rounded-xl border border-tag-border bg-tag-bg px-3 py-2 transition-colors duration-200 dark:border-blue-500/30 dark:bg-blue-500/10">
                 <Shield
                   className="size-3.5 shrink-0 text-tag-text dark:text-blue-400"
                   strokeWidth={2}
                 />
-                <span className="text-[11px] font-semibold text-tag-text dark:text-blue-400">
+                <span className="text-xs font-semibold text-tag-text dark:text-blue-400">
                   Responsible Gaming
                 </span>
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-y-7 gap-x-3 min-[400px]:gap-y-7 gap-x-5 md:gap-[clamp(24px,4vw,64px)]">
+            <div className="grid grid-cols-3 gap-x-3 gap-y-7 min-[400px]:gap-x-5 md:gap-x-16">
               {footerColumns.map((column) => (
                 <div className="flex flex-col gap-4" key={column.heading}>
-                  <h3 className="m-0 text-xs font-bold uppercase tracking-[.1em] text-footer-heading transition-colors duration-200 dark:text-footer-dark-heading">
+                  <h3 className="m-0 text-xs font-bold uppercase tracking-widest text-footer-heading transition-colors duration-200 dark:text-footer-dark-heading">
                     {column.heading}
                   </h3>
-                  <nav className="flex flex-col gap-[11px]">
+                  <nav className="flex flex-col gap-3">
                     {column.links.map((link) => (
                       <Link
-                        className={`cursor-pointer text-[13.5px] no-underline transition-colors duration-150 ${
+                        className={`cursor-pointer text-sm no-underline transition-colors duration-150 ${
                           link.featured
                             ? "font-semibold text-footer-heading hover:text-primary-hover dark:text-footer-dark-heading dark:hover:text-primary-dark-hover"
                             : "text-footer-link hover:text-footer-text dark:text-footer-dark-link dark:hover:text-white"
@@ -112,7 +112,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-footer-bottom-border px-6 py-4.5 transition-colors duration-200 dark:border-footer-dark-bottom-border">
+      <div className="border-t border-footer-bottom-border px-6 py-4 transition-colors duration-200 dark:border-footer-dark-bottom-border">
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3">
           <p className="m-0 text-xs text-footer-copy transition-colors duration-200 dark:text-footer-dark-link">
             {"\u00a9"} 2026 GameHull. All rights reserved.
@@ -128,7 +128,7 @@ function Footer() {
                   {link.label}
                 </Link>
                 {index < bottomLinks.length - 1 ? (
-                  <span className="text-[11px] text-footer-copy transition-colors duration-200 dark:text-footer-dark-link">
+                  <span className="text-xs text-footer-copy transition-colors duration-200 dark:text-footer-dark-link">
                     {"\u00b7"}
                   </span>
                 ) : null}

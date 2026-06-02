@@ -15,10 +15,10 @@ function RegisterPage() {
 
   return (
     <AuthLayout>
-      <section className="w-full max-w-[460px] rounded-2xl border border-blue-500/25 bg-[linear-gradient(180deg,rgba(3,18,31,0.95)_0%,rgba(12,10,54,0.96)_56%,rgba(28,10,78,0.98)_100%)] p-7 md:p-11 shadow-[0_24px_80px_rgba(0,0,0,0.38)]">
+      <section className="w-full max-w-115 rounded-2xl border border-blue-500/25 bg-[linear-gradient(180deg,rgba(3,18,31,0.95)_0%,rgba(12,10,54,0.96)_56%,rgba(28,10,78,0.98)_100%)] p-7 md:p-11 shadow-[0_24px_80px_rgba(0,0,0,0.38)]">
         <div className="text-center">
-          <h1 className="text-[22px] font-extrabold leading-[33px] text-white">Create your account</h1>
-          <p className="mt-1.5 text-[13px] font-normal leading-5 text-white/55">Join thousands of players - it&apos;s free</p>
+          <h1 className="text-2xl font-extrabold leading-8 text-white">Create your account</h1>
+          <p className="mt-1.5 text-sm font-normal leading-5 text-white/55">Join thousands of players - it&apos;s free</p>
         </div>
 
         <form autoComplete="off" className="mt-7 space-y-4" noValidate onSubmit={form.handleSubmit}>
@@ -45,9 +45,9 @@ function RegisterPage() {
             autoComplete="off"
             iconClassName="mr-0 size-5"
             id="email"
-            inputClassName="text-xs font-normal leading-[21px] placeholder:text-slate-400"
+            inputClassName="text-xs font-normal leading-5 placeholder:text-slate-400"
             label="Email address"
-            labelClassName="text-[13px] font-semibold leading-5"
+            labelClassName="text-sm font-semibold leading-5"
             name="email"
             placeholder="you@example.com"
             wrapperClassName="h-12 gap-3 rounded-xl border border-blue-300/15 shadow-none focus-within:border-blue-500/70 focus-within:ring-blue-500/25"
@@ -70,7 +70,7 @@ function RegisterPage() {
 
         <div className="my-6 flex items-center gap-4">
           <div className="h-px flex-1 bg-blue-300/10" />
-          <p className="shrink-0 text-[11px] font-bold uppercase leading-[17px] tracking-[0.16em] text-slate-400">
+          <p className="shrink-0 text-xs font-bold uppercase leading-4 tracking-widest text-slate-400">
             Already have an account?
           </p>
           <div className="h-px flex-1 bg-blue-300/10" />

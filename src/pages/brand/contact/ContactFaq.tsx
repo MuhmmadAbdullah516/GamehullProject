@@ -7,7 +7,7 @@ function ContactFaq({ onToggle, openFaqIndex }: ContactFaqProps) {
   return (
     <section className="mx-auto w-full max-w-5xl px-6 pb-20 pt-12 md:pb-32 md:pt-20">
       <p className="mb-7 text-xs font-black uppercase tracking-widest text-primary">FAQ</p>
-      <h2 className="mb-12 max-w-3xl text-[clamp(28px,4vw,40px)] font-black leading-tight tracking-[-.03em] text-text-heading dark:text-text-dark-heading">
+      <h2 className="mb-12 max-w-3xl text-3xl md:text-4xl font-black leading-tight tracking-tight text-text-heading dark:text-text-dark-heading">
         Frequently asked questions
       </h2>
 
@@ -20,13 +20,13 @@ function ContactFaq({ onToggle, openFaqIndex }: ContactFaqProps) {
               key={item.question}
             >
               <button
-                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-[15px] font-bold text-text-heading transition-colors hover:text-primary dark:text-text-dark-heading"
+                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-bold text-text-heading transition-colors hover:text-primary dark:text-text-dark-heading"
                 onClick={() => onToggle(index)}
                 type="button"
               >
                 {item.question}
                 <ChevronDown
-                  className={`size-[18px] shrink-0 text-text-dim transition-transform duration-200 ${
+                  className={`size-4 shrink-0 text-text-dim transition-transform duration-200 ${
                     isOpen ? "rotate-180 text-primary" : ""
                   }`}
                   strokeWidth={2.4}

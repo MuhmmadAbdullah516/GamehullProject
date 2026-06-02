@@ -26,7 +26,7 @@ function ThemeSelector() {
         <Button
           aria-label="Choose theme"
           className={cn(
-            "size-[42px] shrink-0 cursor-pointer rounded-full border-[1.5px] border-slate-900/10 bg-slate-100 p-0 text-slate-500 hover:bg-slate-200 aria-expanded:bg-slate-200 data-[state=open]:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-white/55 dark:hover:bg-white/[0.09] dark:aria-expanded:bg-white/[0.09] dark:data-[state=open]:bg-white/[0.09]",
+            "size-10 shrink-0 cursor-pointer rounded-full border-2 border-slate-900/10 bg-slate-100 p-0 text-slate-500 hover:bg-slate-200 aria-expanded:bg-slate-200 data-[state=open]:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-white/55 dark:hover:bg-white/[0.09] dark:aria-expanded:bg-white/[0.09] dark:data-[state=open]:bg-white/[0.09]",
             isThemeMenuOpen && "bg-slate-200 dark:bg-white/[0.09]",
           )}
           title="Choose theme"
@@ -34,9 +34,9 @@ function ThemeSelector() {
           variant="outline"
         >
           {effectiveTheme === "dark" ? (
-            <Moon aria-hidden="true" className="size-[18px]" strokeWidth={2} />
+            <Moon aria-hidden="true" className="size-4" strokeWidth={2} />
           ) : (
-            <Sun aria-hidden="true" className="size-[18px]" strokeWidth={2} />
+            <Sun aria-hidden="true" className="size-4" strokeWidth={2} />
           )}
         </Button>
       </DropdownMenuTrigger>
@@ -47,7 +47,7 @@ function ThemeSelector() {
         sideOffset={0}
       >
         <DropdownMenuItem
-          className={`gap-5 rounded-lg px-3 py-2 text-left text-sm font-medium leading-[21px] transition ${
+          className={`gap-5 rounded-lg px-3 py-2 text-left text-sm font-medium leading-5 transition ${
             themePreference === "light"
               ? "bg-blue-600/[0.07] text-blue-600 dark:bg-blue-600/10 dark:text-blue-600"
               : "text-slate-500 dark:text-white/55"
@@ -66,7 +66,7 @@ function ThemeSelector() {
         </DropdownMenuItem>
 
         <DropdownMenuItem
-          className={`gap-5 rounded-lg px-3 py-2 text-left text-sm font-medium leading-[21px] transition ${
+          className={`gap-5 rounded-lg px-3 py-2 text-left text-sm font-medium leading-5 transition ${
             themePreference === "dark"
               ? "bg-blue-600/[0.07] text-blue-600 dark:bg-blue-600/10 dark:text-blue-600"
               : "text-slate-500 dark:text-white/55"
@@ -80,14 +80,14 @@ function ThemeSelector() {
             Dark
           </span>
           {themePreference === "dark" ? (
-            <Check className="size-[18px]" strokeWidth={2} />
+            <Check className="size-4" strokeWidth={2} />
           ) : null}
         </DropdownMenuItem>
 
         <DropdownMenuSeparator className="mx-0 w-full" />
 
         <DropdownMenuItem
-          className={`gap-5 rounded-lg px-3 py-2 text-left text-sm font-medium leading-[21px] transition ${
+          className={`gap-5 rounded-lg px-3 py-2 text-left text-sm font-medium leading-5 transition ${
             themePreference === "system"
               ? "bg-blue-600/[0.07] text-blue-600 dark:bg-blue-600/10 dark:text-blue-600"
               : "text-slate-500 dark:text-white/55"
@@ -101,14 +101,14 @@ function ThemeSelector() {
             System
           </span>
           {themePreference === "system" ? (
-            <Check className="size-[18px]" strokeWidth={2} />
+            <Check className="size-4" strokeWidth={2} />
           ) : null}
         </DropdownMenuItem>
 
         <DropdownMenuSeparator className="mx-0 w-full" />
 
         <div className="px-5 py-3">
-          <p className="text-xs font-normal leading-[18px] text-slate-400 dark:text-zinc-600">
+          <p className="text-xs font-normal leading-5 text-slate-400 dark:text-zinc-600">
             Follows your device preference
           </p>
         </div>

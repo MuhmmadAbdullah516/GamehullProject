@@ -62,7 +62,7 @@ function PasswordField({
     <div className={className}>
       <div className="mb-1.5 flex items-center justify-between gap-4">
         <label
-          className={cn('block text-[13px] font-semibold leading-5 text-white', labelClassName)}
+          className={cn('block text-sm font-semibold leading-5 text-white', labelClassName)}
           htmlFor={props.id}
         >
           {label}
@@ -81,7 +81,7 @@ function PasswordField({
         />
         <input
           className={cn(
-            'h-[48px] w-full rounded-xl border border-slate-700/70 bg-[#171a3d] px-4 pl-12 pr-12 text-sm font-normal leading-[21px] text-slate-200 outline-none transition placeholder:text-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-600',
+            'h-12 w-full rounded-xl border border-slate-700/70 bg-[#171a3d] px-4 pl-12 pr-12 text-sm font-normal leading-5 text-slate-200 outline-none transition placeholder:text-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-600',
             isFilled &&
               'border-transparent bg-[#e7effc] text-black placeholder:text-slate-500 focus:border-transparent focus:ring-0',
             inputClassName,
@@ -97,7 +97,7 @@ function PasswordField({
           aria-label={`${isPasswordVisible ? 'Hide' : 'Show'} ${label.toLowerCase()}`}
           aria-pressed={isPasswordVisible}
           className={cn(
-            'absolute right-2 top-2 z-10 grid size-8 place-items-center rounded-full text-slate-400 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 active:translate-y-0',
+            'absolute right-2 top-2 z-10 grid size-8 place-items-center rounded-full text-slate-400 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 active:!translate-y-0',
             toggleClassName,
           )}
           onClick={handleTogglePasswordVisibility}

@@ -8,12 +8,12 @@ function AccountField({ id, label, onCopy, onToggle, showValue, value }: Account
 
   return (
     <div className="relative">
-      <label className="mb-1.5 ml-1 block text-[11px] font-bold uppercase tracking-widest text-primary" htmlFor={id}>
+      <label className="mb-1.5 ml-1 block text-xs font-bold uppercase tracking-widest text-primary" htmlFor={id}>
         {label}
       </label>
       <div className="relative">
         <input
-          className={`h-14 w-full rounded-2xl border border-border bg-slate-100 pl-5 ${isPassword ? "pr-24" : "pr-14"} text-[15px] font-black text-slate-900 outline-none transition-all focus:border-primary dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-white ${isPassword && !showValue ? "tracking-[0.3em]" : ""}`}
+          className={`h-14 w-full rounded-2xl border border-border bg-slate-100 pl-5 ${isPassword ? "pr-24" : "pr-14"} text-base font-black text-slate-900 outline-none transition-all focus:border-primary dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-white ${isPassword && !showValue ? "tracking-widest" : ""}`}
           id={id}
           readOnly
           type={isPassword && !showValue ? "password" : "text"}

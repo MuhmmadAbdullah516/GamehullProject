@@ -22,10 +22,10 @@ function FilterSelect({ icon: Icon, label, onChange, options, value }: FilterSel
       <DropdownMenuTrigger asChild>
         <button
           aria-label={label}
-          className="flex h-[42px] w-full cursor-pointer items-center justify-between gap-2.5 rounded-full border border-slate-900/10 bg-slate-100 px-4 text-[13px] font-semibold text-slate-600 transition hover:border-blue-600/20 hover:bg-blue-600/5 hover:text-blue-600 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-zinc-400 md:w-auto md:justify-start"
+          className="flex h-10 w-full cursor-pointer items-center justify-between gap-2.5 rounded-full border border-slate-900/10 bg-slate-100 px-4 text-sm font-semibold text-slate-600 transition hover:border-blue-600/20 hover:bg-blue-600/5 hover:text-blue-600 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-zinc-400 md:w-auto md:justify-start"
           type="button"
         >
-          <Icon className="size-[15px]" strokeWidth={2} />
+          <Icon className="size-4" strokeWidth={2} />
           <span>{value}</span>
           <ChevronDown
             aria-hidden="true"
@@ -42,7 +42,7 @@ function FilterSelect({ icon: Icon, label, onChange, options, value }: FilterSel
       >
         {options.map((option) => (
           <DropdownMenuItem
-            className="cursor-pointer rounded-none px-4 py-2.5 text-[13px] text-slate-600 transition-colors hover:bg-blue-600/10 hover:text-blue-600 focus:bg-blue-600/10 focus:text-blue-600 dark:text-zinc-400"
+            className="cursor-pointer rounded-none px-4 py-2.5 text-sm text-slate-600 transition-colors hover:bg-blue-600/10 hover:text-blue-600 focus:bg-blue-600/10 focus:text-blue-600 dark:text-zinc-400"
             key={option.value}
             onSelect={() => {
               onChange(option.value);
@@ -71,7 +71,7 @@ function TransactionFilterBar({
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-3">
         <div className="flex items-center gap-2 text-slate-500 transition-colors dark:text-white/55 md:mr-2">
           <Menu className="size-4 text-blue-600" strokeWidth={2.5} />
-          <span className="text-[13px] font-bold uppercase tracking-wider">
+          <span className="text-sm font-bold uppercase tracking-wider">
             Filter by:
           </span>
         </div>
@@ -82,7 +82,7 @@ function TransactionFilterBar({
         </div>
         {isFiltered ? (
           <button
-            className="flex h-[42px] w-full shrink-0 cursor-pointer items-center justify-center rounded-full border border-slate-900/10 bg-slate-100 text-slate-500 transition hover:border-blue-600/20 hover:text-blue-600 dark:border-blue-400/15 dark:bg-white/[0.06] md:ml-auto md:w-[42px]"
+            className="flex h-10 w-full shrink-0 cursor-pointer items-center justify-center rounded-full border border-slate-900/10 bg-slate-100 text-slate-500 transition hover:border-blue-600/20 hover:text-blue-600 dark:border-blue-400/15 dark:bg-white/[0.06] md:ml-auto md:w-10"
             onClick={onReset}
             type="button"
           >

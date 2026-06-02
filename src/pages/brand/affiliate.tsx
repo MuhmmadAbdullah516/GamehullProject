@@ -40,7 +40,7 @@ function AffiliatePage() {
           <div className="absolute inset-0 bg-transparent" />
         </div>
 
-        <div className="relative z-[1] mx-auto flex w-full max-w-[720px] flex-col items-center">
+        <div className="relative z-[1] mx-auto flex w-full max-w-180 flex-col items-center">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-600/20 bg-blue-600/[0.07] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#1D4ED8] transition-colors duration-200 dark:border-blue-400/25 dark:bg-blue-600/10 dark:!text-[#BFDBFE]">
             <span className="relative flex size-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
@@ -49,7 +49,7 @@ function AffiliatePage() {
             Earn With Us
           </div>
 
-          <h1 className="mb-3 text-[clamp(28px,5vw,44px)] font-black leading-tight tracking-normal text-[#0F172A] transition-colors duration-200 dark:!text-[#FFFFFF]">
+          <h1 className="mb-3 text-3xl md:text-4xl font-black leading-tight tracking-normal text-[#0F172A] transition-colors duration-200 dark:!text-[#FFFFFF]">
             Affiliate Program
           </h1>
 
@@ -60,7 +60,7 @@ function AffiliatePage() {
 
           <Button
             asChild
-            className="h-[50px] rounded-full bg-[#2563EB] px-8 text-[15px] font-extrabold text-white no-underline transition-all duration-150 hover:-translate-y-px hover:bg-[#1D4ED8] hover:shadow-[0_4px_14px_rgba(37,99,235,0.22)] dark:hover:shadow-[0_4px_14px_rgba(59,130,246,0.25)]"
+            className="h-12 rounded-full bg-[#2563EB] px-8 text-base font-extrabold text-white no-underline transition-all duration-150 hover:-translate-y-px hover:bg-[#1D4ED8] hover:shadow-[0_4px_14px_rgba(37,99,235,0.22)] dark:hover:shadow-[0_4px_14px_rgba(59,130,246,0.25)]"
           >
             <Link to={affiliateLinkTarget}>
               Join as Affiliate
@@ -70,7 +70,7 @@ function AffiliatePage() {
       </section>
 
       <div className="bg-white py-12 transition-colors duration-200 dark:bg-[#080d1c]">
-        <div className="mx-auto max-w-[860px] px-6">
+        <div className="mx-auto max-w-215 px-6">
           <section
             aria-label="Affiliate statistics"
             className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-3"
@@ -80,7 +80,7 @@ function AffiliatePage() {
                 className="rounded-2xl border border-border bg-slate-100 p-6 text-center transition-colors duration-200 dark:border-blue-400/15 dark:bg-white/[0.06]"
                 key={stat.label}
               >
-                <div className="mb-1 text-[28px] font-black tracking-normal text-[#2563EB] dark:!text-[#3B82F6]">
+                <div className="mb-1 text-3xl font-black tracking-normal text-[#2563EB] dark:!text-[#3B82F6]">
                   {stat.value}
                 </div>
                 <div className="text-xs font-semibold uppercase tracking-widest text-[#94A3B8] transition-colors duration-200 dark:!text-[#52525B]">
@@ -103,11 +103,11 @@ function AffiliatePage() {
                   {index + 1}
                 </div>
 
-                <h2 className="mb-2 text-[15px] font-extrabold tracking-normal text-[#0F172A] transition-colors duration-200 dark:!text-[#FFFFFF]">
+                <h2 className="mb-2 text-base font-extrabold tracking-normal text-[#0F172A] transition-colors duration-200 dark:!text-[#FFFFFF]">
                   {step.title}
                 </h2>
 
-                <p className="text-[13px] leading-relaxed text-[#475569] transition-colors duration-200 dark:!text-[#A1A1AA]">
+                <p className="text-sm leading-relaxed text-[#475569] transition-colors duration-200 dark:!text-[#A1A1AA]">
                   {step.description}
                 </p>
               </article>
@@ -119,7 +119,7 @@ function AffiliatePage() {
               Ready to start earning?
             </h2>
 
-            <p className="mb-8 text-[15px] leading-relaxed text-[#475569] transition-colors duration-200 dark:!text-[#A1A1AA]">
+            <p className="mb-8 text-base leading-relaxed text-[#475569] transition-colors duration-200 dark:!text-[#A1A1AA]">
               Join thousands of affiliates already earning with GameHull. Share
               your link on social media, YouTube, Discord, or anywhere your
               audience is.
@@ -127,7 +127,7 @@ function AffiliatePage() {
 
             <Button
               asChild
-              className="h-[50px] rounded-full bg-[#2563EB] px-8 text-[15px] font-extrabold text-white no-underline transition-all duration-150 hover:-translate-y-px hover:bg-[#1D4ED8]"
+              className="h-12 rounded-full bg-[#2563EB] px-8 text-base font-extrabold text-white no-underline transition-all duration-150 hover:-translate-y-px hover:bg-[#1D4ED8]"
             >
               <Link to={affiliateLinkTarget}>
                 {referralButtonText}

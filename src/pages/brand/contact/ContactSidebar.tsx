@@ -11,10 +11,10 @@ function ContactSidebar() {
             return (
               <div className="group flex cursor-pointer items-start gap-4" key={item.label}>
                 <div className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-primary/10 bg-primary/5 transition-colors group-hover:bg-primary/10">
-                  <Icon className="size-[18px] text-primary" strokeWidth={2} />
+                  <Icon className="size-4 text-primary" strokeWidth={2} />
                 </div>
                 <div>
-                  <p className="mb-0.5 text-[11px] font-bold uppercase tracking-wider text-text-muted dark:text-text-dark-muted">
+                  <p className="mb-0.5 text-xs font-bold uppercase tracking-wider text-text-muted dark:text-text-dark-muted">
                     {item.label}
                   </p>
                   <p className="text-sm font-bold text-text-heading transition-colors dark:text-text-dark-heading">
@@ -38,10 +38,10 @@ function ContactSidebar() {
                   <Icon className="size-3.5 text-primary" strokeWidth={2.5} />
                 </div>
                 <div>
-                  <p className="mb-1 text-[13.5px] font-bold leading-none text-text-heading transition-colors dark:text-text-dark-heading">
+                  <p className="mb-1 text-sm font-bold leading-none text-text-heading transition-colors dark:text-text-dark-heading">
                     {topic.title}
                   </p>
-                  <p className="text-[11.5px] text-text-muted transition-colors dark:text-text-dark-muted">
+                  <p className="text-xs text-text-muted transition-colors dark:text-text-dark-muted">
                     {topic.description}
                   </p>
                 </div>

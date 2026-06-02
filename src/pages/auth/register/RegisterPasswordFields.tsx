@@ -16,9 +16,9 @@ function RegisterPasswordFields({ errors }: RegisterPasswordFieldsProps) {
             autoComplete="new-password"
             iconClassName="size-4"
             id={field.id}
-            inputClassName="text-sm font-normal leading-[21px] tracking-normal placeholder:text-slate-400"
+            inputClassName="text-sm font-normal leading-5 tracking-normal placeholder:text-slate-400"
             label={field.label}
-            labelClassName="text-[13px] font-semibold leading-5"
+            labelClassName="text-sm font-semibold leading-5"
             name={field.name}
             placeholder={field.placeholder}
             toggleClassName="size-8 hover:text-slate-200 focus-visible:ring-blue-400 [&_svg]:size-5"

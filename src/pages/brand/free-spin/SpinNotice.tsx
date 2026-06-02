@@ -10,14 +10,14 @@ function SpinNotice({ countdown, show }: SpinNoticeProps) {
         <span className="text-xl font-black text-[#D97706] dark:!text-[#F59E0B]">!</span>
       </div>
       <div className="flex-1">
-        <p className="text-[15px] font-bold text-[#92400E] dark:!text-[#FACC15]">Free spin already used today</p>
-        <p className="mt-0.5 text-[13px] leading-relaxed text-[#92400E] dark:!text-[#F59E0B]">
+        <p className="text-base font-bold text-[#92400E] dark:!text-[#FACC15]">Free spin already used today</p>
+        <p className="mt-0.5 text-sm leading-relaxed text-[#92400E] dark:!text-[#F59E0B]">
           Come back in <span className="font-bold text-[#B45309] dark:!text-[#FACC15]">{formatCountdown(countdown)}</span> for your next free spin.
         </p>
       </div>
-      <div className="min-w-[120px] shrink-0 text-center">
-        <p className="mb-1 text-[11px] font-bold uppercase tracking-wider text-[#92400E] dark:!text-[#FACC15]">Next free spin</p>
-        <p className="text-[22px] font-black tabular-nums text-[#B45309] dark:!text-[#FACC15]">{formatCountdown(countdown)}</p>
+      <div className="min-w-30 shrink-0 text-center">
+        <p className="mb-1 text-xs font-bold uppercase tracking-wider text-[#92400E] dark:!text-[#FACC15]">Next free spin</p>
+        <p className="text-2xl font-black tabular-nums text-[#B45309] dark:!text-[#FACC15]">{formatCountdown(countdown)}</p>
       </div>
     </div>
   );

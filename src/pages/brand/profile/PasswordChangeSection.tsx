@@ -23,7 +23,7 @@ function PasswordChangeSection({ onChange, values }: PasswordChangeSectionProps)
             <p className="text-sm text-slate-500 transition-colors dark:text-white/55">Update your account password</p>
           </div>
         </div>
-        <Button className="h-auto rounded-full bg-primary px-5 py-2 text-[13px] font-bold text-white transition-all hover:bg-blue-700" type="submit">
+        <Button className="h-auto rounded-full bg-primary px-5 py-2 text-sm font-bold text-white transition-all hover:bg-blue-700" type="submit">
           Update Password
         </Button>
       </div>
@@ -35,16 +35,16 @@ function PasswordChangeSection({ onChange, values }: PasswordChangeSectionProps)
             className="space-y-0"
             iconClassName="mr-4 size-4 self-center text-slate-400 group-focus-within:text-slate-400"
             id={field.id}
-            inputClassName="h-full min-w-0 flex-1 p-0 text-sm leading-none text-slate-900 placeholder:text-slate-400 dark:text-slate-100"
+            inputClassName="h-full min-w-0 flex-1 pl-11 pr-12 text-sm leading-none text-slate-900 placeholder:text-slate-400 dark:text-slate-100"
             key={field.id}
             label={field.label}
-            labelClassName="ml-1 block text-[13px] font-bold uppercase tracking-wider text-slate-500 dark:text-white/55"
+            labelClassName="ml-1 block text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-white/55"
             name={field.id}
             onChange={onChange}
             placeholder="********"
             toggleClassName="ml-4 size-8 p-0 text-slate-400 hover:bg-transparent hover:text-primary"
             value={values[field.id]}
-            wrapperClassName="h-12 rounded-xl border-border bg-slate-100 px-4 py-0 text-slate-900 focus-within:border-border focus-within:ring-1 focus-within:ring-primary dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-slate-100"
+            wrapperClassName="h-12 rounded-xl border-border bg-slate-100 py-0 text-slate-900 focus-within:border-border focus-within:ring-1 focus-within:ring-primary dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-slate-100"
           />
         ))}
       </div>

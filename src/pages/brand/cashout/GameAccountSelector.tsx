@@ -17,12 +17,12 @@ function GameAccountSelector({
   return (
     <div className="flex max-w-2xl flex-col gap-4 md:flex-row md:items-end">
       <div className="relative flex-1">
-        <label className="mb-2 ml-1 block text-[13px] font-bold text-text-heading dark:text-text-dark-heading">
+        <label className="mb-2 ml-1 block text-sm font-bold text-text-heading dark:text-text-dark-heading">
           Select Game Account
         </label>
         <div className="relative" ref={gameDropdownRef}>
           <button
-            className="flex h-14 w-full cursor-pointer items-center gap-3 rounded-xl border border-border bg-white px-4 text-left text-[15px] text-text shadow-sm outline-none transition-all focus:ring-2 focus:ring-primary dark:border-border-dark dark:bg-bg-dark dark:text-text-dark"
+            className="flex h-14 w-full cursor-pointer items-center gap-3 rounded-xl border border-border bg-white px-4 text-left text-base text-text shadow-sm outline-none transition-all focus:ring-2 focus:ring-primary dark:border-border-dark dark:bg-bg-dark dark:text-text-dark"
             onClick={onToggleGameList}
             type="button"
           >
@@ -52,7 +52,7 @@ function GameAccountSelector({
                   value={gameSearch}
                 />
               </div>
-              <div className="wallet-scrollbar max-h-[300px] overflow-y-auto p-1.5">
+              <div className="wallet-scrollbar max-h-75 overflow-y-auto p-1.5">
                 {filteredGames.map((game) => (
                   <button
                     className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-all ${
@@ -69,13 +69,13 @@ function GameAccountSelector({
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="truncate text-sm font-bold">{game.name}</div>
-                      <div className="truncate text-[11px] opacity-60">@abdullah</div>
+                      <div className="truncate text-xs opacity-60">@abdullah</div>
                     </div>
-                    {selectedGame?.slug === game.slug ? <Check className="size-[18px] shrink-0" strokeWidth={3} /> : null}
+                    {selectedGame?.slug === game.slug ? <Check className="size-4 shrink-0" strokeWidth={3} /> : null}
                   </button>
                 ))}
                 {filteredGames.length === 0 ? (
-                  <div className="p-8 text-center text-[13px] text-text-muted">No games found matching your search.</div>
+                  <div className="p-8 text-center text-sm text-text-muted">No games found matching your search.</div>
                 ) : null}
               </div>
             </div>
@@ -84,7 +84,7 @@ function GameAccountSelector({
       </div>
 
       <button
-        className="inline-flex h-14 w-full cursor-pointer items-center justify-center gap-2.5 rounded-full bg-primary px-8 text-[15px] font-bold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary-hover active:scale-95 md:w-auto"
+        className="inline-flex h-14 w-full cursor-pointer items-center justify-center gap-2.5 rounded-full bg-primary px-8 text-base font-bold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary-hover active:scale-95 md:w-auto"
         onClick={onRedirectToGame}
         type="button"
       >

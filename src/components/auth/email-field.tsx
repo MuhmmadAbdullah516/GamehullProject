@@ -34,7 +34,7 @@ function EmailField({
   return (
     <div className={className}>
       <label
-        className={cn('mb-1.5 block text-[13px] font-semibold leading-5 text-white', labelClassName)}
+        className={cn('mb-1.5 block text-sm font-semibold leading-5 text-white', labelClassName)}
         htmlFor={props.id}
       >
         {label}
@@ -61,7 +61,7 @@ function EmailField({
         ) : null}
         <input
           className={cn(
-            'h-full min-w-0 flex-1 rounded-[inherit] bg-transparent px-4 text-sm font-normal leading-[21px] text-slate-200 outline-none placeholder:text-slate-300',
+            'h-full min-w-0 flex-1 rounded-xl bg-transparent px-4 text-sm font-normal leading-5 text-slate-200 outline-none placeholder:text-slate-300',
             showIcon && 'pl-12',
             isFilled && 'text-black placeholder:text-slate-500',
             inputClassName,

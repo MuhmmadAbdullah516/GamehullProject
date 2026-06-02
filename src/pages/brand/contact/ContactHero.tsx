@@ -9,7 +9,7 @@ function ContactHero() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
-        <nav className="mb-[18px] flex items-center gap-1.5 text-xs text-text-dim dark:text-text-dark-dim" aria-label="Breadcrumb">
+        <nav className="mb-4 flex items-center gap-1.5 text-xs text-text-dim dark:text-text-dark-dim" aria-label="Breadcrumb">
           <Link className="font-medium text-primary transition-colors hover:text-primary-hover" to="/">
             Home
           </Link>
@@ -26,11 +26,11 @@ function ContactHero() {
             Get in Touch
           </div>
 
-          <h1 className="mb-4 text-[clamp(32px,5vw,56px)] font-black leading-[1.1] tracking-[-.04em] text-text-heading transition-colors duration-200 dark:text-text-dark-heading">
+          <h1 className="mb-4 text-4xl md:text-6xl font-black leading-tight tracking-tight text-text-heading transition-colors duration-200 dark:text-text-dark-heading">
             Let's <span className="text-primary">talk</span>
           </h1>
 
-          <p className="max-w-[600px] text-[15px] leading-relaxed text-text-body transition-colors duration-200 dark:text-text-dark-body md:text-base">
+          <p className="max-w-150 text-base leading-relaxed text-text-body transition-colors duration-200 dark:text-text-dark-body md:text-base">
             Have a question, business inquiry, or need technical support? We're here to help you 24/7. Fill out the
             form and we'll get back to you shortly.
           </p>

@@ -11,12 +11,12 @@ function LoginPage() {
 
   return (
     <AuthLayout>
-      <section className="w-full max-w-[440px] rounded-3xl border border-blue-500/25 bg-[linear-gradient(180deg,rgba(3,18,31,0.94)_0%,rgba(15,9,69,0.96)_58%,rgba(31,11,80,0.98)_100%)] p-7 md:p-11 shadow-[0_24px_80px_rgba(0,0,0,0.42)]">
+      <section className="w-full max-w-110 rounded-3xl border border-blue-500/25 bg-[linear-gradient(180deg,rgba(3,18,31,0.94)_0%,rgba(15,9,69,0.96)_58%,rgba(31,11,80,0.98)_100%)] p-7 md:p-11 shadow-[0_24px_80px_rgba(0,0,0,0.42)]">
         <div className="text-center">
-          <h1 className="font-sans text-[22px] font-extrabold leading-[33px] tracking-normal text-white">
+          <h1 className="font-sans text-2xl font-extrabold leading-8 tracking-normal text-white">
             Welcome back
           </h1>
-          <p className="mt-1.5 text-[13px] font-normal leading-5 text-white/55">
+          <p className="mt-1.5 text-sm font-normal leading-5 text-white/55">
             Sign in to your GameHull account
           </p>
         </div>
@@ -61,7 +61,7 @@ function LoginPage() {
 
         <div className="my-8 flex items-center gap-5">
           <div className="h-px flex-1 bg-blue-300/10" />
-          <p className="shrink-0 text-[11px] font-bold uppercase leading-[17px] tracking-[0.16em] text-slate-400">
+          <p className="shrink-0 text-xs font-bold uppercase leading-4 tracking-widest text-slate-400">
             Don&apos;t have an account?
           </p>
           <div className="h-px flex-1 bg-blue-300/10" />

@@ -35,10 +35,10 @@ function DiscoverMore({ currentGameSlug, gameImages, games }: DiscoverMoreProps)
             </div>
 
             <div className="p-5">
-              <h3 className="text-[15px] font-black text-slate-900 transition-colors group-hover:text-blue-600 dark:text-white">
+              <h3 className="text-base font-black text-slate-900 transition-colors group-hover:text-blue-600 dark:text-white">
                 {game.name}
               </h3>
-              <p className="mt-1 text-[11px] font-bold uppercase tracking-widest text-slate-500 dark:text-white/55">
+              <p className="mt-1 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-white/55">
                 Fish & Slots
               </p>
             </div>

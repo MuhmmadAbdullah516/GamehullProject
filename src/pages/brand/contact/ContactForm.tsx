@@ -8,7 +8,7 @@ function ContactForm({ onSubmit }: ContactFormProps) {
     <form className="space-y-6" noValidate onSubmit={onSubmit}>
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
-          <label className="mb-2.5 ml-1 block text-[13px] font-bold uppercase tracking-wider text-text-muted dark:text-text-dark-muted">
+          <label className="mb-2.5 ml-1 block text-sm font-bold uppercase tracking-wider text-text-muted dark:text-text-dark-muted">
             Name <span className="text-red-500">*</span>
           </label>
           <input
@@ -30,7 +30,7 @@ function ContactForm({ onSubmit }: ContactFormProps) {
               Email <span className="text-red-500">*</span>
             </>
           }
-          labelClassName="mb-2.5 ml-1 block text-[13px] font-bold uppercase tracking-wider text-text-muted dark:text-text-dark-muted"
+          labelClassName="mb-2.5 ml-1 block text-sm font-bold uppercase tracking-wider text-text-muted dark:text-text-dark-muted"
           name="email"
           placeholder="you@email.com"
           required
@@ -40,7 +40,7 @@ function ContactForm({ onSubmit }: ContactFormProps) {
       </div>
 
       <div>
-        <label className="mb-2.5 ml-1 block text-[13px] font-bold uppercase tracking-wider text-text-muted dark:text-text-dark-muted">
+        <label className="mb-2.5 ml-1 block text-sm font-bold uppercase tracking-wider text-text-muted dark:text-text-dark-muted">
           Subject
         </label>
         <input
@@ -52,7 +52,7 @@ function ContactForm({ onSubmit }: ContactFormProps) {
       </div>
 
       <div>
-        <label className="mb-2.5 ml-1 block text-[13px] font-bold uppercase tracking-wider text-text-muted dark:text-text-dark-muted">
+        <label className="mb-2.5 ml-1 block text-sm font-bold uppercase tracking-wider text-text-muted dark:text-text-dark-muted">
           Message <span className="text-red-500">*</span>
         </label>
         <textarea
@@ -69,7 +69,7 @@ function ContactForm({ onSubmit }: ContactFormProps) {
         type="submit"
       >
         Send Message
-        <ArrowRight className="size-[18px]" strokeWidth={3} />
+        <ArrowRight className="size-4" strokeWidth={3} />
       </button>
     </form>
   );

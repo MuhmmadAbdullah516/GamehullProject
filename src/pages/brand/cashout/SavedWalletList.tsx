@@ -19,7 +19,7 @@ function SavedWalletList({ onOpenDeleteModal, savedWallets }: SavedWalletListPro
                 <h3 className="truncate text-xl font-black leading-tight text-text-heading dark:text-text-dark-heading">
                   {wallet.method}
                 </h3>
-                <p className="truncate text-[13px] font-bold uppercase tracking-wide text-primary">{wallet.label}</p>
+                <p className="truncate text-sm font-bold uppercase tracking-wide text-primary">{wallet.label}</p>
               </div>
             </div>
 
@@ -33,7 +33,7 @@ function SavedWalletList({ onOpenDeleteModal, savedWallets }: SavedWalletListPro
             </button>
           </div>
 
-          <p className="mb-2 text-[13px] font-black uppercase tracking-wide text-text-muted dark:text-text-dark-muted">
+          <p className="mb-2 text-sm font-black uppercase tracking-wide text-text-muted dark:text-text-dark-muted">
             Wallet Address
           </p>
           <div className="rounded-xl bg-white px-4 py-4 font-mono text-sm text-text dark:bg-white/[0.06] dark:text-text-dark">

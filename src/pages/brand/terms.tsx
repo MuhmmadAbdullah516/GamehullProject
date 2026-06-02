@@ -55,7 +55,7 @@ function TermsPage() {
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
-          <nav className="mb-[18px] flex items-center gap-1.5 text-xs text-text-dim dark:text-text-dark-dim" aria-label="Breadcrumb">
+          <nav className="mb-4 flex items-center gap-1.5 text-xs text-text-dim dark:text-text-dark-dim" aria-label="Breadcrumb">
             <Link className="font-medium text-primary transition-colors hover:text-primary-hover" to="/">
               Home
             </Link>
@@ -72,11 +72,11 @@ function TermsPage() {
               Usage Guidelines
             </div>
 
-            <h1 className="mb-4 text-[clamp(32px,5vw,56px)] font-black leading-[1.1] tracking-[-.04em] text-text-heading transition-colors duration-200 dark:text-text-dark-heading">
+            <h1 className="mb-4 text-4xl md:text-6xl font-black leading-tight tracking-tight text-text-heading transition-colors duration-200 dark:text-text-dark-heading">
               Terms of <span className="text-primary">Service</span>
             </h1>
 
-            <p className="max-w-[600px] text-[15px] leading-relaxed text-text-body transition-colors duration-200 dark:text-text-dark-body md:text-base">
+            <p className="max-w-150 text-base leading-relaxed text-text-body transition-colors duration-200 dark:text-text-dark-body md:text-base">
               Please read these terms carefully before using our platform. By playing on GameHull, you agree to follow
               our rules and community guidelines.
             </p>
@@ -87,7 +87,7 @@ function TermsPage() {
       <main className="mx-auto w-full max-w-5xl px-6 pb-20 md:pb-32">
         <div className="rounded-4xl border border-card-border bg-white p-8 shadow-card transition-all duration-200 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark md:p-12">
           <div className="mb-12">
-            <p className="text-[13px] font-bold uppercase tracking-widest text-text-dim transition-colors dark:text-text-dark-dim">
+            <p className="text-sm font-bold uppercase tracking-widest text-text-dim transition-colors dark:text-text-dark-dim">
               Last updated: May 23, 2026
             </p>
           </div>
@@ -100,7 +100,7 @@ function TermsPage() {
                   {section.title}
                 </h2>
 
-                <div className="space-y-4 text-[15px] leading-relaxed text-text-body dark:text-text-dark-body">
+                <div className="space-y-4 text-base leading-relaxed text-text-body dark:text-text-dark-body">
                   {section.body ? <p>{section.body}</p> : null}
 
                   {section.items ? (
@@ -126,18 +126,18 @@ function TermsPage() {
 
             <section className="border-t border-border-DEFAULT pt-8 dark:border-border-dark">
               <h2 className="mb-4 text-xl font-bold text-text-heading dark:text-text-dark-heading">Need Clarification?</h2>
-              <p className="mb-6 text-[15px] leading-relaxed text-text-body dark:text-text-dark-body">
+              <p className="mb-6 text-base leading-relaxed text-text-body dark:text-text-dark-body">
                 If you have any questions about these Terms of Service, please reach out to our support team for more
                 information.
               </p>
 
               <Button
                 asChild
-                className="inline-flex h-auto items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-[15px] font-bold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary-hover active:scale-95"
+                className="inline-flex h-auto items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary-hover active:scale-95"
               >
                 <Link to="/contact">
                   Contact Us
-                  <ArrowRight className="size-[18px]" strokeWidth={2.5} />
+                  <ArrowRight className="size-4" strokeWidth={2.5} />
                 </Link>
               </Button>
             </section>

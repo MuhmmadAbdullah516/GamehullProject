@@ -12,7 +12,7 @@ function RegisterCaptchaField({
 }: RegisterCaptchaProps) {
   return (
     <div>
-      <label className="mb-1.5 block text-[13px] font-semibold leading-5 text-white" htmlFor="captcha">
+      <label className="mb-1.5 block text-sm font-semibold leading-5 text-white" htmlFor="captcha">
         Captcha
       </label>
 
@@ -20,13 +20,13 @@ function RegisterCaptchaField({
         <div className="group relative flex h-12 items-center overflow-hidden rounded-xl border border-blue-300/15 bg-white/8 transition focus-within:border-blue-500/70 focus-within:ring-2 focus-within:ring-blue-500/25">
           <Shield
             aria-hidden="true"
-            className="pointer-events-none absolute left-4 top-1/2 z-10 size-[18px] -translate-y-1/2 text-slate-400 transition-colors group-focus-within:text-[#2d75ff]"
+            className="pointer-events-none absolute left-4 top-1/2 z-10 size-4 -translate-y-1/2 text-slate-400 transition-colors group-focus-within:text-[#2d75ff]"
             strokeWidth={2}
           />
 
           <input
             autoComplete="off"
-            className="h-full min-w-0 flex-1 rounded-[inherit] bg-transparent px-4 pl-12 text-xs font-normal leading-[21px] text-white outline-none placeholder:text-slate-400"
+            className="h-full min-w-0 flex-1 rounded-xl bg-transparent px-4 pl-12 text-xs font-normal leading-5 text-white outline-none placeholder:text-slate-400"
             id="captcha"
             inputMode="numeric"
             name="captcha"

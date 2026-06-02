@@ -14,7 +14,7 @@ function RegisterTextField({
 }: RegisterTextFieldProps) {
   return (
     <div>
-      <label className="mb-1.5 block text-[13px] font-semibold leading-5 text-white" htmlFor={id}>
+      <label className="mb-1.5 block text-sm font-semibold leading-5 text-white" htmlFor={id}>
         {label}
       </label>
       <div
@@ -26,7 +26,7 @@ function RegisterTextField({
         <User
           aria-hidden="true"
           className={cn(
-            "pointer-events-none absolute left-4 top-1/2 z-10 size-[18px] -translate-y-1/2 shrink-0 text-slate-400 transition-colors group-focus-within:text-[#2d75ff]",
+            "pointer-events-none absolute left-4 top-1/2 z-10 size-4 -translate-y-1/2 shrink-0 text-slate-400 transition-colors group-focus-within:text-[#2d75ff]",
             filled && "group-focus-within:text-slate-400",
           )}
           strokeWidth={2}
@@ -34,7 +34,7 @@ function RegisterTextField({
         <input
           aria-invalid={Boolean(error)}
           className={cn(
-            "h-full min-w-0 flex-1 rounded-[inherit] bg-transparent px-4 pl-12 text-xs font-normal leading-[21px] text-white outline-none placeholder:text-slate-400",
+            "h-full min-w-0 flex-1 rounded-xl bg-transparent px-4 pl-12 text-xs font-normal leading-5 text-white outline-none placeholder:text-slate-400",
             filled && "text-black",
           )}
           id={id}

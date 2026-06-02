@@ -55,10 +55,10 @@ function TransactionsPage() {
   return (
     <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-12 md:py-16">
       <div className="mb-12 text-center">
-        <h1 className="mb-3 text-[clamp(32px,5vw,48px)] font-black leading-none tracking-normal text-slate-900 transition-colors dark:text-white">
+        <h1 className="mb-3 text-4xl md:text-5xl font-black leading-none tracking-normal text-slate-900 transition-colors dark:text-white">
           Transactions
         </h1>
-        <p className="mx-auto max-w-[500px] text-[15px] leading-relaxed text-slate-600 transition-colors dark:text-zinc-400 md:text-base">
+        <p className="mx-auto max-w-125 text-base leading-relaxed text-slate-600 transition-colors dark:text-zinc-400 md:text-base">
           View your deposit, cash in, and cash out history in one place
         </p>
       </div>

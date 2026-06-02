@@ -57,12 +57,12 @@ function CashoutRequestTab({
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {cashoutSteps.map((step, index) => (
             <div className="flex items-start gap-4 rounded-2xl border border-primary/10 bg-primary/[0.03] p-5 transition-colors hover:bg-primary/[0.05] dark:border-primary/20 dark:bg-primary/[0.06]" key={step.title}>
-              <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-[13px] font-black text-white shadow-md">
+              <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-black text-white shadow-md">
                 {index + 1}
               </div>
               <div className="flex-1">
-                <h4 className="mb-1 text-[15px] font-bold text-text-heading dark:text-text-dark-heading">{step.title}</h4>
-                <p className="text-[13px] leading-relaxed text-text-body dark:text-text-dark-body">
+                <h4 className="mb-1 text-base font-bold text-text-heading dark:text-text-dark-heading">{step.title}</h4>
+                <p className="text-sm leading-relaxed text-text-body dark:text-text-dark-body">
                   {index === 0 ? (
                     <>
                       Go to the{" "}

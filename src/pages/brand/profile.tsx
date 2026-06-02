@@ -19,11 +19,11 @@ function ProfilePage() {
   return (
     <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 py-12 md:py-16">
       <div className="mb-10 text-center">
-        <h1 className="mb-3 text-[clamp(32px,5vw,48px)] font-black leading-none tracking-normal text-slate-900 transition-colors dark:text-white">
+        <h1 className="mb-3 text-4xl md:text-5xl font-black leading-none tracking-normal text-slate-900 transition-colors dark:text-white">
           Account Center
         </h1>
 
-        <p className="mx-auto max-w-[500px] text-[15px] leading-relaxed text-slate-600 transition-colors dark:text-zinc-400 md:text-base">
+        <p className="mx-auto max-w-125 text-base leading-relaxed text-slate-600 transition-colors dark:text-zinc-400 md:text-base">
           Your profile and settings in one place
         </p>
       </div>
