@@ -6,9 +6,10 @@ import {
   useRef,
   useState,
 } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
+import { api } from "@/lib/api";
 import { verifyOtpSchema } from "@/schemas/auth-schema";
 import type { VerifyOtpErrors } from "@/types/validation";
 
@@ -17,8 +18,12 @@ export const OTP_LENGTH = 4;
 export function useOtpVerification() {
   const [otp, setOtp] = useState<string[]>(Array(OTP_LENGTH).fill(""));
   const [errors, setErrors] = useState<VerifyOtpErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
+  const location = useLocation();
   const navigate = useNavigate();
+  const email = location.state?.email as string | undefined;
+  const purpose = location.state?.purpose as string | undefined;
 
   function focusInput(index: number) {
     inputRefs.current[index]?.focus();
@@ -51,7 +56,7 @@ export function useOtpVerification() {
     focusInput(Math.min(pastedOtp.length, OTP_LENGTH - 1));
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const result = verifyOtpSchema.safeParse({ otp: otp.join("") });
 
@@ -62,10 +67,40 @@ export function useOtpVerification() {
       return;
     }
 
-    setErrors({});
-    toast.success("OTP verified successfully.");
-    navigate("/login");
+    if (!email) {
+      toast.error("Email is missing. Please restart password recovery.");
+      navigate("/forgot-password");
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      setErrors({});
+
+      await api.post("/auth/verify-otp", {
+        email,
+        otp: result.data.otp,
+        purpose,
+      });
+
+      toast.success("OTP verified successfully.");
+      navigate("/login");
+    } catch {
+      toast.error("Invalid or expired verification code.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
-  return { errors, handleChange, handleKeyDown, handlePaste, handleSubmit, inputRefs, otp };
+  return {
+    email,
+    errors,
+    handleChange,
+    handleKeyDown,
+    handlePaste,
+    handleSubmit,
+    inputRefs,
+    isSubmitting,
+    otp,
+  };
 }

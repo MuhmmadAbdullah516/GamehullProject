@@ -5,17 +5,18 @@ import {
 } from "react";
 
 import { AuthContext } from "@/context/auth-context-value";
+import { AUTH_TOKEN_STORAGE_KEY } from "@/lib/api";
 import type {
   AuthContextValue,
   AuthProviderProps,
   AuthUser,
 } from "@/types/auth-fields";
 
-const AUTH_STORAGE_KEY = "gamehull-auth-user";
+const AUTH_USER_STORAGE_KEY = "gamehull-auth-user";
 
 function getStoredUser() {
   try {
-    const storedUser = localStorage.getItem(AUTH_STORAGE_KEY);
+    const storedUser = localStorage.getItem(AUTH_USER_STORAGE_KEY);
 
     return storedUser ? (JSON.parse(storedUser) as AuthUser) : null;
   } catch {
@@ -23,34 +24,40 @@ function getStoredUser() {
   }
 }
 
+function getStoredToken() {
+  return localStorage.getItem(AUTH_TOKEN_STORAGE_KEY);
+}
+
 export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<AuthUser | null>(() => getStoredUser());
+  const [token, setToken] = useState<string | null>(() => getStoredToken());
 
   useEffect(() => {
-    if (user) {
-      localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(user));
+    if (user && token) {
+      localStorage.setItem(AUTH_USER_STORAGE_KEY, JSON.stringify(user));
+      localStorage.setItem(AUTH_TOKEN_STORAGE_KEY, token);
       return;
     }
 
-    localStorage.removeItem(AUTH_STORAGE_KEY);
-  }, [user]);
+    localStorage.removeItem(AUTH_USER_STORAGE_KEY);
+    localStorage.removeItem(AUTH_TOKEN_STORAGE_KEY);
+  }, [user, token]);
 
   const value = useMemo<AuthContextValue>(
     () => ({
-      isAuthenticated: Boolean(user),
-      signIn: ({ email, name }) => {
-        setUser({
-          balance: 5,
-          email,
-          name: name?.trim() || "Muhammad Abdullah",
-        });
+      isAuthenticated: Boolean(user && token),
+      token,
+      signIn: ({ token, user }) => {
+        setToken(token);
+        setUser(user);
       },
       signOut: () => {
+        setToken(null);
         setUser(null);
       },
       user,
     }),
-    [user],
+    [user, token],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

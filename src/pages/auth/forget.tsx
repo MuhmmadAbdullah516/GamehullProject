@@ -7,7 +7,7 @@ import { useForgetPasswordForm } from "@/hooks/auth/authpages-hooks";
 import AuthLayout from "@/layout/authlayout";
 
 function ForgetPasswordPage() {
-  const { errors, handleSubmit } = useForgetPasswordForm();
+  const { errors, handleSubmit, isSubmitting } = useForgetPasswordForm();
 
   return (
     <AuthLayout>
@@ -38,8 +38,8 @@ function ForgetPasswordPage() {
               </p>
             ) : null}
 
-            <Button size="auth" type="submit" variant="auth">
-              Send OTP
+            <Button disabled={isSubmitting} size="auth" type="submit" variant="auth">
+              {isSubmitting ? "Sending..." : "Send OTP"}
             </Button>
           </form>
 

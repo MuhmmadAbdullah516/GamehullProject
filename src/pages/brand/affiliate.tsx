@@ -31,7 +31,7 @@ function AffiliatePage() {
 
     const {isAuthenticated} = useAuth()
     const affiliateLinkTarget = isAuthenticated ? "/games":"/register";
-    const referralButtonText = isAuthenticated ? "view your refferal Lik":"Create Free Account"
+    const referralButtonText = isAuthenticated ? "View Your Referral Link" : "Create Free Account"
   
   return (
     <main className="m-0 flex-grow bg-white p-0 text-[#0F172A] transition-colors dark:bg-[#080D1C] dark:!text-[#F1F5F9]">

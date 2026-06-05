@@ -7,7 +7,7 @@ import { useLoginForm } from "@/hooks/auth/authpages-hooks";
 import AuthLayout from "@/layout/authlayout";
 
 function LoginPage() {
-  const { errors, handleSubmit } = useLoginForm();
+  const { errors, handleSubmit, isSubmitting } = useLoginForm();
 
   return (
     <AuthLayout>
@@ -54,8 +54,8 @@ function LoginPage() {
             </p>
           ) : null}
 
-          <Button className="mt-7" size="auth" type="submit" variant="auth">
-            Sign In
+          <Button className="mt-7" disabled={isSubmitting} size="auth" type="submit" variant="auth">
+            {isSubmitting ? "Signing in..." : "Sign In"}
           </Button>
         </form>
 

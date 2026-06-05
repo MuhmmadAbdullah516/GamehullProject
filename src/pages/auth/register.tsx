@@ -62,9 +62,9 @@ function RegisterPage() {
             question={form.captchaQuestion}
           />
           <RegisterTerms accepted={form.acceptedTerms} error={form.errors.terms} onChange={form.handleTermsChange} />
-          <Button className="gap-2 disabled:bg-[#2f6dea]/35 disabled:text-white/35 disabled:shadow-none" disabled={!form.acceptedTerms} size="auth" type="submit" variant="auth">
+          <Button className="gap-2 disabled:bg-[#2f6dea]/35 disabled:text-white/35 disabled:shadow-none" disabled={!form.acceptedTerms || form.isSubmitting} size="auth" type="submit" variant="auth">
             <Zap aria-hidden="true" className="size-6" strokeWidth={2} />
-            Create Account &amp; Play Now
+            {form.isSubmitting ? "Creating account..." : "Create Account & Play Now"}
           </Button>
         </form>
 

@@ -6,7 +6,7 @@ import { useOtpVerification } from '@/hooks/auth/authpages-hooks'
 import AuthLayout from '@/layout/authlayout'
 
 function VerifyOtpPage() {
-  const { errors, handleChange, handleKeyDown, handlePaste, handleSubmit, inputRefs, otp } =
+  const { errors, handleChange, handleKeyDown, handlePaste, handleSubmit, inputRefs, isSubmitting, otp } =
     useOtpVerification()
 
   return (
@@ -53,8 +53,8 @@ function VerifyOtpPage() {
             <p className="mt-2 text-xs font-normal leading-5 text-red-300">{errors.otp}</p>
           ) : null}
 
-          <Button className="mt-7" size="auth" type="submit" variant="auth">
-            Verify Code
+          <Button className="mt-7" disabled={isSubmitting} size="auth" type="submit" variant="auth">
+            {isSubmitting ? "Verifying..." : "Verify Code"}
           </Button>
         </form>
 

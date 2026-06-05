@@ -31,12 +31,13 @@ export interface AuthUser {
 }
 
 export interface SignInPayload {
-  email: string
-  name?: string
+  token: string
+  user: AuthUser
 }
 
 export interface AuthContextValue {
   isAuthenticated: boolean
+  token: string | null
   signIn: (payload: SignInPayload) => void
   signOut: () => void
   user: AuthUser | null

@@ -2,6 +2,7 @@ import { type ChangeEvent, type FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
+import { api } from "@/lib/api";
 import { useAuth } from "@/hooks/auth/use-auth";
 import { registerSchema } from "@/schemas/auth-schema";
 import type { RegisterErrors } from "@/types/validation";
@@ -11,6 +12,7 @@ export function useRegisterForm() {
   const [hasUsername, setHasUsername] = useState(false);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [errors, setErrors] = useState<RegisterErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [captchaSeed, setCaptchaSeed] = useState(() => ({
     left: 4,
     right: 7,
@@ -43,7 +45,7 @@ export function useRegisterForm() {
     setAcceptedTerms(event.currentTarget.checked);
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const result = registerSchema.safeParse({
@@ -80,10 +82,28 @@ export function useRegisterForm() {
       return;
     }
 
-    setErrors({});
-    signIn({ email: result.data.email, name: result.data.fullName });
-    toast.success("Account created successfully.");
-    navigate("/");
+    try {
+      setIsSubmitting(true);
+      setErrors({});
+
+      const response = await api.post("/auth/register", {
+        email: result.data.email,
+        fullName: result.data.fullName,
+        password: result.data.password,
+        username: result.data.username,
+      });
+
+      signIn({
+        token: response.data.token,
+        user: response.data.user,
+      });
+      toast.success("Account created successfully.");
+      navigate("/");
+    } catch {
+      toast.error("Unable to create account.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return {
@@ -98,6 +118,7 @@ export function useRegisterForm() {
     handleUsernameChange,
     hasFullName,
     hasUsername,
+    isSubmitting,
     refreshCaptcha,
   };
 }
