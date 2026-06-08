@@ -8,7 +8,7 @@ import { faqAnswerClass, sectionRevealClass, smoothIconClass } from "./home-styl
 function FaqSection({ onToggle, openIndex }: FaqSectionProps) {
   return (
     <section className={`${sectionRevealClass} relative overflow-hidden border-t border-slate-900/10 bg-[#f4f7ff] py-14 md:py-24 transition-colors duration-300 ease-out dark:border-blue-400/15 dark:bg-[linear-gradient(180deg,#10032a_0%,#080d1c_100%)]`}>
-      <div className="relative z-10 mx-auto w-full max-w-180 px-6">
+      <div className="relative z-10 mx-auto w-full max-w-[45rem] px-6">
         <div className="mb-12 text-center">
           <h2 className="text-2xl md:text-4xl font-black leading-tight text-slate-900 transition-colors dark:text-white">
             Frequently Asked Questions

@@ -26,7 +26,7 @@ function RegisterTextField({
         <User
           aria-hidden="true"
           className={cn(
-            "pointer-events-none absolute left-4 top-1/2 z-10 size-4 -translate-y-1/2 shrink-0 text-slate-400 transition-colors group-focus-within:text-blue-500",
+            "pointer-events-none absolute left-4 top-1/2 z-10 size-4 -translate-y-1/2 shrink-0 text-slate-400 transition-colors group-focus-within:text-[#2d75ff]",
             filled && "group-focus-within:text-slate-400",
           )}
           strokeWidth={2}

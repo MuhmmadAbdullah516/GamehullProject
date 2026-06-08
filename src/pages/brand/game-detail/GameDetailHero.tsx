@@ -6,7 +6,7 @@ import type { GameDetailHeroProps } from "@/types/game-detail";
 
 function GameDetailHero({ game }: GameDetailHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-white bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] py-12 pb-8 transition-colors duration-300 ease-out dark:bg-[#080d1c] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080d1c,#080d1c)] md:py-20 md:pb-13">
+    <section className="relative overflow-hidden bg-white bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] py-12 pb-8 transition-colors duration-300 ease-out dark:bg-[#080d1c] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080d1c,#080d1c)] md:py-20 md:pb-[3.25rem]">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute inset-0 bg-transparent" />
       </div>
@@ -20,7 +20,7 @@ function GameDetailHero({ game }: GameDetailHeroProps) {
         </nav>
 
         <div className="flex flex-col items-center gap-8 md:flex-row md:gap-12">
-          <div className="group relative size-35 shrink-0 overflow-hidden rounded-4xl border border-slate-900/10 shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] dark:border-blue-400/20 dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)] md:size-45 md:rounded-5xl">
+          <div className="group relative size-[8.75rem] shrink-0 overflow-hidden rounded-[1.625rem] border border-slate-900/10 shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] dark:border-blue-400/20 dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)] md:size-[11.25rem] md:rounded-[2rem]">
             <img
               alt={game.name}
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -38,7 +38,7 @@ function GameDetailHero({ game }: GameDetailHeroProps) {
             <h1 className="mb-4 text-4xl md:text-5xl font-black leading-tight tracking-normal text-slate-900 transition-colors duration-200 dark:text-white">
               {game.name}
             </h1>
-            <p className="max-w-140 text-base leading-relaxed text-slate-600 transition-colors duration-200 dark:text-zinc-400 md:text-base">
+            <p className="max-w-[35rem] text-base leading-relaxed text-slate-600 transition-colors duration-200 dark:text-zinc-400 md:text-base">
               {game.description}
             </p>
           </div>

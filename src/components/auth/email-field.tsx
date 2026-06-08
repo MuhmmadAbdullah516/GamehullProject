@@ -41,7 +41,7 @@ function EmailField({
       </label>
       <div
         className={cn(
-          'group relative flex h-12 items-center overflow-hidden rounded-xl border border-slate-700/70 bg-[#171a3d] text-slate-200 transition focus-within:border-blue-600 focus-within:ring-2 focus-within:ring-blue-600',
+          'group relative flex h-12 items-center overflow-hidden rounded-xl border border-blue-300/15 bg-white/8 text-white transition focus-within:border-blue-500/70 focus-within:ring-2 focus-within:ring-blue-500/25',
           isFilled &&
             'border-transparent bg-[#e7effc] text-slate-950 shadow-none focus-within:border-transparent focus-within:ring-0',
           wrapperClassName,
@@ -61,7 +61,7 @@ function EmailField({
         ) : null}
         <input
           className={cn(
-            'h-full min-w-0 flex-1 rounded-xl bg-transparent px-4 text-sm font-normal leading-5 text-slate-200 outline-none placeholder:text-slate-300',
+            'h-full min-w-0 flex-1 rounded-xl bg-transparent px-4 text-sm font-normal leading-5 text-white outline-none placeholder:text-slate-400',
             showIcon && 'pl-12',
             isFilled && 'text-black placeholder:text-slate-500',
             inputClassName,

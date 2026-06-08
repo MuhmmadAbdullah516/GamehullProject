@@ -84,7 +84,14 @@ export function useOtpVerification() {
       });
 
       toast.success("OTP verified successfully.");
-      navigate("/login");
+      navigate("/reset-password", {
+        replace: true,
+        state: {
+          email,
+          purpose,
+          verified: true,
+        },
+      });
     } catch {
       toast.error("Invalid or expired verification code.");
     } finally {

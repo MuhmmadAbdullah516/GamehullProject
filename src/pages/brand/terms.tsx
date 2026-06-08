@@ -49,7 +49,7 @@ const termsSections: TermsSection[] = [
 function TermsPage() {
   return (
     <main className="flex-grow bg-white text-slate-900 transition-colors dark:bg-[#080d1c] dark:text-slate-100">
-      <section className="relative overflow-hidden bg-white bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] py-12 pb-8 transition-colors duration-300 ease-out dark:bg-[#080d1c] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080d1c,#080d1c)] md:py-20 md:pb-13">
+      <section className="relative overflow-hidden bg-white bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] py-12 pb-8 transition-colors duration-300 ease-out dark:bg-[#080d1c] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080d1c,#080d1c)] md:py-20 md:pb-[3.25rem]">
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
           <div className="absolute inset-0 bg-transparent" />
         </div>
@@ -76,7 +76,7 @@ function TermsPage() {
               Terms of <span className="text-primary">Service</span>
             </h1>
 
-            <p className="max-w-150 text-base leading-relaxed text-text-body transition-colors duration-200 dark:text-text-dark-body md:text-base">
+            <p className="max-w-[37.5rem] text-base leading-relaxed text-text-body transition-colors duration-200 dark:text-text-dark-body md:text-base">
               Please read these terms carefully before using our platform. By playing on GameHull, you agree to follow
               our rules and community guidelines.
             </p>
@@ -85,7 +85,7 @@ function TermsPage() {
       </section>
 
       <main className="mx-auto w-full max-w-5xl px-6 pb-20 md:pb-32">
-        <div className="rounded-4xl border border-card-border bg-white p-8 shadow-card transition-all duration-200 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark md:p-12">
+        <div className="rounded-[1.625rem] border border-card-border bg-white p-8 shadow-card transition-all duration-200 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark md:p-12">
           <div className="mb-12">
             <p className="text-sm font-bold uppercase tracking-widest text-text-dim transition-colors dark:text-text-dark-dim">
               Last updated: May 23, 2026

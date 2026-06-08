@@ -13,7 +13,7 @@ function AccountField({ id, label, onCopy, onToggle, showValue, value }: Account
       </label>
       <div className="relative">
         <input
-          className={`h-14 w-full rounded-2xl border border-border bg-slate-100 pl-5 ${isPassword ? "pr-24" : "pr-14"} text-base font-black text-slate-900 outline-none transition-all focus:border-primary dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-white ${isPassword && !showValue ? "tracking-widest" : ""}`}
+          className={`h-14 w-full rounded-2xl border border-border bg-slate-100 pl-5 ${isPassword ? "pr-24" : "pr-14"} text-base font-black text-slate-900 outline-none transition-all focus:border-blue-500/70 focus:ring-2 focus:ring-blue-500/25 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-white ${isPassword && !showValue ? "tracking-widest" : ""}`}
           id={id}
           readOnly
           type={isPassword && !showValue ? "password" : "text"}

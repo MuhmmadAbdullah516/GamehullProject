@@ -3,7 +3,7 @@ import { contactInfo, supportTopics } from "./contact-data";
 function ContactSidebar() {
   return (
     <aside className="space-y-6 lg:col-span-2">
-      <section className="rounded-4xl border border-card-border bg-white p-8 shadow-card transition-all duration-200 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark">
+      <section className="rounded-[1.625rem] border border-card-border bg-white p-8 shadow-card transition-all duration-200 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark">
         <h2 className="mb-6 text-base font-bold text-text-heading dark:text-text-dark-heading">Support Info</h2>
         <div className="space-y-6">
           {contactInfo.map((item) => {
@@ -27,7 +27,7 @@ function ContactSidebar() {
         </div>
       </section>
 
-      <section className="rounded-4xl border border-card-border bg-white p-8 shadow-card transition-all duration-200 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark">
+      <section className="rounded-[1.625rem] border border-card-border bg-white p-8 shadow-card transition-all duration-200 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark">
         <h2 className="mb-6 text-base font-bold text-text-heading dark:text-text-dark-heading">How we can help</h2>
         <div className="space-y-4">
           {supportTopics.map((topic) => {

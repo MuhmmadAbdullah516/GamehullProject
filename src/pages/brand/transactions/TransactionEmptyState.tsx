@@ -11,7 +11,7 @@ function TransactionEmptyState({ isFiltered }: TransactionEmptyStateProps) {
       <h2 className="mb-2 text-lg font-bold text-slate-900 transition-colors dark:text-white">
         No transactions found
       </h2>
-      <p className="mx-auto max-w-85 text-sm leading-relaxed text-slate-500 transition-colors dark:text-zinc-500">
+      <p className="mx-auto max-w-[21.25rem] text-sm leading-relaxed text-slate-500 transition-colors dark:text-zinc-500">
         {isFiltered
           ? "No transactions match your current filter criteria. Try resetting the filters."
           : "Your deposits and withdrawals will appear here once you start playing or make a deposit."}

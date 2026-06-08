@@ -53,7 +53,7 @@ function DepositPaymentPopup({ method, onBack }: DepositPaymentPopupProps) {
         <p className="text-sm text-white/40">Enter amount to deposit</p>
       </div>
 
-      <div className="mb-6 flex items-start gap-3 rounded-2xl border border-primary/20 bg-primary/10 p-4 sm:mb-8 sm:gap-4 sm:rounded-5 sm:p-5">
+      <div className="mb-6 flex items-start gap-3 rounded-2xl border border-primary/20 bg-primary/10 p-4 sm:mb-8 sm:gap-4 sm:rounded-[1.25rem] sm:p-5">
         <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center shrink-0">
           <Zap className="size-5 text-[#3b82f6]" fill="currentColor" strokeWidth={0} />
         </div>
@@ -70,7 +70,7 @@ function DepositPaymentPopup({ method, onBack }: DepositPaymentPopupProps) {
           <div className="relative">
             <span className="absolute left-5 top-1/2 -translate-y-1/2 text-lg font-bold text-white/30">$</span>
             <input
-              className="h-14 w-full rounded-2xl border border-white/10 bg-white/5 pl-10 pr-6 text-lg font-bold text-white outline-none transition-all placeholder:text-white/10 focus:border-primary/50 focus:ring-4 focus:ring-primary/10 sm:h-17 sm:rounded-5.5 sm:text-xl"
+              className="h-14 w-full rounded-xl border border-blue-300/15 bg-transparent pl-10 pr-6 text-lg font-bold text-white outline-none transition placeholder:text-slate-400 focus:border-blue-500/70 focus:ring-2 focus:ring-blue-500/25 sm:h-[4.25rem] sm:text-xl"
               id="deposit-amount"
               inputMode="numeric"
               max={500}
@@ -100,7 +100,7 @@ function DepositPaymentPopup({ method, onBack }: DepositPaymentPopupProps) {
       </div>
 
       <button
-        className="mb-5 h-14 w-full cursor-pointer rounded-full bg-primary text-base font-bold text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 hover:bg-primary-hover sm:mb-6 sm:h-17 sm:text-lg"
+        className="mb-5 h-14 w-full cursor-pointer rounded-full bg-primary text-base font-bold text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 hover:bg-primary-hover sm:mb-6 sm:h-[4.25rem] sm:text-lg"
         onClick={handlePayNow}
         type="button"
       >

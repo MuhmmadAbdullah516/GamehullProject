@@ -3,6 +3,9 @@ import { Check, ChevronDown, ExternalLink, Gamepad2 } from "lucide-react";
 import { gameImages } from "@/data/game-assets";
 import type { GameAccountSelectorProps } from "@/types/cashout";
 
+const searchFieldClassName =
+  "w-full rounded-xl border border-blue-300/15 bg-transparent px-4 py-2 text-sm text-text-heading outline-none transition placeholder:text-text-muted focus:border-blue-500/70 focus:ring-2 focus:ring-blue-500/25 dark:text-white dark:placeholder:text-slate-400";
+
 function GameAccountSelector({
   filteredGames,
   gameDropdownRef,
@@ -22,7 +25,7 @@ function GameAccountSelector({
         </label>
         <div className="relative" ref={gameDropdownRef}>
           <button
-            className="flex h-14 w-full cursor-pointer items-center gap-3 rounded-xl border border-border bg-white px-4 text-left text-base text-text shadow-sm outline-none transition-all focus:ring-2 focus:ring-primary dark:border-border-dark dark:bg-bg-dark dark:text-text-dark"
+            className="flex h-14 w-full cursor-pointer items-center gap-3 rounded-xl border border-blue-300/15 bg-transparent px-4 text-left text-base text-text-heading outline-none transition-all focus:border-blue-500/70 focus:ring-2 focus:ring-blue-500/25 dark:text-white"
             onClick={onToggleGameList}
             type="button"
           >
@@ -33,7 +36,7 @@ function GameAccountSelector({
                 <Gamepad2 className="size-4 text-primary/40" strokeWidth={2} />
               )}
             </div>
-            <span className={selectedGame ? "font-bold text-text dark:text-text-dark" : "text-text-muted"}>
+            <span className={selectedGame ? "font-bold text-text-heading dark:text-white" : "text-text-muted"}>
               {selectedGame ? selectedGame.name : "Select a game..."}
             </span>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4">
@@ -45,14 +48,14 @@ function GameAccountSelector({
             <div className="absolute z-50 mt-2 w-full overflow-hidden rounded-2xl border border-border bg-white shadow-2xl dark:border-border-dark dark:bg-card-dark-bg">
               <div className="border-b border-border bg-bg-muted/30 p-3 dark:border-border-dark dark:bg-bg-dark-muted/30">
                 <input
-                  className="w-full rounded-xl border border-border bg-white px-4 py-2 text-sm outline-none transition-all focus:ring-1 focus:ring-primary dark:border-border-dark dark:bg-bg-dark"
+                  className={searchFieldClassName}
                   onChange={(event) => onGameSearchChange(event.target.value)}
                   placeholder="Search games..."
                   type="text"
                   value={gameSearch}
                 />
               </div>
-              <div className="wallet-scrollbar max-h-75 overflow-y-auto p-1.5">
+              <div className="wallet-scrollbar max-h-[18.75rem] overflow-y-auto p-1.5">
                 {filteredGames.map((game) => (
                   <button
                     className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-all ${

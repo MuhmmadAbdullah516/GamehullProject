@@ -9,14 +9,14 @@ function RegisterTerms({ accepted, error, onChange }: RegisterTermsProps) {
         <input
           aria-invalid={Boolean(error)}
           checked={accepted}
-          className="mt-0.5 size-3.5 shrink-0 rounded border-blue-300/30 bg-white accent-blue-500"
+          className="mt-0.5 size-3.5 shrink-0 rounded border-blue-300/30 bg-white accent-[#2d75ff]"
           name="terms"
           onChange={onChange}
           type="checkbox"
         />
         <span>
-          I agree to the <Link className="font-bold text-blue-500 hover:text-blue-400" to="/terms">Terms of Service</Link>{" "}
-          and <Link className="font-bold text-blue-500 hover:text-blue-400" to="/privacy">Privacy Policy</Link>.
+          I agree to the <Link className="font-bold text-[#2d75ff] hover:text-[#5b94ff]" to="/terms">Terms of Service</Link>{" "}
+          and <Link className="font-bold text-[#2d75ff] hover:text-[#5b94ff]" to="/privacy">Privacy Policy</Link>.
           I confirm I am 18+ and play responsibly.
         </span>
       </label>

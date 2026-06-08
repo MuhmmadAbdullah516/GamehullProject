@@ -22,7 +22,7 @@ function ReviewsSection() {
           <p className="mt-3 text-sm text-slate-600 transition-colors dark:text-zinc-400">Join thousands of satisfied players who trust GameHull.</p>
         </div>
 
-        <div className="grid max-h-120 grid-cols-1 gap-4 overflow-hidden md:grid-cols-3">
+        <div className="grid max-h-[30rem] grid-cols-1 gap-4 overflow-hidden md:grid-cols-3">
           {reviewColumns.map((column, columnIndex) => (
             <div className={columnIndex === 0 ? "overflow-hidden" : "hidden overflow-hidden md:block"} key={`review-column-${columnIndex}`}>
               <div className={`flex flex-col gap-3.5 hover:[animation-play-state:paused] ${scrollClasses[columnIndex]}`}>

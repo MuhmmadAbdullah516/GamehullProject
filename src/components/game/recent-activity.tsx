@@ -25,7 +25,7 @@ function RecentActivity({ gameName }: RecentActivityProps) {
 
           <Link
             className="group inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition-all hover:text-blue-700"
-            to="/games"
+            to="/transactions"
           >
             View Detailed History
             <ArrowRight
@@ -35,7 +35,7 @@ function RecentActivity({ gameName }: RecentActivityProps) {
           </Link>
         </div>
 
-        <div className="overflow-hidden rounded-4xl border border-slate-900/10 bg-white shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-all dark:border-blue-400/20 dark:bg-[#0e1629] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)]">
+        <div className="overflow-hidden rounded-[1.625rem] border border-slate-900/10 bg-white shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-all dark:border-blue-400/20 dark:bg-[#0e1629] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)]">
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>

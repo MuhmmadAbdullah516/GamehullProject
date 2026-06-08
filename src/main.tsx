@@ -17,7 +17,7 @@ createRoot(document.getElementById('root')!).render(
       </AuthProvider>
       <ToastContainer
         autoClose={2600}
-        className="!bottom-3 !left-3 !right-3 !w-auto [--toastify-color-dark:transparent] [--toastify-font-family:Inter,ui-sans-serif,system-ui,sans-serif] [--toastify-toast-width:calc(100vw-24px)] sm:!bottom-4 sm:!left-auto sm:!right-4 sm:!w-85 sm:[--toastify-toast-width:340px]"
+        className="!bottom-3 !left-3 !right-3 !w-auto [--toastify-color-dark:transparent] [--toastify-font-family:Inter,ui-sans-serif,system-ui,sans-serif] [--toastify-toast-width:calc(100vw-24px)] sm:!bottom-4 sm:!left-auto sm:!right-4 sm:!w-[21.25rem] sm:[--toastify-toast-width:340px]"
         closeOnClick
         newestOnTop
         pauseOnFocusLoss={false}

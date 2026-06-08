@@ -33,9 +33,11 @@ function PasswordChangeSection({ onChange, values }: PasswordChangeSectionProps)
           <PasswordField
             autoComplete="new-password"
             className="space-y-0"
-            iconClassName="mr-4 size-4 self-center text-slate-400 group-focus-within:text-slate-400"
+            filledInputClassName="text-slate-900 placeholder:text-slate-500 dark:text-white"
+            filledWrapperClassName="border-border bg-transparent text-slate-900 focus-within:border-blue-500/70 focus-within:ring-2 focus-within:ring-blue-500/25 dark:border-blue-400/15 dark:bg-transparent dark:text-white"
+            iconClassName="mr-4 size-4 self-center"
             id={field.id}
-            inputClassName="h-full min-w-0 flex-1 pl-11 pr-12 text-sm leading-none text-slate-900 placeholder:text-slate-400 dark:text-slate-100"
+            inputClassName="h-full min-w-0 flex-1 pl-11 pr-12 text-sm leading-none text-slate-900 dark:text-white"
             key={field.id}
             label={field.label}
             labelClassName="ml-1 block text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-white/55"
@@ -44,7 +46,7 @@ function PasswordChangeSection({ onChange, values }: PasswordChangeSectionProps)
             placeholder="********"
             toggleClassName="ml-4 size-8 p-0 text-slate-400 hover:bg-transparent hover:text-primary"
             value={values[field.id]}
-            wrapperClassName="h-12 rounded-xl border-border bg-slate-100 py-0 text-slate-900 focus-within:border-border focus-within:ring-1 focus-within:ring-primary dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-slate-100"
+            wrapperClassName="h-12 rounded-xl border-border bg-transparent py-0 text-slate-900 dark:border-blue-400/15 dark:bg-transparent dark:text-white"
           />
         ))}
       </div>

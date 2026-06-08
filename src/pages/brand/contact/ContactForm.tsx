@@ -1,7 +1,11 @@
 import { ArrowRight } from "lucide-react";
 
 import EmailField from "@/components/auth/email-field";
+import { cn } from "@/lib/utils";
 import type { ContactFormProps } from "@/types/contact";
+
+const contactFieldClassName =
+  "w-full rounded-xl border border-blue-300/15 bg-transparent px-5 py-4 text-sm text-text-heading outline-none transition placeholder:text-text-muted focus:border-blue-500/70 focus:ring-2 focus:ring-blue-500/25 dark:text-white dark:placeholder:text-slate-400";
 
 function ContactForm({ onSubmit }: ContactFormProps) {
   return (
@@ -12,7 +16,7 @@ function ContactForm({ onSubmit }: ContactFormProps) {
             Name <span className="text-red-500">*</span>
           </label>
           <input
-            className="w-full rounded-2xl border border-border-DEFAULT bg-white px-5 py-4 text-sm text-text-heading transition-all placeholder:text-text-dim focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/20 dark:border-card-dark-border dark:bg-card-dark-bg dark:text-text-dark-heading"
+            className={contactFieldClassName}
             name="name"
             placeholder="Your full name"
             required
@@ -22,9 +26,9 @@ function ContactForm({ onSubmit }: ContactFormProps) {
 
         <EmailField
           className="space-y-0"
-          filledInputClassName="text-text-heading dark:text-text-dark-heading"
-          filledWrapperClassName="border-border-DEFAULT bg-[#e7effc] focus-within:border-border-DEFAULT focus-within:ring-0 dark:border-card-dark-border dark:bg-[#e7effc]"
-          inputClassName="h-auto min-w-0 flex-1 bg-transparent p-0 text-sm font-normal leading-normal text-text-heading outline-none placeholder:text-text-dim dark:text-text-dark-heading"
+          filledInputClassName="text-text-heading placeholder:text-text-muted dark:text-white dark:placeholder:text-slate-400"
+          filledWrapperClassName="border-blue-300/15 bg-transparent text-text-heading focus-within:border-blue-500/70 focus-within:ring-2 focus-within:ring-blue-500/25 dark:bg-transparent dark:text-white"
+          inputClassName="h-auto min-w-0 flex-1 bg-transparent p-0 text-sm font-normal leading-normal text-text-heading outline-none placeholder:text-text-muted dark:text-white dark:placeholder:text-slate-400"
           label={
             <>
               Email <span className="text-red-500">*</span>
@@ -35,7 +39,7 @@ function ContactForm({ onSubmit }: ContactFormProps) {
           placeholder="you@email.com"
           required
           showIcon={false}
-          wrapperClassName="w-full rounded-2xl border border-border-DEFAULT bg-white px-5 py-4 text-text-heading transition-all focus-within:border-primary/40 focus-within:outline-none focus-within:ring-2 focus-within:ring-primary/20 dark:border-card-dark-border dark:bg-card-dark-bg dark:text-text-dark-heading [&:has(input:-webkit-autofill)]:border-border-DEFAULT [&:has(input:-webkit-autofill)]:bg-[#e7effc] [&:has(input:-webkit-autofill)]:ring-0 dark:[&:has(input:-webkit-autofill)]:bg-[#e7effc]"
+          wrapperClassName="w-full rounded-xl bg-transparent px-5 py-4 text-text-heading dark:text-white"
         />
       </div>
 
@@ -44,7 +48,7 @@ function ContactForm({ onSubmit }: ContactFormProps) {
           Subject
         </label>
         <input
-          className="w-full rounded-2xl border border-border-DEFAULT bg-white px-5 py-4 text-sm text-text-heading transition-all placeholder:text-text-dim focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/20 dark:border-card-dark-border dark:bg-card-dark-bg dark:text-text-dark-heading"
+          className={contactFieldClassName}
           name="subject"
           placeholder="What's this about?"
           type="text"
@@ -56,7 +60,7 @@ function ContactForm({ onSubmit }: ContactFormProps) {
           Message <span className="text-red-500">*</span>
         </label>
         <textarea
-          className="w-full resize-none rounded-2xl border border-border-DEFAULT bg-white px-5 py-4 text-sm text-text-heading transition-all placeholder:text-text-dim focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/20 dark:border-card-dark-border dark:bg-card-dark-bg dark:text-text-dark-heading"
+          className={cn(contactFieldClassName, "resize-none")}
           name="message"
           placeholder="How can we help you?"
           required

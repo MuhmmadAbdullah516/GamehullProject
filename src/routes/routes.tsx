@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import ForgetPasswordPage from '@/pages/auth/forget'
 import LoginPage from '@/pages/auth/login'
 import RegisterPage from '@/pages/auth/register'
+import ResetPasswordPage from '@/pages/auth/reset-password'
 import VerifyOtpPage from '@/pages/auth/verifyOtp'
 import MainLayout from '@/layout/mainlayout'
 import GamePage from "@/pages/brand/games"
@@ -47,6 +48,7 @@ function AppRoutes() {
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/forgot-password" element={<ForgetPasswordPage />} />
       <Route path="/verify-otp" element={<VerifyOtpPage />} />
+      <Route path="/reset-password" element={<ResetPasswordPage />} />
     </Routes>
   )
 }

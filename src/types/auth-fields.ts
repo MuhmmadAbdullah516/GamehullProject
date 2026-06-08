@@ -15,6 +15,8 @@ export interface EmailFieldProps  extends Omit<InputHTMLAttributes<HTMLInputElem
 
 export interface PasswordFieldProps extends Omit<InputHTMLAttributes<HTMLInputElement>,'type'> {
   className?:string
+  filledInputClassName?: string
+  filledWrapperClassName?: string
   iconClassName?: string
   inputClassName?: string
   label: string

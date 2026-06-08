@@ -46,7 +46,7 @@ function Footer() {
       <div className="mx-auto w-full max-w-6xl px-6 pb-12 pt-14">
         <div className="flex flex-col gap-12">
           <div className="grid grid-cols-1 items-start gap-8 md:gap-20 md:grid-cols-[1fr_auto]">
-            <div className="flex max-w-75 flex-col gap-4">
+            <div className="flex max-w-[18.75rem] flex-col gap-4">
               <Link
                 className="flex cursor-pointer items-center gap-2.5 no-underline"
                 to="/"

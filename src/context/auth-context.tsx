@@ -18,7 +18,14 @@ function getStoredUser() {
   try {
     const storedUser = localStorage.getItem(AUTH_USER_STORAGE_KEY);
 
-    return storedUser ? (JSON.parse(storedUser) as AuthUser) : null;
+    if (!storedUser) return null;
+
+    const user = JSON.parse(storedUser) as AuthUser;
+
+    return {
+      ...user,
+      balance: user.balance === 5000 ? 4.00 : user.balance,
+    };
   } catch {
     return null;
   }

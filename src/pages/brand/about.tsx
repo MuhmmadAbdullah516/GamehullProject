@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function AboutPage() {
   return (
     <main className="flex-grow bg-[#080d1c] text-slate-100 transition-colors">
-      <section className="relative overflow-hidden bg-white bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] py-12 pb-8 transition-colors duration-300 ease-out dark:bg-[#080d1c] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080d1c,#080d1c)] md:py-20 md:pb-13">
+      <section className="relative overflow-hidden bg-white bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] py-12 pb-8 transition-colors duration-300 ease-out dark:bg-[#080d1c] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080d1c,#080d1c)] md:py-20 md:pb-[3.25rem]">
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
           <div className="absolute inset-0 bg-transparent" />
         </div>
@@ -31,7 +31,7 @@ function AboutPage() {
               Redefining the <span className="text-primary">Gaming</span> experience
             </h1>
 
-            <p className="max-w-150 text-base leading-relaxed text-text-dark-body transition-colors duration-200">
+            <p className="max-w-[37.5rem] text-base leading-relaxed text-text-dark-body transition-colors duration-200">
               GameHull is more than just a platform. It's a community dedicated to providing the most exciting, secure,
               and rewarding fish games and slots in the industry.
             </p>
@@ -41,7 +41,7 @@ function AboutPage() {
 
       <section className="mx-auto mb-20 w-full max-w-5xl px-6 md:mb-32">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8">
-          <article className="group rounded-4xl border border-card-dark-border bg-card-dark-bg p-6 text-center transition-all duration-200 hover:shadow-lg hover:shadow-primary/5 md:p-8">
+          <article className="group rounded-[1.625rem] border border-card-dark-border bg-card-dark-bg p-6 text-center transition-all duration-200 hover:shadow-lg hover:shadow-primary/5 md:p-8">
             <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-primary/10 transition-transform duration-300 group-hover:scale-110">
               <Users className="size-5 text-primary" strokeWidth={2} />
             </div>
@@ -53,7 +53,7 @@ function AboutPage() {
             </p>
           </article>
 
-          <article className="group rounded-4xl border border-card-dark-border bg-card-dark-bg p-6 text-center transition-all duration-200 hover:shadow-lg hover:shadow-primary/5 md:p-8">
+          <article className="group rounded-[1.625rem] border border-card-dark-border bg-card-dark-bg p-6 text-center transition-all duration-200 hover:shadow-lg hover:shadow-primary/5 md:p-8">
             <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-primary/10 transition-transform duration-300 group-hover:scale-110">
               <CircleDollarSign className="size-5 text-primary" strokeWidth={2} />
             </div>
@@ -65,7 +65,7 @@ function AboutPage() {
             </p>
           </article>
 
-          <article className="group rounded-4xl border border-card-dark-border bg-card-dark-bg p-6 text-center transition-all duration-200 hover:shadow-lg hover:shadow-primary/5 md:p-8">
+          <article className="group rounded-[1.625rem] border border-card-dark-border bg-card-dark-bg p-6 text-center transition-all duration-200 hover:shadow-lg hover:shadow-primary/5 md:p-8">
             <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-primary/10 transition-transform duration-300 group-hover:scale-110">
               <Gamepad2 className="size-5 text-primary" strokeWidth={2} />
             </div>
@@ -77,7 +77,7 @@ function AboutPage() {
             </p>
           </article>
 
-          <article className="group rounded-4xl border border-card-dark-border bg-card-dark-bg p-6 text-center transition-all duration-200 hover:shadow-lg hover:shadow-primary/5 md:p-8">
+          <article className="group rounded-[1.625rem] border border-card-dark-border bg-card-dark-bg p-6 text-center transition-all duration-200 hover:shadow-lg hover:shadow-primary/5 md:p-8">
             <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-primary/10 transition-transform duration-300 group-hover:scale-110">
               <Zap className="size-5 text-primary" strokeWidth={2} />
             </div>
@@ -115,7 +115,7 @@ function AboutPage() {
             </section>
 
             <section className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <article className="rounded-4xl border border-card-dark-border bg-card-dark-bg p-8 transition-colors">
+              <article className="rounded-[1.625rem] border border-card-dark-border bg-card-dark-bg p-8 transition-colors">
                 <h3 className="mb-3 text-lg font-bold text-white">Fair Play</h3>
                 <p className="text-sm leading-relaxed text-text-dark-body">
                   Every game on our platform uses certified RNG technology to ensure 100% fair results for every player,
@@ -123,7 +123,7 @@ function AboutPage() {
                 </p>
               </article>
 
-              <article className="rounded-4xl border border-card-dark-border bg-card-dark-bg p-8 transition-colors">
+              <article className="rounded-[1.625rem] border border-card-dark-border bg-card-dark-bg p-8 transition-colors">
                 <h3 className="mb-3 text-lg font-bold text-white">
                   Instant Payouts
                 </h3>
@@ -136,8 +136,8 @@ function AboutPage() {
           </div>
 
           <aside className="space-y-8 lg:col-span-5">
-            <section className="relative overflow-hidden rounded-4xl border border-white/5 bg-[linear-gradient(160deg,#021020_0%,#140540_100%)] p-10 text-white shadow-2xl shadow-primary/30 transition-all duration-200">
-              <Layers className="absolute right-0 top-0 size-75 -translate-y-1/4 translate-x-1/4 text-white opacity-10" fill="currentColor" strokeWidth={0} />
+            <section className="relative overflow-hidden rounded-[1.625rem] border border-white/5 bg-[linear-gradient(160deg,#021020_0%,#140540_100%)] p-10 text-white shadow-2xl shadow-primary/30 transition-all duration-200">
+              <Layers className="absolute right-0 top-0 size-[18.75rem] -translate-y-1/4 translate-x-1/4 text-white opacity-10" fill="currentColor" strokeWidth={0} />
 
               <h3 className="relative z-10 mb-4 text-2xl font-black text-white transition-colors">
                 Join the Hull
@@ -163,7 +163,7 @@ function AboutPage() {
               </div>
             </section>
 
-            <section className="rounded-4xl border border-card-dark-border bg-card-dark-bg p-8 transition-colors">
+            <section className="rounded-[1.625rem] border border-card-dark-border bg-card-dark-bg p-8 transition-colors">
               <h3 className="mb-6 text-base font-bold text-white">Our Values</h3>
               <div className="space-y-5">
                 <div className="flex items-start gap-4">

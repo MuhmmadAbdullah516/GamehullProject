@@ -54,7 +54,7 @@ function UserAccountMenu({ className, onAction, user }: UserAccountMenuProps) {
 
       <DropdownMenuContent
         align="end"
-        className="mt-2 w-70 max-w-[calc(100vw-28px)] rounded-3xl border-slate-900/10 bg-white p-0 shadow-2xl dark:border-blue-400/15 dark:bg-[#0e1629]"
+        className="mt-2 w-[17.5rem] max-w-[calc(100vw-28px)] rounded-3xl border-slate-900/10 bg-white p-0 shadow-2xl dark:border-blue-400/15 dark:bg-[#0e1629]"
         sideOffset={0}
       >
         <div className="p-5">

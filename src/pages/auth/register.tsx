@@ -15,7 +15,7 @@ function RegisterPage() {
 
   return (
     <AuthLayout>
-      <section className="w-full max-w-115 rounded-2xl border border-blue-500/25 bg-[linear-gradient(180deg,rgba(3,18,31,0.95)_0%,rgba(12,10,54,0.96)_56%,rgba(28,10,78,0.98)_100%)] p-7 md:p-11 shadow-[0_24px_80px_rgba(0,0,0,0.38)]">
+      <section className="w-full max-w-[28.75rem] rounded-2xl border border-blue-500/25 bg-[linear-gradient(180deg,rgba(3,18,31,0.95)_0%,rgba(12,10,54,0.96)_56%,rgba(28,10,78,0.98)_100%)] p-7 md:p-11 shadow-[0_24px_80px_rgba(0,0,0,0.38)]">
         <div className="text-center">
           <h1 className="text-2xl font-extrabold leading-8 text-white">Create your account</h1>
           <p className="mt-1.5 text-sm font-normal leading-5 text-white/55">Join thousands of players - it&apos;s free</p>

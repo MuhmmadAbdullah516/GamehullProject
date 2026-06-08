@@ -9,7 +9,7 @@ import { sectionRevealClass, smoothCardClass } from "./home-styles";
 function GamesPreviewSection({ games }: GamesPreviewSectionProps) {
   return (
     <section className={`${sectionRevealClass} relative overflow-hidden border-t border-slate-900/10 bg-[#f8fbff] py-14 md:py-24 transition-colors duration-300 ease-out dark:border-blue-400/15 dark:bg-[#06101f]`}>
-      <div className="pointer-events-none absolute left-1/2 -top-25 h-100 w-225 -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(37,99,235,0.1)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse,rgba(59,130,246,0.12)_0%,transparent_70%)]" />
+      <div className="pointer-events-none absolute left-1/2 -top-[6.25rem] h-[25rem] w-[56.25rem] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(37,99,235,0.1)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse,rgba(59,130,246,0.12)_0%,transparent_70%)]" />
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         <div className="mb-9 flex flex-wrap items-end justify-between gap-5">
           <div>
@@ -22,7 +22,7 @@ function GamesPreviewSection({ games }: GamesPreviewSectionProps) {
             <h2 className="m-0 mb-2 text-3xl md:text-4xl font-black leading-tight tracking-normal text-slate-900 transition-colors dark:text-white">
               Browse All Games
             </h2>
-            <p className="m-0 max-w-130 text-sm leading-relaxed text-slate-600 transition-colors dark:text-zinc-400">
+            <p className="m-0 max-w-[32.5rem] text-sm leading-relaxed text-slate-600 transition-colors dark:text-zinc-400">
               Pick your favourite and start playing instantly - no download needed.
             </p>
           </div>

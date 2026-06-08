@@ -12,7 +12,7 @@ function WalletPopup({ balance, compact = false }: WalletPopupProps) {
   const [selectedDepositMethod, setSelectedDepositMethod] = useState<DepositMethodName>("CashApp");
   const [walletStep, setWalletStep] = useState<WalletStep>("wallet");
   const walletDialogClass =
-    "wallet-scrollbar relative !max-h-[calc(100dvh-20px)] !w-[calc(100vw-20px)] max-w-135 overflow-y-scroll !rounded-2xl border border-white/10 bg-[#0f172a] !p-4 shadow-2xl sm:!max-h-[calc(100vh-40px)] sm:!w-full sm:!rounded-4xl sm:!p-6 md:!p-8";
+    "wallet-scrollbar relative !max-h-[calc(100dvh-20px)] !w-[calc(100vw-20px)] max-w-[33.75rem] overflow-y-scroll !rounded-2xl border border-white/10 bg-[#0f172a] !p-4 shadow-2xl sm:!max-h-[calc(100vh-40px)] sm:!w-full sm:!rounded-[1.625rem] sm:!p-6 md:!p-8";
 
   function handleRefreshClick() {
     setRefreshRotation((currentRotation) => currentRotation + 360);
@@ -128,7 +128,7 @@ function WalletPopup({ balance, compact = false }: WalletPopupProps) {
 
             <div className="mb-5 grid grid-cols-1 gap-3 sm:mb-6 sm:grid-cols-2 sm:gap-4">
               <button
-                className="flex h-13 cursor-pointer items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 text-base font-bold text-white transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-lg hover:shadow-primary/20 sm:h-15 sm:text-lg"
+                className="flex h-[3.25rem] cursor-pointer items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 text-base font-bold text-white transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-lg hover:shadow-primary/20 sm:h-[3.75rem] sm:text-lg"
                 onClick={() => setWalletStep("deposit")}
                 type="button"
               >
@@ -138,7 +138,7 @@ function WalletPopup({ balance, compact = false }: WalletPopupProps) {
 
               <DialogClose asChild>
                 <Link
-                  className="flex h-13 cursor-pointer items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 text-base font-bold text-white no-underline transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-lg hover:shadow-primary/20 sm:h-15 sm:text-lg"
+                  className="flex h-[3.25rem] cursor-pointer items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 text-base font-bold text-white no-underline transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-lg hover:shadow-primary/20 sm:h-[3.75rem] sm:text-lg"
                   state={{ fromWithdraw: true }}
                   to="/cashout"
                 >

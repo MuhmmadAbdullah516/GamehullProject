@@ -5,7 +5,7 @@ import type { PlatformInfoProps } from "@/types/game-detail";
 function PlatformInfo({ details }: PlatformInfoProps) {
   return (
     <div className="space-y-6">
-      <article className="rounded-4xl border border-slate-900/10 bg-white p-8 transition-all duration-200 dark:border-blue-400/20 dark:bg-card-dark-bg md:p-10">
+      <article className="rounded-[1.625rem] border border-slate-900/10 bg-white p-8 transition-all duration-200 dark:border-blue-400/20 dark:bg-[#0e1629] md:p-10">
         <h2 className="mb-6 text-lg font-black tracking-normal text-slate-900 transition-colors dark:text-white">
           Platform Details
         </h2>
@@ -14,7 +14,7 @@ function PlatformInfo({ details }: PlatformInfoProps) {
             ["Type", details.type, "text-slate-900 dark:text-white"],
             ["Payout", details.payout, "text-primary"],
             ["Difficulty", details.difficulty, "text-slate-900 dark:text-white"],
-            ["Jackpot", details.jackpot, "text-amber-500"],
+            ["Jackpot", details.jackpot, "text-[#f59e0b]"],
           ].map(([label, value, tone]) => (
             <div key={label}>
               <dt className="mb-1.5 text-xs font-bold uppercase tracking-widest text-slate-400 transition-colors dark:text-zinc-600">
@@ -27,9 +27,9 @@ function PlatformInfo({ details }: PlatformInfoProps) {
           ))}
         </dl>
       </article>
-      <article className="relative overflow-hidden rounded-4xl border border-white/5 bg-primary p-8 text-white shadow-2xl shadow-primary/20 transition-all duration-200 dark:bg-[linear-gradient(160deg,#021020_0%,#140540_100%)]">
+      <article className="relative overflow-hidden rounded-[1.625rem] border border-white/5 bg-primary p-8 text-white shadow-2xl shadow-primary/20 transition-all duration-200 dark:bg-[linear-gradient(160deg,#021020_0%,#140540_100%)]">
         <Layers
-          className="absolute right-0 top-0 size-50 -translate-y-1/4 translate-x-1/4 text-white opacity-10"
+          className="absolute right-0 top-0 size-[12.5rem] -translate-y-1/4 translate-x-1/4 text-white opacity-10"
           fill="currentColor"
           strokeWidth={0}
         />

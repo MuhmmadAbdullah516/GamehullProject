@@ -36,7 +36,7 @@ function CashinDialog({ gameName, onComplete }: CashinDialogProps) {
   }
 
   return (
-    <DialogContent className="wallet-scrollbar max-h-[calc(100vh-40px)] max-w-110 overflow-y-auto rounded-3xl border border-white/10 bg-[#0f172a] p-6 text-center text-white shadow-2xl dark:bg-[#020617] md:p-8">
+    <DialogContent className="wallet-scrollbar max-h-[calc(100vh-40px)] max-w-[27.5rem] overflow-y-auto rounded-3xl border border-white/10 bg-[#0f172a] p-6 text-center text-white shadow-2xl dark:bg-[#020617] md:p-8">
       {step === "amount" ? (
         <button className="absolute left-6 top-6 flex cursor-pointer items-center gap-2 text-sm font-semibold text-white/60 transition-colors hover:text-white" onClick={() => setStep("source")} type="button">
           <ChevronLeft className="size-4" strokeWidth={2.5} />
@@ -51,7 +51,7 @@ function CashinDialog({ gameName, onComplete }: CashinDialogProps) {
       </DialogClose>
 
       <div className="flex flex-col items-center text-center">
-        <div className="mb-6 flex size-16 items-center justify-center rounded-5 border border-primary/20 bg-primary/10 text-primary">
+        <div className="mb-6 flex size-16 items-center justify-center rounded-[1.25rem] border border-primary/20 bg-primary/10 text-primary">
           <Download className="size-8" strokeWidth={2} />
         </div>
         <h2 className="mb-1 text-2xl font-bold leading-tight text-white">Cashin</h2>
@@ -89,7 +89,7 @@ function CashinDialog({ gameName, onComplete }: CashinDialogProps) {
         </div>
       ) : (
         <div className="mt-8 space-y-4 text-left">
-          <div className="mb-8 rounded-5 border border-white/10 bg-white/5 p-6 text-center">
+          <div className="mb-8 rounded-[1.25rem] border border-white/10 bg-white/5 p-6 text-center">
             <p className="mb-1 text-sm font-semibold uppercase tracking-wider text-white/40">Wallet Balance</p>
             <p className="text-4xl font-black leading-none text-white">${walletBalance.toFixed(2)}</p>
           </div>
@@ -100,7 +100,7 @@ function CashinDialog({ gameName, onComplete }: CashinDialogProps) {
             </label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-lg font-bold text-white/40">$</span>
-              <input className="h-14 w-full appearance-none rounded-xl border border-white/10 bg-white/5 pl-10 pr-4 text-xl font-bold text-white outline-none transition-colors placeholder:text-white/40 focus:border-primary" id="cashin-amount" inputMode="numeric" min={1} onChange={(event) => setAmount(event.target.value)} placeholder="0" type="number" value={amount} />
+              <input className="h-14 w-full appearance-none rounded-xl border border-white/10 bg-transparent pl-10 pr-4 text-xl font-bold text-white outline-none transition-colors placeholder:text-white/40 focus:border-blue-500/70 focus:ring-2 focus:ring-blue-500/25" id="cashin-amount" inputMode="numeric" min={1} onChange={(event) => setAmount(event.target.value)} placeholder="0" type="number" value={amount} />
             </div>
           </div>
 
@@ -117,7 +117,7 @@ function CashinDialog({ gameName, onComplete }: CashinDialogProps) {
             Cashin
           </Button>
 
-          <p className="mx-auto mt-6 max-w-70 text-center text-sm leading-relaxed text-white/40">
+          <p className="mx-auto mt-6 max-w-[17.5rem] text-center text-sm leading-relaxed text-white/40">
             Funds will be deducted from your wallet and added to your {gameName} account.
           </p>
         </div>

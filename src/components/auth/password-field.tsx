@@ -7,6 +7,8 @@ import type { PasswordFieldProps } from '@/types/auth-fields'
 
 function PasswordField({
   className,
+  filledInputClassName,
+  filledWrapperClassName,
   iconClassName,
   inputClassName,
   label,
@@ -69,7 +71,14 @@ function PasswordField({
         </label>
         {labelAction}
       </div>
-      <div className={cn('group relative', wrapperClassName)}>
+      <div
+        className={cn(
+          'group relative flex h-12 items-center overflow-hidden rounded-xl border border-blue-300/15 bg-white/8 text-white transition focus-within:border-blue-500/70 focus-within:ring-2 focus-within:ring-blue-500/25',
+          isFilled && 'border-transparent bg-[#e7effc] text-black focus-within:border-transparent focus-within:ring-0',
+          wrapperClassName,
+          isFilled && filledWrapperClassName,
+        )}
+      >
         <LockKeyhole
           aria-hidden="true"
           className={cn(
@@ -81,10 +90,10 @@ function PasswordField({
         />
         <input
           className={cn(
-            'h-12 w-full rounded-xl border border-slate-700/70 bg-[#171a3d] px-4 pl-12 pr-12 text-sm font-normal leading-5 text-slate-200 outline-none transition placeholder:text-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-600',
-            isFilled &&
-              'border-transparent bg-[#e7effc] text-black placeholder:text-slate-500 focus:border-transparent focus:ring-0',
+            'h-full min-w-0 flex-1 rounded-xl bg-transparent px-4 pl-12 pr-12 text-sm font-normal leading-5 text-white outline-none transition placeholder:text-slate-400',
+            isFilled && 'text-black placeholder:text-slate-500',
             inputClassName,
+            isFilled && filledInputClassName,
           )}
           key={`${props.id ?? props.name ?? 'password'}-${isPasswordVisible ? 'visible' : 'hidden'}`}
           {...props}

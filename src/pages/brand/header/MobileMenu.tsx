@@ -1,12 +1,27 @@
-import { useNavigate, Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { useAuth } from "@/hooks/auth/use-auth";
+import { cn } from "@/lib/utils";
 import type { MobileMenuProps } from "@/types/header";
 import { navigationItems } from "./header-data";
 
 function MobileMenu({ isAuthenticated, isOpen, onClose }: MobileMenuProps) {
+  const location = useLocation();
   const navigate = useNavigate();
   const { signOut } = useAuth();
+  const pathname = location.pathname;
+
+  function isActivePath(path: string) {
+    if (path === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === path || pathname.startsWith(`${path}/`);
+  }
+
+  const mobileLinkClassName =
+    "flex items-center gap-3 rounded-full p-3 text-text-muted no-underline transition hover:bg-primary/5 hover:text-primary dark:text-text-dark-muted dark:hover:bg-primary/10";
+  const activeLinkClassName = "bg-primary/10 font-bold text-primary dark:text-primary";
 
   function handleSignOut() {
     signOut();
@@ -17,37 +32,67 @@ function MobileMenu({ isAuthenticated, isOpen, onClose }: MobileMenuProps) {
   return (
     <div
       aria-hidden={!isOpen}
-      className={`overflow-hidden border-t border-slate-900/10 bg-white transition-[max-height,opacity,transform] duration-300 ease-out dark:border-blue-400/15 dark:bg-[#080d1c] lg:hidden ${isOpen ? "max-h-140 translate-y-0 opacity-100" : "max-h-0 -translate-y-2 opacity-0"}`}
+      className={`absolute left-0 top-[72px] z-[205] flex w-full flex-col gap-1 overflow-hidden border-t border-border-DEFAULT bg-bg-header bg-[linear-gradient(180deg,rgba(255,255,255,0.05)_0%,transparent_100%)] p-5 shadow-2xl backdrop-blur-xl transition-[max-height,opacity,transform] duration-300 ease-out dark:border-primary/20 dark:bg-[#0f172a] lg:hidden ${isOpen ? "max-h-[35rem] translate-y-0 opacity-100" : "pointer-events-none max-h-0 -translate-y-2 opacity-0"}`}
       id="mobile-menu"
     >
-      <div className="px-6 py-4">
-        <p className="text-xs font-extrabold uppercase leading-5 tracking-widest text-slate-400 dark:text-white/30">Menu</p>
-        <nav className="mt-4 flex flex-col gap-4">
-          {navigationItems.map((item) => (
-            <Link className="text-sm font-semibold leading-6 text-slate-500 transition hover:text-slate-900 dark:text-white/55 dark:hover:text-slate-100" key={item.to} onClick={onClose} to={item.to}>
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-        {isAuthenticated ? (
-          <div className="mt-4 flex flex-col gap-4 border-t border-slate-900/10 pt-4 dark:border-blue-400/15">
-            <Link className="text-sm font-semibold leading-6 text-slate-500 transition hover:text-slate-900 dark:text-white/55 dark:hover:text-slate-100" onClick={onClose} to="/profile">
-              Profile
-            </Link>
-            <Link className="text-sm font-semibold leading-6 text-slate-500 transition hover:text-slate-900 dark:text-white/55 dark:hover:text-slate-100" onClick={onClose} to="/transactions">
-              Transactions
-            </Link>
-            <button className="h-8 rounded-full bg-red-500/10 text-sm font-semibold text-red-500 transition hover:bg-red-500/15" onClick={handleSignOut} type="button">
-              Sign Out
-            </button>
-          </div>
-        ) : (
-          <div className="mt-9 grid grid-cols-2 gap-3">
-            <Link className="inline-flex h-12 w-full items-center justify-center rounded-xl border border-slate-900/10 bg-slate-100 text-base font-bold text-slate-500 no-underline transition hover:bg-slate-200 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-white/55" onClick={onClose} to="/login">Log In</Link>
-            <Link className="inline-flex h-12 w-full items-center justify-center rounded-xl bg-blue-600 text-base font-bold text-white no-underline shadow-lg transition hover:bg-blue-700" onClick={onClose} to="/register">Play Now</Link>
-          </div>
-        )}
-      </div>
+      <p className="px-3 pb-2 text-[11px] font-bold uppercase tracking-widest text-text-dim dark:text-text-dark-dim">Menu</p>
+      <nav className="flex flex-col gap-1">
+        {navigationItems.map((item) => (
+          <Link
+            aria-current={isActivePath(item.to) ? "page" : undefined}
+            className={cn(mobileLinkClassName, isActivePath(item.to) && activeLinkClassName)}
+            key={item.to}
+            onClick={onClose}
+            to={item.to}
+          >
+            <span className="text-[15px]">{item.label}</span>
+          </Link>
+        ))}
+      </nav>
+      {isAuthenticated ? (
+        <div className="mt-2 flex flex-col gap-1 border-t border-border-DEFAULT pt-4 dark:border-border-dark">
+          <Link
+            aria-current={isActivePath("/profile") ? "page" : undefined}
+            className={cn(mobileLinkClassName, isActivePath("/profile") && activeLinkClassName)}
+            onClick={onClose}
+            to="/profile"
+          >
+            <span className="text-[15px]">Profile</span>
+          </Link>
+          <Link
+            aria-current={isActivePath("/transactions") ? "page" : undefined}
+            className={cn(mobileLinkClassName, isActivePath("/transactions") && activeLinkClassName)}
+            onClick={onClose}
+            to="/transactions"
+          >
+            <span className="text-[15px]">Transactions</span>
+          </Link>
+          <button
+            className="mt-2 flex h-[50px] w-full items-center justify-center rounded-full border border-[#ef4444]/10 bg-[#ef4444]/10 font-medium text-[#ef4444] no-underline transition-all hover:bg-[#ef4444]/15 active:scale-[0.98]"
+            onClick={handleSignOut}
+            type="button"
+          >
+            Sign Out
+          </button>
+        </div>
+      ) : (
+        <div className="mt-4 flex gap-2">
+          <Link
+            className="flex h-[50px] flex-1 items-center justify-center rounded-full bg-bg-muted font-bold text-text-muted no-underline transition hover:bg-bg-hover dark:bg-bg-dark-muted dark:text-text-dark-muted dark:hover:bg-bg-dark-hover"
+            onClick={onClose}
+            to="/login"
+          >
+            Log In
+          </Link>
+          <Link
+            className="flex h-[50px] flex-1 items-center justify-center rounded-full bg-primary font-bold text-white no-underline transition hover:bg-primary-hover"
+            onClick={onClose}
+            to="/register"
+          >
+            Play Now
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

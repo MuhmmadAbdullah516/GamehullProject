@@ -1,6 +1,5 @@
-import { LogOut, User } from "lucide-react";
+import { LogOut, Mail, User } from "lucide-react";
 
-import EmailField from "@/components/auth/email-field";
 import { Button } from "@/components/ui/button";
 import type { ProfileInfoSectionProps } from "@/types/profile";
 
@@ -31,22 +30,15 @@ function ProfileInfoSection({ onSignOut, user }: ProfileInfoSectionProps) {
           <label className="mb-2.5 ml-1 block text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-white/55" htmlFor="username">Username</label>
           <div className="relative">
             <User className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-slate-400" />
-            <input className="w-full cursor-not-allowed rounded-xl border border-border bg-slate-100 py-3 pl-12 pr-4 text-sm text-slate-900 opacity-70 transition-all focus:outline-none focus:ring-1 focus:ring-primary dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-slate-100" id="username" readOnly type="text" value={getUsername(user?.name)} />
+            <input className="w-full cursor-not-allowed rounded-xl border border-border bg-transparent py-3 pl-12 pr-4 text-sm text-slate-900 opacity-80 outline-none transition focus:border-blue-500/70 focus:ring-2 focus:ring-blue-500/25 dark:border-blue-400/15 dark:text-white" id="username" readOnly type="text" value={getUsername(user?.name)} />
           </div>
         </div>
         <div>
           <label className="mb-2.5 ml-1 block text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-white/55" htmlFor="email">Email</label>
-          <EmailField
-            className="space-y-0"
-            iconClassName="text-slate-400 group-focus-within:text-slate-400"
-            id="email"
-            inputClassName="h-full min-w-0 flex-1 pl-12 pr-4 text-sm leading-5 text-slate-900 placeholder:text-slate-400 dark:text-slate-100"
-            label=""
-            labelClassName="sr-only"
-            readOnly
-            value={user?.email || ""}
-            wrapperClassName="h-12 cursor-not-allowed rounded-xl border-border bg-slate-100 py-0 text-slate-900 opacity-70 focus-within:border-border focus-within:ring-0 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-slate-100"
-          />
+          <div className="relative">
+            <Mail className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-slate-400" />
+            <input className="w-full cursor-not-allowed rounded-xl border border-border bg-transparent py-3 pl-12 pr-4 text-sm text-slate-900 opacity-80 outline-none transition focus:border-blue-500/70 focus:ring-2 focus:ring-blue-500/25 dark:border-blue-400/15 dark:text-white" id="email" readOnly type="email" value={user?.email || ""} />
+          </div>
         </div>
       </div>
     </section>

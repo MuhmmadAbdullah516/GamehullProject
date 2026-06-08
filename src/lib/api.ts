@@ -58,13 +58,13 @@ if (!import.meta.env.VITE_API_BASE_URL) {
         throw err;
       }
 
-      // Store new account credentials with a $5,000.00 play balance
+      // Store new account credentials with the default wallet balance
       const newUser = {
         email: email.toLowerCase(),
         name: fullName,
         username,
         password,
-        balance: 5000.00,
+        balance: 4.00,
       };
       
       users[email.toLowerCase()] = newUser;
@@ -114,7 +114,7 @@ if (!import.meta.env.VITE_API_BASE_URL) {
             email: user.email,
             name: user.name,
             username: user.username,
-            balance: user.balance,
+            balance: user.balance === 5000 ? 4.00 : user.balance,
           },
         },
       };
@@ -154,6 +154,36 @@ if (!import.meta.env.VITE_API_BASE_URL) {
         headers: {},
         config: {},
         data: { message: "OTP verified successfully." },
+      };
+    }
+
+    // 5. RESET PASSWORD SIMULATION
+    if (url === "/auth/reset-password") {
+      const { email, password } = data || {};
+      const key = email?.toLowerCase();
+      const user = users[key];
+
+      if (!user) {
+        const err = new Error("Not Found") as any;
+        err.response = { status: 404, data: { message: "No account found with this email." } };
+        throw err;
+      }
+
+      if (!password || password.length < 8) {
+        const err = new Error("Bad Request") as any;
+        err.response = { status: 400, data: { message: "Password must be at least 8 characters." } };
+        throw err;
+      }
+
+      users[key] = { ...user, password };
+      saveMockUsers(users);
+
+      return {
+        status: 200,
+        statusText: "OK",
+        headers: {},
+        config: {},
+        data: { message: "Password updated successfully." },
       };
     }
 

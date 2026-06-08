@@ -34,7 +34,7 @@ function GameAccountPanel({ game }: GameAccountPanelProps) {
   }
 
   return (
-    <article className="rounded-4xl border border-slate-900/10 bg-white p-8 shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-all duration-200 dark:border-blue-400/20 dark:bg-[#0e1629] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)] md:p-10">
+    <article className="rounded-[1.625rem] border border-slate-900/10 bg-white p-8 shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-all duration-200 dark:border-blue-400/20 dark:bg-[#0e1629] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)] md:p-10">
       <div className="mb-8 flex items-center gap-5">
         <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
           <User className="size-5" strokeWidth={2.5} />
@@ -66,17 +66,17 @@ function GameAccountPanel({ game }: GameAccountPanelProps) {
             value="gh_pass_123"
           />
           <div className="grid grid-cols-2 gap-3 pt-4">
-            <Button className="!h-13 gap-2 rounded-2xl border border-primary/20 bg-primary/10 text-sm font-bold text-primary hover:bg-primary/20" onClick={() => setCashinDialogOpen(true)} type="button" variant="outline">
+            <Button className="!h-[3.25rem] gap-2 rounded-2xl border border-primary/20 bg-primary/10 text-sm font-bold text-primary hover:bg-primary/20" onClick={() => setCashinDialogOpen(true)} type="button" variant="outline">
               <Upload className="size-4" strokeWidth={2.5} />
               Cashin
             </Button>
-            <Button className="!h-13 cursor-not-allowed gap-2 rounded-2xl border border-border bg-slate-100 text-sm font-bold text-slate-400 opacity-60 grayscale dark:border-blue-400/15" disabled type="button" variant="outline">
+            <Button className="!h-[3.25rem] cursor-not-allowed gap-2 rounded-2xl border border-border bg-slate-100 text-sm font-bold text-slate-400 opacity-60 grayscale dark:border-blue-400/15" disabled type="button" variant="outline">
               <Download className="size-4" strokeWidth={2.5} />
               Cashout
             </Button>
           </div>
           <Link
-            className="mt-3 flex h-13 w-full items-center justify-center rounded-2xl bg-primary text-sm font-black text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 hover:bg-blue-700"
+            className="mt-3 flex h-[3.25rem] w-full items-center justify-center rounded-2xl bg-primary text-sm font-black text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 hover:bg-blue-700"
             rel="noopener noreferrer"
             target="_blank"
             to="/games"
@@ -89,7 +89,7 @@ function GameAccountPanel({ game }: GameAccountPanelProps) {
           <p className="text-base leading-relaxed text-slate-600 transition-colors dark:text-zinc-400">
             Click the button below to instantly generate your <strong className="text-slate-900 dark:text-white">{game.name}</strong> account.
           </p>
-          <Button className="!h-13 w-full rounded-2xl bg-primary text-base font-bold text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 hover:bg-blue-700 active:scale-[0.98]" onClick={handleCreateAccount} type="button">
+          <Button className="!h-[3.25rem] w-full rounded-2xl bg-primary text-base font-bold text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 hover:bg-blue-700 active:scale-[0.98]" onClick={handleCreateAccount} type="button">
             Create Account Instantly
           </Button>
         </div>

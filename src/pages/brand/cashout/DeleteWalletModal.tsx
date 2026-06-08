@@ -5,7 +5,7 @@ import type { DeleteWalletModalProps } from "@/types/cashout";
 function DeleteWalletModal({ onCancel, onConfirm, wallet }: DeleteWalletModalProps) {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 p-4 backdrop-blur-sm">
-      <div className="w-full max-w-100 overflow-hidden rounded-4xl border border-card-border bg-white shadow-2xl dark:border-card-dark-border dark:bg-card-dark-bg">
+      <div className="w-full max-w-[25rem] overflow-hidden rounded-[1.625rem] border border-card-border bg-white shadow-2xl dark:border-card-dark-border dark:bg-card-dark-bg">
         <div className="p-8 text-center">
           <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-2xl border border-red-100 bg-red-50 dark:border-red-500/20 dark:bg-red-500/10">
             <TriangleAlert className="size-8 text-red-500" strokeWidth={2.5} />

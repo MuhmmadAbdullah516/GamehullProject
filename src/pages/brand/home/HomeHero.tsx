@@ -12,20 +12,20 @@ function HomeHero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_0%,rgba(37,99,235,0.16)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse_70%_55%_at_50%_0%,rgba(37,99,235,0.36)_0%,transparent_70%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-180 flex-col items-center text-center">
+      <div className="relative z-10 mx-auto flex w-full max-w-[45rem] flex-col items-center text-center">
         <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-600/20 bg-blue-600/[0.07] px-4 py-2 text-sm font-semibold text-blue-700 shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-colors dark:border-blue-400/25 dark:bg-blue-600/10 dark:text-blue-200">
           <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(74,222,128,.7)]" />
           50,000+ players online worldwide
         </div>
 
-        <h1 className="mb-5 max-w-190 text-5xl md:text-6xl lg:text-7xl font-black leading-none tracking-normal text-slate-900 transition-colors dark:text-white">
+        <h1 className="mb-5 max-w-[47.5rem] text-5xl md:text-6xl lg:text-7xl font-black leading-none tracking-normal text-slate-900 transition-colors dark:text-white">
           Play. Win.
           <span className="block bg-gradient-to-r from-[#1d4ed8] to-[#6d28d9] bg-clip-text text-transparent dark:from-[#60a5fa] dark:to-[#a78bfa]">
             Cash Out Instantly.
           </span>
         </h1>
 
-        <p className="mx-auto mb-10 max-w-125 text-lg leading-relaxed text-slate-500 transition-colors dark:text-white/55">
+        <p className="mx-auto mb-10 max-w-[31.25rem] text-lg leading-relaxed text-slate-500 transition-colors dark:text-white/55">
           The fastest-paying online casino. 60+ games, real jackpots, and instant withdrawals.
         </p>
 
@@ -39,11 +39,11 @@ function HomeHero() {
         </div>
       </div>
 
-      <div className="relative z-10 -mx-6 border-t border-slate-900/10 bg-white transition-colors dark:border-blue-400/15 dark:bg-card-dark-bg">
-        <div className="mx-auto grid w-full max-w-225 grid-cols-2 transition-colors md:grid-cols-4">
+      <div className="relative z-10 -mx-6 border-t border-slate-900/10 bg-white transition-colors dark:border-blue-400/15 dark:bg-[#0e1629]">
+        <div className="mx-auto grid w-full max-w-[56.25rem] grid-cols-2 transition-colors md:grid-cols-4">
           {heroStats.map((stat) => (
             <div className="border-slate-900/10 py-6 px-4 text-center transition-colors dark:border-blue-400/15 md:border-r md:last:border-r-0" key={stat.label}>
-              <p className={`text-2xl font-black leading-none ${stat.featured ? "text-amber-500" : "text-slate-900 dark:text-white"}`}>{stat.value}</p>
+              <p className={`text-2xl font-black leading-none ${stat.featured ? "text-[#f59e0b]" : "text-slate-900 dark:text-white"}`}>{stat.value}</p>
               <p className="mt-2 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-white/55">{stat.label}</p>
             </div>
           ))}

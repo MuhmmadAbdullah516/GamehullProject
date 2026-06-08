@@ -36,7 +36,7 @@ function GamePage() {
 
   return (
     <div className="min-h-[calc(100vh-72px)] bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] text-slate-900 transition-[background-color,color] duration-300 dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080d1c,#080d1c)] dark:text-slate-100">
-      <section className="relative overflow-hidden border-b border-slate-900/10 bg-white bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] py-12 pb-8 transition-colors duration-300 ease-out dark:border-blue-400/15 dark:bg-[#080d1c] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080d1c,#080d1c)] md:py-20 md:pb-13">
+      <section className="relative overflow-hidden border-b border-slate-900/10 bg-white bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] py-12 pb-8 transition-colors duration-300 ease-out dark:border-blue-400/15 dark:bg-[#080d1c] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080d1c,#080d1c)] md:py-20 md:pb-[3.25rem]">
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
           <div className="absolute inset-0 bg-transparent" />
         </div>
@@ -68,7 +68,7 @@ function GamePage() {
                 All Games
               </h1>
 
-              <p className="m-0 max-w-120 text-sm font-normal leading-relaxed text-slate-600 transition-colors dark:text-zinc-400">
+              <p className="m-0 max-w-[30rem] text-sm font-normal leading-relaxed text-slate-600 transition-colors dark:text-zinc-400">
                Pick your favourite platform and start playing instantly — no download needed. New games added every week.
               </p>
             </div>
@@ -98,7 +98,7 @@ function GamePage() {
       </section>
 
       <section className="relative overflow-hidden border-t border-slate-900/10 bg-white py-14 md:py-24 transition-colors duration-200 dark:border-blue-400/15 dark:bg-[#080d1c]">
-        <div className="pointer-events-none absolute left-1/2 -top-25 h-100 w-225 -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(37,99,235,0.1)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse,rgba(59,130,246,0.12)_0%,transparent_70%)]" />
+        <div className="pointer-events-none absolute left-1/2 -top-[6.25rem] h-[25rem] w-[56.25rem] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(37,99,235,0.1)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse,rgba(59,130,246,0.12)_0%,transparent_70%)]" />
         <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
           <div className="grid grid-cols-1 gap-5 min-[420px]:grid-cols-2 min-[700px]:grid-cols-3 min-[1024px]:grid-cols-4">
             {games.map((game) => (

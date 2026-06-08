@@ -36,7 +36,7 @@ const buttonVariants = cva(
         "icon-sm":
           "size-7 rounded-xl in-data-[slot=button-group]:rounded-lg",
         "icon-lg": "size-9",
-        auth: "h-12 w-full rounded-4xl text-base font-bold leading-6",
+        auth: "h-12 w-full rounded-[1.625rem] text-base font-bold leading-6",
       },
     },
     defaultVariants: {

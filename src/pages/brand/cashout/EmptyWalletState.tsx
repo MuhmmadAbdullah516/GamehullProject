@@ -9,7 +9,7 @@ function EmptyWalletState({ onAddFirstWallet }: EmptyWalletStateProps) {
         <Wallet className="size-10 text-primary opacity-40" strokeWidth={1.5} />
       </div>
       <h3 className="mb-2 text-lg font-bold text-text-heading dark:text-text-dark-heading">No Wallets Saved</h3>
-      <p className="mx-auto mb-8 max-w-100 text-sm text-text-muted dark:text-text-dark-muted">
+      <p className="mx-auto mb-8 max-w-[25rem] text-sm text-text-muted dark:text-text-dark-muted">
         Add your CashApp, Chime, or crypto wallet to start receiving cashout payments instantly.
       </p>
       <button

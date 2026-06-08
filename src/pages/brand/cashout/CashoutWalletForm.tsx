@@ -3,6 +3,9 @@ import { ChevronDown } from "lucide-react";
 import { walletMethods } from "./cashout-data";
 import type { CashoutWalletFormProps } from "@/types/cashout";
 
+const fieldClassName =
+  "w-full rounded-xl border border-blue-300/15 bg-transparent px-4 py-3 text-sm text-text-heading outline-none transition placeholder:text-text-muted focus:border-blue-500/70 focus:ring-2 focus:ring-blue-500/25 dark:text-white dark:placeholder:text-slate-400";
+
 function CashoutWalletForm({
   formState,
   onAddressChange,
@@ -19,11 +22,11 @@ function CashoutWalletForm({
             <label className="ml-1 block text-sm font-bold text-text-heading dark:text-text-dark-heading">Payment Method</label>
             <div className="group relative">
               <button
-                className="flex w-full cursor-pointer items-center justify-between rounded-lg border border-border bg-bg-muted py-2.5 pl-4 pr-10 text-left text-sm text-text outline-none transition-colors focus:ring-2 focus:ring-primary dark:border-border-dark dark:bg-bg-dark-muted dark:text-text-dark"
+                className="flex w-full cursor-pointer items-center justify-between rounded-xl border border-blue-300/15 bg-transparent py-2.5 pl-4 pr-10 text-left text-sm text-text-heading outline-none transition focus:border-blue-500/70 focus:ring-2 focus:ring-blue-500/25 dark:text-white"
                 onClick={onToggleMethodList}
                 type="button"
               >
-                <span className={formState.walletMethod ? "text-text dark:text-text-dark" : "text-text-muted"}>
+                <span className={formState.walletMethod ? "text-text-heading dark:text-white" : "text-text-muted"}>
                   {formState.walletMethodLabel}
                 </span>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
@@ -58,7 +61,7 @@ function CashoutWalletForm({
           <div className="space-y-2">
             <label className="ml-1 block text-sm font-bold text-text-heading dark:text-text-dark-heading">Wallet Address / Tag</label>
             <input
-              className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-text transition-colors focus:border-primary focus:outline-none dark:border-border-dark dark:bg-bg-dark dark:text-text-dark"
+              className={fieldClassName}
               onChange={(event) => onAddressChange(event.target.value)}
               placeholder="$CashTag, phone, or address"
               type="text"
@@ -71,7 +74,7 @@ function CashoutWalletForm({
               Label <span className="text-xs font-normal opacity-50">(e.g., My CashApp)</span>
             </label>
             <input
-              className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-text transition-colors focus:border-primary focus:outline-none dark:border-border-dark dark:bg-bg-dark dark:text-text-dark"
+              className={fieldClassName}
               onChange={(event) => onLabelChange(event.target.value)}
               placeholder="Personal label (optional)"
               type="text"

@@ -137,7 +137,7 @@ function SupportPage() {
         </section>
 
         <aside className="space-y-6 lg:col-span-4">
-          <section className="rounded-4xl border border-primary/10 bg-primary/[0.03] p-8 text-center transition-all duration-200 dark:border-primary/20 dark:bg-primary/[0.08]">
+          <section className="rounded-[1.625rem] border border-primary/10 bg-primary/[0.03] p-8 text-center transition-all duration-200 dark:border-primary/20 dark:bg-primary/[0.08]">
             <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
               <Mail className="size-7" strokeWidth={2} />
             </div>
@@ -161,7 +161,7 @@ function SupportPage() {
             </Button>
           </section>
 
-          <section className="rounded-4xl border border-card-border bg-white p-8 shadow-card transition-all duration-200 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark">
+          <section className="rounded-[1.625rem] border border-card-border bg-white p-8 shadow-card transition-all duration-200 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark">
             <h2 className="mb-6 text-base font-bold text-text-heading dark:text-text-dark-heading">Quick Links</h2>
 
             <nav className="space-y-4">

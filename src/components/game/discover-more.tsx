@@ -16,7 +16,7 @@ function DiscoverMore({ currentGameSlug, gameImages, games }: DiscoverMoreProps)
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
         {discoverGames.map((game) => (
           <Link
-            className="group block overflow-hidden rounded-4xl border border-slate-900/10 bg-white shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-all duration-300 hover:translate-y-[-4px] hover:shadow-[0_24px_55px_rgb(15_23_42_/_0.18)] dark:border-blue-400/20 dark:bg-[#0e1629] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)] dark:hover:shadow-[0_22px_70px_rgb(96_165_250_/_0.22),0_10px_26px_rgb(37_99_235_/_0.16)]"
+            className="group block overflow-hidden rounded-[1.625rem] border border-slate-900/10 bg-white shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-all duration-300 hover:translate-y-[-4px] hover:shadow-[0_24px_55px_rgb(15_23_42_/_0.18)] dark:border-blue-400/20 dark:bg-[#0e1629] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)] dark:hover:shadow-[0_22px_70px_rgb(96_165_250_/_0.22),0_10px_26px_rgb(37_99_235_/_0.16)]"
             key={game.slug}
             to={`/games/${game.slug}`}
           >

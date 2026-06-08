@@ -43,11 +43,11 @@ function ThemeSelector() {
 
       <DropdownMenuContent
         align="end"
-        className="mt-2 w-45 rounded-lg p-1 duration-300"
+        className="mt-2 w-[11.25rem] rounded-lg p-1 duration-300"
         sideOffset={0}
       >
         <DropdownMenuItem
-          className={`gap-5 rounded-lg px-3 py-2 text-left text-sm font-medium leading-5 transition ${
+          className={`gap-5 rounded-full px-3 py-2 text-left text-sm font-medium leading-5 transition hover:bg-blue-600/[0.07] focus:bg-blue-600/[0.07] dark:hover:bg-blue-600/10 dark:focus:bg-blue-600/10 ${
             themePreference === "light"
               ? "bg-blue-600/[0.07] text-blue-600 dark:bg-blue-600/10 dark:text-blue-600"
               : "text-slate-500 dark:text-white/55"
@@ -66,7 +66,7 @@ function ThemeSelector() {
         </DropdownMenuItem>
 
         <DropdownMenuItem
-          className={`gap-5 rounded-lg px-3 py-2 text-left text-sm font-medium leading-5 transition ${
+          className={`gap-5 rounded-full px-3 py-2 text-left text-sm font-medium leading-5 transition hover:bg-blue-600/[0.07] focus:bg-blue-600/[0.07] dark:hover:bg-blue-600/10 dark:focus:bg-blue-600/10 ${
             themePreference === "dark"
               ? "bg-blue-600/[0.07] text-blue-600 dark:bg-blue-600/10 dark:text-blue-600"
               : "text-slate-500 dark:text-white/55"
@@ -87,7 +87,7 @@ function ThemeSelector() {
         <DropdownMenuSeparator className="mx-0 w-full" />
 
         <DropdownMenuItem
-          className={`gap-5 rounded-lg px-3 py-2 text-left text-sm font-medium leading-5 transition ${
+          className={`gap-5 rounded-full px-3 py-2 text-left text-sm font-medium leading-5 transition hover:bg-blue-600/[0.07] focus:bg-blue-600/[0.07] dark:hover:bg-blue-600/10 dark:focus:bg-blue-600/10 ${
             themePreference === "system"
               ? "bg-blue-600/[0.07] text-blue-600 dark:bg-blue-600/10 dark:text-blue-600"
               : "text-slate-500 dark:text-white/55"

@@ -11,7 +11,7 @@ function LoginPage() {
 
   return (
     <AuthLayout>
-      <section className="w-full max-w-110 rounded-3xl border border-blue-500/25 bg-[linear-gradient(180deg,rgba(3,18,31,0.94)_0%,rgba(15,9,69,0.96)_58%,rgba(31,11,80,0.98)_100%)] p-7 md:p-11 shadow-[0_24px_80px_rgba(0,0,0,0.42)]">
+      <section className="w-full max-w-[27.5rem] rounded-3xl border border-blue-500/25 bg-[linear-gradient(180deg,rgba(3,18,31,0.94)_0%,rgba(15,9,69,0.96)_58%,rgba(31,11,80,0.98)_100%)] p-7 md:p-11 shadow-[0_24px_80px_rgba(0,0,0,0.42)]">
         <div className="text-center">
           <h1 className="font-sans text-2xl font-extrabold leading-8 tracking-normal text-white">
             Welcome back
@@ -39,7 +39,7 @@ function LoginPage() {
             label="Password"
             labelAction={
               <Link
-                className="text-xs font-bold text-blue-500 transition hover:text-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="text-xs font-bold text-[#2d75ff] transition hover:text-[#5b94ff] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                 to="/forgot-password"
               >
                 Forgot password?

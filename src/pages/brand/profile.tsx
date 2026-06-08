@@ -23,7 +23,7 @@ function ProfilePage() {
           Account Center
         </h1>
 
-        <p className="mx-auto max-w-125 text-base leading-relaxed text-slate-600 transition-colors dark:text-zinc-400 md:text-base">
+        <p className="mx-auto max-w-[31.25rem] text-base leading-relaxed text-slate-600 transition-colors dark:text-zinc-400 md:text-base">
           Your profile and settings in one place
         </p>
       </div>

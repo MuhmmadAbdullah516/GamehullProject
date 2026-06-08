@@ -58,7 +58,7 @@ function TransactionsPage() {
         <h1 className="mb-3 text-4xl md:text-5xl font-black leading-none tracking-normal text-slate-900 transition-colors dark:text-white">
           Transactions
         </h1>
-        <p className="mx-auto max-w-125 text-base leading-relaxed text-slate-600 transition-colors dark:text-zinc-400 md:text-base">
+        <p className="mx-auto max-w-[31.25rem] text-base leading-relaxed text-slate-600 transition-colors dark:text-zinc-400 md:text-base">
           View your deposit, cash in, and cash out history in one place
         </p>
       </div>

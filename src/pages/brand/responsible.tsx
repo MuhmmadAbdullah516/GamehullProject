@@ -91,7 +91,7 @@ function ResponsiblePage() {
 
             return (
               <article
-                className="rounded-4xl border border-card-border bg-white p-8 shadow-card transition-all duration-200 hover:-translate-y-1 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark"
+                className="rounded-[1.625rem] border border-card-border bg-white p-8 shadow-card transition-all duration-200 hover:-translate-y-1 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark"
                 key={card.title}
               >
                 <div className="mb-6 flex size-12 items-center justify-center rounded-xl bg-primary shadow-lg shadow-primary/20">
@@ -110,7 +110,7 @@ function ResponsiblePage() {
           })}
         </div>
 
-        <div className="rounded-4xl border border-card-border bg-white p-8 shadow-card transition-all duration-200 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark md:p-12">
+        <div className="rounded-[1.625rem] border border-card-border bg-white p-8 shadow-card transition-all duration-200 dark:border-card-dark-border dark:bg-card-dark-bg dark:shadow-card-dark md:p-12">
           <div className="max-w-3xl space-y-12">
             <section>
               <h2 className="mb-4 text-xl font-bold text-text-heading transition-colors dark:text-text-dark-heading">

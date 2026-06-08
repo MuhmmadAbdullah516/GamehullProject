@@ -29,3 +29,13 @@ export const forgetPasswordSchema = z.object({
 export const verifyOtpSchema = z.object({
   otp: z.string().regex(/^\d{4}$/, "Enter the 4-digit code"),
 });
+
+export const resetPasswordSchema = z
+  .object({
+    confirmPassword: z.string().min(1, "Confirm your new password"),
+    password: z.string().min(8, "Password must be at least 8 characters"),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords do not match",
+    path: ["confirmPassword"],
+  });
