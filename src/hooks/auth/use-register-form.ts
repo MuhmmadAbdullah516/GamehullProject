@@ -98,7 +98,7 @@ export function useRegisterForm() {
         user: response.data.user,
       });
       toast.success("Account created successfully.");
-      navigate("/");
+      navigate("/profile");
     } catch {
       toast.error("Unable to create account.");
     } finally {

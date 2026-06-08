@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:ui": "vitest"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.8",
@@ -41,6 +43,11 @@
     "globals": "^17.6.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
-    "vite": "^8.0.12"
+    "vite": "^8.0.12",
+    "vitest": "^2.0.0",
+    "@testing-library/react": "^15.0.0",
+    "@testing-library/jest-dom": "^6.5.0",
+    "msw": "^2.4.0",
+    "playwright": "^1.47.0"
   }
 }

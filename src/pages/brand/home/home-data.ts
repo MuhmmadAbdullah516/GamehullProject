@@ -9,7 +9,7 @@ export const heroStats = [
 
 export const affiliateStats = [
   { icon: Wallet, label: "Commission Rate", tone: "text-emerald-400", value: "5%" },
-  { icon: Zap, label: "Payout Speed", tone: "text-[#f59e0b]", value: "Instant" },
+  { icon: Zap, label: "Payout Speed", tone: "text-amber-500", value: "Instant" },
   { icon: AppWindowMac, label: "Earning Potential", tone: "text-blue-600", value: "No Limit" },
   { icon: User, label: "Support Available", tone: "text-sky-400", value: "24/7" },
 ];

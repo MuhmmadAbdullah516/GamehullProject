@@ -28,6 +28,7 @@ export interface AuthUser {
   balance: number
   email: string
   name: string
+  username?: string
 }
 
 export interface SignInPayload {

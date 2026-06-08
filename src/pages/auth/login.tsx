@@ -39,7 +39,7 @@ function LoginPage() {
             label="Password"
             labelAction={
               <Link
-                className="text-xs font-bold text-[#2d75ff] transition hover:text-[#5b94ff] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="text-xs font-bold text-blue-500 transition hover:text-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                 to="/forgot-password"
               >
                 Forgot password?

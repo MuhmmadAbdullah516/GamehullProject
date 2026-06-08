@@ -21,9 +21,17 @@ export function useFreeSpin() {
   const totalSpinsAvailable = freeSpinsAvailable + depositSpins;
   const totalWon = useMemo(() => history.reduce((total, item) => total + item.prize.value, 0), [history]);
   const bestWin = useMemo(() => Math.max(0, ...history.map((item) => item.prize.value)), [history]);
+  // BUG-05 fix: "Today" only counts prizes won on the current calendar day
+  const todayWon = useMemo(
+    () =>
+      history
+        .filter((item) => new Date(item.createdAt).toDateString() === new Date().toDateString())
+        .reduce((sum, item) => sum + item.prize.value, 0),
+    [history],
+  );
 
   const stats = [
-    { label: "Today", value: formatCurrency(totalWon) },
+    { label: "Today", value: formatCurrency(todayWon) },
     { label: "Available", value: totalSpinsAvailable },
     { label: "Total Won", value: formatCurrency(totalWon) },
     { label: "Used Today", value: freeSpinUsedToday ? 1 : 0 },
@@ -42,7 +50,7 @@ export function useFreeSpin() {
   function handleSpin() {
     if (spinning) return;
     if (!isAuthenticated) {
-      toast.warning("Spin not allowed. Your session has expired, please refresh and login again.");
+      toast.warning("Please log in to spin the wheel.");
       return;
     }
     if (totalSpinsAvailable <= 0) {
@@ -52,16 +60,23 @@ export function useFreeSpin() {
 
     const prizeIndex = Math.floor(Math.random() * prizes.length);
     const prize = prizes[prizeIndex];
+    // BUG-07 fix: read spin type BEFORE any state mutation (avoid stale closure)
+    const spinType = freeSpinUsedToday ? "Deposit" : "Free";
     setSpinning(true);
-    setRotation((current) => current + 1440 + prizeIndex * 45);
+    // BUG-04 fix: rotate to an absolute angle that places the chosen prize under the pointer.
+    // Each of 8 prizes occupies 45°. We add 5 full rotations (1800°) so the wheel
+    // visibly spins multiple times before landing on the prize segment.
+    setRotation(1800 + prizeIndex * 45);
 
     window.setTimeout(() => {
-      setFreeSpinUsedToday((used) => {
-        if (used) setDepositSpins((current) => Math.max(current - 1, 0));
-        return true;
-      });
+      // Consume the appropriate spin type
+      if (spinType === "Free") {
+        setFreeSpinUsedToday(true);
+      } else {
+        setDepositSpins((current) => Math.max(current - 1, 0));
+      }
       setHistory((current) => [
-        { createdAt: new Date(), id: Date.now(), prize, type: freeSpinUsedToday ? "Deposit" : "Free" },
+        { createdAt: new Date(), id: Date.now(), prize, type: spinType },
         ...current,
       ]);
       setSpinning(false);

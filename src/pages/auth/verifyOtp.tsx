@@ -13,7 +13,7 @@ function VerifyOtpPage() {
     <AuthLayout>
       <section className="w-full max-w-110 rounded-3xl border border-blue-500/25 bg-[linear-gradient(180deg,rgba(3,18,31,0.94)_0%,rgba(15,9,69,0.96)_58%,rgba(31,11,80,0.98)_100%)] p-7 md:p-11 shadow-[0_24px_80px_rgba(0,0,0,0.42)]">
         <div className="text-center">
-          <div className="mx-auto mb-5 grid size-12 place-items-center rounded-full bg-blue-500/18 text-[#2d75ff] ring-1 ring-blue-300/20">
+          <div className="mx-auto mb-5 grid size-12 place-items-center rounded-full bg-blue-500/18 text-blue-500 ring-1 ring-blue-300/20">
             <Check aria-hidden="true" className="size-6" strokeWidth={2.4} />
           </div>
 
@@ -61,7 +61,7 @@ function VerifyOtpPage() {
         <div className="mt-8 flex items-center justify-center gap-2 text-sm font-normal leading-5 text-white/55">
           <span>Didn&apos;t receive code?</span>
           <Link
-            className="inline-flex items-center gap-2 font-bold text-[#2d75ff] transition hover:text-[#5b94ff] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+            className="inline-flex items-center gap-2 font-bold text-blue-500 transition hover:text-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
             to="/forgot-password"
           >
             Resend
@@ -72,7 +72,7 @@ function VerifyOtpPage() {
           <ChevronLeft aria-hidden="true" className="size-6" strokeWidth={2} />
           <span>Remember it?</span>
           <Link
-            className="font-bold text-[#2d75ff] transition hover:text-[#5b94ff] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+            className="font-bold text-blue-500 transition hover:text-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
             to="/login"
           >
             Back to Sign In

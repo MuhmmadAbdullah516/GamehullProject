@@ -33,7 +33,7 @@ function AffiliatePreviewSection() {
               </li>
             ))}
           </ul>
-          <Button asChild className="mt-8 !h-auto w-fit self-start rounded-full bg-gradient-to-br from-[#16a34a] to-[#22c55e] px-7 py-3.5 text-sm font-extrabold text-[#14532d] no-underline shadow-[0_0_28px_rgba(34,197,94,.3)] transition-all duration-150 hover:-translate-y-0.5">
+          <Button asChild className="mt-8 !h-auto w-fit self-start rounded-full bg-gradient-to-br from-[#16a34a] to-[#22c55e] px-7 py-3.5 text-sm font-extrabold text-green-900 no-underline shadow-[0_0_28px_rgba(34,197,94,.3)] transition-all duration-150 hover:-translate-y-0.5">
             <Link to="/affiliate">Become an Affiliate<ArrowRight className="size-4" strokeWidth={2.5} /></Link>
           </Button>
         </div>

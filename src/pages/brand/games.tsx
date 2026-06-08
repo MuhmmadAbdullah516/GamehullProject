@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { ArrowRight, ChevronLeft, Zap } from "lucide-react";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import { gameImages, gameTagStyles } from "@/data/game-assets";
@@ -14,8 +14,10 @@ function GamePage() {
   const [games, setGames] = useState<GameCard[]>([]);
   const { isAuthenticated } = useAuth();
 
+  const navigate = useNavigate();
+
   function handlePlayNowClick() {
-    window.location.reload();
+    navigate("/games");
   }
 
   useEffect(() => {
@@ -58,7 +60,7 @@ function GamePage() {
               <div className="mb-3.5 inline-flex items-center gap-1.5 rounded-full border border-blue-600/20 bg-blue-600/[0.07] px-3.5 py-1 transition-colors dark:border-blue-400/25 dark:bg-blue-600/10">
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-blue-600" />
                 <span className="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-200">
-                  {games.length || 13} Games Available
+                  {games.length > 0 ? `${games.length} Games Available` : "Loading games…"}
                 </span>
               </div>
 

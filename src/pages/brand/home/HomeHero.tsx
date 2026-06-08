@@ -39,11 +39,11 @@ function HomeHero() {
         </div>
       </div>
 
-      <div className="relative z-10 -mx-6 border-t border-slate-900/10 bg-white transition-colors dark:border-blue-400/15 dark:bg-[#0e1629]">
+      <div className="relative z-10 -mx-6 border-t border-slate-900/10 bg-white transition-colors dark:border-blue-400/15 dark:bg-card-dark-bg">
         <div className="mx-auto grid w-full max-w-225 grid-cols-2 transition-colors md:grid-cols-4">
           {heroStats.map((stat) => (
             <div className="border-slate-900/10 py-6 px-4 text-center transition-colors dark:border-blue-400/15 md:border-r md:last:border-r-0" key={stat.label}>
-              <p className={`text-2xl font-black leading-none ${stat.featured ? "text-[#f59e0b]" : "text-slate-900 dark:text-white"}`}>{stat.value}</p>
+              <p className={`text-2xl font-black leading-none ${stat.featured ? "text-amber-500" : "text-slate-900 dark:text-white"}`}>{stat.value}</p>
               <p className="mt-2 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-white/55">{stat.label}</p>
             </div>
           ))}

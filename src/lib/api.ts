@@ -54,7 +54,7 @@ if (!import.meta.env.VITE_API_BASE_URL) {
 
       if (users[email.toLowerCase()]) {
         const err = new Error("Conflict") as any;
-        err.response = { status: 400, data: { message: "This email address is already registered." } };
+        err.response = { status: 409, data: { message: "This email address is already registered." } };
         throw err;
       }
 
@@ -83,6 +83,7 @@ if (!import.meta.env.VITE_API_BASE_URL) {
           user: {
             email: newUser.email,
             name: newUser.name,
+            username: newUser.username,
             balance: newUser.balance,
           },
         },
@@ -112,6 +113,7 @@ if (!import.meta.env.VITE_API_BASE_URL) {
           user: {
             email: user.email,
             name: user.name,
+            username: user.username,
             balance: user.balance,
           },
         },
