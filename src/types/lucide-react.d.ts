@@ -43,4 +43,6 @@ declare module 'lucide-react' {
   export const Users: ComponentType<LucideProps>
   export const Wallet: ComponentType<LucideProps>
   export const Zap: ComponentType<LucideProps>
+  export const ClipboardCopy: ComponentType<LucideProps>
+  export const CirclePlay: ComponentType<LucideProps>
 }
