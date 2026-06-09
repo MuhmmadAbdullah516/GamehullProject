@@ -136,7 +136,7 @@ function GamePage() {
                   >
                     <Link to={`/games/${game.slug}`}>
                       <span>{isAuthenticated ? "Play Now" : "Login To Play"}</span>
-                      <ArrowRight className="size-3.5" strokeWidth={2.5} />
+                      <ArrowRight className="h-[14px] w-[14px]" strokeWidth={2.5} />
                     </Link>
                   </Button>
                 </div>

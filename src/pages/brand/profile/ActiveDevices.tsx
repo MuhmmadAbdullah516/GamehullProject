@@ -115,7 +115,7 @@ function ActiveDevices() {
 
                     {!device.current ? (
                       <Button
-                        className="h-auto shrink-0 rounded-full border border-border bg-transparent px-5 py-2.5 text-sm font-bold text-red-500 transition-all hover:bg-red-500/5 dark:border-blue-400/15"
+                        className="inline-flex h-auto shrink-0 cursor-pointer items-center justify-center gap-2 rounded-full border border-border bg-transparent px-5 py-2.5 text-[14px] font-bold text-red-500 transition-all hover:!bg-red-500/5 hover:text-red-500 dark:border-border-dark dark:hover:!bg-red-500/5 dark:hover:text-red-500"
                         onClick={() => handleRemoveDevice(device.id)}
                         type="button"
                         variant="outline"

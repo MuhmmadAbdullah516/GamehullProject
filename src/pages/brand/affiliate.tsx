@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import {useAuth} from "@/hooks/auth/use-auth"
+import { useAuth } from "@/hooks/auth/use-auth";
 import { Button } from "@/components/ui/button";
 import type { AffiliateStat, AffiliateStep } from "@/types/brand-pages";
 
@@ -28,15 +28,19 @@ const affiliateSteps: AffiliateStep[] = [
 ];
 
 function AffiliatePage() {
+  const { isAuthenticated } = useAuth();
+  const affiliateLinkTarget = isAuthenticated ? "/profile" : "/register";
+  const referralButtonText = isAuthenticated
+    ? "View Your Referral Link"
+    : "Create Free Account";
 
-    const {isAuthenticated} = useAuth()
-    const affiliateLinkTarget = isAuthenticated ? "/profile" : "/register";
-    const referralButtonText = isAuthenticated ? "View Your Referral Link" : "Create Free Account"
-  
   return (
     <main className="m-0 flex-grow bg-white p-0 text-[#0F172A] transition-colors dark:bg-[#080D1C] dark:!text-[#F1F5F9]">
       <section className="relative overflow-hidden bg-white bg-[linear-gradient(180deg,#ffffff_0%,#f0f5ff_100%)] px-6 py-16 text-center transition-colors duration-300 ease-out dark:bg-[#080D1C] dark:bg-[radial-gradient(ellipse_85%_55%_at_50%_-5%,rgba(29,78,216,0.48)_0%,transparent_65%),linear-gradient(#080D1C,#080D1C)]">
-        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div
+          className="pointer-events-none absolute inset-0"
+          aria-hidden="true"
+        >
           <div className="absolute inset-0 bg-transparent" />
         </div>
 
@@ -62,9 +66,7 @@ function AffiliatePage() {
             asChild
             className="h-12 rounded-full bg-[#2563EB] px-8 text-base font-extrabold text-white no-underline transition-all duration-150 hover:-translate-y-px hover:bg-[#1D4ED8] hover:shadow-[0_4px_14px_rgba(37,99,235,0.22)] dark:hover:shadow-[0_4px_14px_rgba(59,130,246,0.25)]"
           >
-            <Link to={affiliateLinkTarget}>
-              Join as Affiliate
-            </Link>
+            <Link to={affiliateLinkTarget}>Join as Affiliate</Link>
           </Button>
         </div>
       </section>
@@ -77,7 +79,7 @@ function AffiliatePage() {
           >
             {affiliateStats.map((stat) => (
               <article
-                className="rounded-2xl border border-border bg-slate-100 p-6 text-center transition-colors duration-200 dark:border-blue-400/15 dark:bg-white/[0.06]"
+                className="rounded-2xl border border-border bg-slate-100 p-6 text-center transition-all duration-300 dark:border-blue-400/15 dark:bg-white/[0.06] hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg dark:hover:shadow-black/30"
                 key={stat.label}
               >
                 <div className="mb-1 text-3xl font-black tracking-normal text-[#2563EB] dark:!text-[#3B82F6]">
@@ -96,7 +98,7 @@ function AffiliatePage() {
           >
             {affiliateSteps.map((step, index) => (
               <article
-                className="rounded-2xl border border-slate-900/10 bg-white p-7 text-center shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-colors duration-200 dark:border-blue-400/20 dark:bg-[#0E1629] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)]"
+                className="rounded-2xl border border-slate-900/10 bg-white p-7 text-center shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg dark:border-blue-400/20 dark:bg-[#0E1629] dark:shadow-[0_4px_24px_rgb(0_0_0_/_0.4)] dark:hover:shadow-black/30"
                 key={step.title}
               >
                 <div className="mx-auto mb-4 flex size-11 items-center justify-center rounded-xl bg-[#2563EB] text-lg font-black text-white shadow-[0_4px_12px_rgba(37,99,235,0.22)] transition-colors duration-200 dark:shadow-[0_4px_12px_rgba(59,130,246,0.25)]">
@@ -129,9 +131,7 @@ function AffiliatePage() {
               asChild
               className="h-12 rounded-full bg-[#2563EB] px-8 text-base font-extrabold text-white no-underline transition-all duration-150 hover:-translate-y-px hover:bg-[#1D4ED8]"
             >
-              <Link to={affiliateLinkTarget}>
-                {referralButtonText}
-              </Link>
+              <Link to={affiliateLinkTarget}>{referralButtonText}</Link>
             </Button>
           </section>
         </div>

@@ -1,6 +1,5 @@
-import { Eye, EyeOff } from "lucide-react";
+import { Copy, Eye, EyeOff } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import type { AccountFieldProps } from "@/types/game-detail";
 
 function AccountField({ id, label, onCopy, onToggle, showValue, value }: AccountFieldProps) {
@@ -13,7 +12,7 @@ function AccountField({ id, label, onCopy, onToggle, showValue, value }: Account
       </label>
       <div className="relative">
         <input
-          className={`h-14 w-full rounded-2xl border border-border bg-slate-100 pl-5 ${isPassword ? "pr-24" : "pr-14"} text-base font-black text-slate-900 outline-none transition-all focus:border-blue-500/70 focus:ring-2 focus:ring-blue-500/25 dark:border-blue-400/15 dark:bg-white/[0.06] dark:text-white ${isPassword && !showValue ? "tracking-widest" : ""}`}
+          className={`h-14 w-full rounded-2xl border border-border bg-bg-muted pl-5 ${isPassword ? "pr-24" : "pr-14"} text-[15px] font-black text-text-heading outline-none transition-all focus:border-primary dark:border-border-dark dark:bg-bg-dark-muted dark:text-text-dark-heading ${isPassword && !showValue ? "tracking-[0.3em]" : "tracking-normal"}`}
           id={id}
           readOnly
           type={isPassword && !showValue ? "password" : "text"}
@@ -21,13 +20,13 @@ function AccountField({ id, label, onCopy, onToggle, showValue, value }: Account
         />
         <div className="absolute right-3 top-1/2 flex -translate-y-1/2 items-center gap-1">
           {onToggle ? (
-            <Button className="!size-auto rounded-full bg-transparent p-2.5 text-slate-400 shadow-none hover:bg-transparent hover:text-primary" onClick={onToggle} size="icon" type="button" variant="ghost">
-              {showValue ? <EyeOff className="size-5" /> : <Eye className="size-5" />}
-            </Button>
+            <button className="cursor-pointer rounded-full bg-transparent p-2.5 text-text-dim transition-colors hover:text-primary dark:text-text-dark-dim" onClick={onToggle} type="button">
+              {showValue ? <EyeOff className="size-5" strokeWidth={2} /> : <Eye className="size-5" strokeWidth={2} />}
+            </button>
           ) : null}
-          <Button className="!size-auto rounded-full bg-transparent p-2.5 text-slate-400 shadow-none hover:bg-transparent hover:text-primary" onClick={onCopy} size="icon" type="button" variant="ghost">
-            Copy
-          </Button>
+          <button className="cursor-pointer rounded-full bg-transparent p-2.5 text-text-dim transition-colors hover:text-primary dark:text-text-dark-dim" onClick={onCopy} type="button">
+            <Copy className="size-5" strokeWidth={2} />
+          </button>
         </div>
       </div>
     </div>

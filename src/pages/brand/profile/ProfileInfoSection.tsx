@@ -20,8 +20,9 @@ function ProfileInfoSection({ onSignOut, user }: ProfileInfoSectionProps) {
             <p className="text-sm text-slate-500 transition-colors dark:text-white/55">Account information</p>
           </div>
         </div>
-        <Button className="h-auto rounded-full border border-border bg-transparent px-5 py-2.5 text-sm font-bold text-red-500 transition-all hover:bg-red-500/5 dark:border-blue-400/15" onClick={onSignOut} type="button" variant="outline">
-          <LogOut className="size-4" strokeWidth={2.5} /> Sign Out
+        <Button className="inline-flex h-auto cursor-pointer items-center justify-center gap-2 rounded-full border border-border bg-transparent px-5 py-2.5 text-[14px] font-bold text-red-500 transition-all hover:!bg-red-500/5 hover:text-red-500 dark:border-border-dark dark:hover:!bg-red-500/5 dark:hover:text-red-500" onClick={onSignOut} type="button" variant="outline">
+          <LogOut className="size-4" strokeWidth={2.5} />
+          Sign Out
         </Button>
       </div>
 

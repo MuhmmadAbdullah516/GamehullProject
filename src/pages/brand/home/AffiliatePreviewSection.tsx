@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import { affiliateStats } from "./home-data";
-import { sectionRevealClass, smoothCardClass, smoothIconClass } from "./home-styles";
+import { sectionRevealClass } from "./home-styles";
 
 const perks = ["Instant commission payouts", "Lifetime referral tracking", "No limit on earnings"];
 
@@ -38,16 +38,18 @@ function AffiliatePreviewSection() {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 gap-3.5 min-[400px]:grid-cols-2">
+        <div className="grid grid-cols-1 gap-[14px] min-[400px]:grid-cols-2">
           {affiliateStats.map((item) => {
             const Icon = item.icon;
             return (
-              <article className={`${smoothCardClass} group flex flex-col gap-3.5 rounded-2xl border border-slate-900/10 bg-white py-6 px-5 shadow-[0_2px_16px_rgb(15_23_42_/_0.07)] hover:-translate-y-1 hover:shadow-[0_24px_55px_rgb(15_23_42_/_0.18)] dark:border-blue-400/20 dark:bg-[linear-gradient(135deg,#021020_0%,#140540_100%)]`} key={item.label}>
-                <div className={`${smoothIconClass} flex size-10 items-center justify-center rounded-full border border-blue-600/20 bg-blue-600/[0.07] group-hover:scale-105 dark:border-blue-400/25 dark:bg-blue-600/10`}>
+              <article className="flex flex-col gap-[14px] rounded-[20px] border border-card-border bg-card-bg p-[22px_20px] shadow-card transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgb(15_23_42_/_0.18)] dark:border-card-dark-border dark:bg-gradient-to-br dark:from-[#021020] dark:to-[#140540] dark:shadow-card-dark dark:hover:shadow-[0_22px_70px_rgb(96_165_250_/_0.22),0_10px_26px_rgb(37_99_235_/_0.16)]" key={item.label}>
+                <div className="flex size-10 items-center justify-center rounded-full border border-tag-border bg-tag-bg transition-colors duration-200 dark:border-tag-dark-border dark:bg-tag-dark-bg">
                   <Icon className={`size-4 ${item.tone}`} strokeWidth={1.8} />
                 </div>
-                <p className="text-2xl md:text-3xl font-black leading-tight text-slate-900 transition-colors dark:text-white">{item.value}</p>
-                <p className="text-xs font-medium text-slate-400 transition-colors dark:text-zinc-600">{item.label}</p>
+                <div>
+                  <p className="text-[clamp(22px,2.5vw,28px)] font-black leading-[1.1] tracking-normal text-text-heading transition-colors duration-200 dark:text-text-dark-heading">{item.value}</p>
+                  <p className="mt-1 text-xs font-medium text-text-dim transition-colors duration-200 dark:text-text-dark-dim">{item.label}</p>
+                </div>
               </article>
             );
           })}

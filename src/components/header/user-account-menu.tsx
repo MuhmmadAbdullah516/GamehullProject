@@ -70,7 +70,7 @@ function UserAccountMenu({ className, onAction, user }: UserAccountMenuProps) {
 
         <div className="space-y-0.5 p-2.5">
           <DropdownMenuItem
-            className="gap-3 rounded-xl p-3 text-base font-medium leading-6 text-slate-500 hover:text-blue-600 focus:bg-slate-100 focus:text-blue-600 dark:text-white/55 dark:hover:text-blue-600 dark:focus:bg-white/[0.06] dark:focus:text-blue-600"
+            className="gap-3 rounded-full p-3 text-base font-medium leading-6 text-slate-500 hover:text-blue-600 focus:bg-slate-100 focus:text-blue-600 dark:text-white/55 dark:hover:text-blue-600 dark:focus:bg-white/[0.06] dark:focus:text-blue-600"
             onSelect={() => {
               handleMenuAction("/profile");
             }}
@@ -80,7 +80,7 @@ function UserAccountMenu({ className, onAction, user }: UserAccountMenuProps) {
           </DropdownMenuItem>
 
           <DropdownMenuItem
-            className="gap-3 rounded-xl p-3 text-base font-medium leading-6 text-slate-500 hover:text-blue-600 focus:bg-slate-100 focus:text-blue-600 dark:text-white/55 dark:hover:text-blue-600 dark:focus:bg-white/[0.06] dark:focus:text-blue-600"
+            className="gap-3 rounded-full p-3 text-base font-medium leading-6 text-slate-500 hover:text-blue-600 focus:bg-slate-100 focus:text-blue-600 dark:text-white/55 dark:hover:text-blue-600 dark:focus:bg-white/[0.06] dark:focus:text-blue-600"
             onSelect={() => {
               handleMenuAction("/transactions");
             }}

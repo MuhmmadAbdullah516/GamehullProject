@@ -1,4 +1,5 @@
-import { Gamepad2, Shield } from "lucide-react";
+import { Shield } from "lucide-react";
+import BrandLogo from "@/components/brand-logo"
 import { Link } from "react-router-dom";
 
 const footerColumns = [
@@ -47,26 +48,7 @@ function Footer() {
         <div className="flex flex-col gap-12">
           <div className="grid grid-cols-1 items-start gap-8 md:gap-20 md:grid-cols-[1fr_auto]">
             <div className="flex max-w-[18.75rem] flex-col gap-4">
-              <Link
-                className="flex cursor-pointer items-center gap-2.5 no-underline"
-                to="/"
-                onClick={() => window.scrollTo({ left: 0, top: 0, behavior: "smooth" })}
-              >
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary shadow-[0_4px_12px_rgba(37,99,235,0.22)] transition-shadow duration-200 dark:shadow-[0_4px_12px_rgba(59,130,246,0.25)]">
-                  <Gamepad2
-                    className="size-5 text-white"
-                    strokeWidth={2}
-                  />
-                </div>
-                <div className="flex flex-col leading-tight">
-                  <span className="text-lg font-extrabold tracking-tight text-text-heading transition-colors duration-200 dark:text-text-dark-heading">
-                    GameHull
-                  </span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-primary">
-                    Play & Win
-                  </span>
-                </div>
-              </Link>
+           <BrandLogo subtitle="Play & Win" />
 
               <p className="m-0 text-sm leading-relaxed text-footer-text transition-colors duration-200 dark:text-footer-dark-text">
                 Your trusted platform for premium gaming. Play, win, and
