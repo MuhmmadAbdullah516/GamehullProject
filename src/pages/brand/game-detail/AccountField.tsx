@@ -1,4 +1,4 @@
-import { Copy, Eye, EyeOff } from "lucide-react";
+import { ClipboardCopy, Eye, EyeOff } from "lucide-react";
 
 import type { AccountFieldProps } from "@/types/game-detail";
 
@@ -25,7 +25,7 @@ function AccountField({ id, label, onCopy, onToggle, showValue, value }: Account
             </button>
           ) : null}
           <button className="cursor-pointer rounded-full bg-transparent p-2.5 text-text-dim transition-colors hover:text-primary dark:text-text-dark-dim" onClick={onCopy} type="button">
-            <Copy className="size-5" strokeWidth={2} />
+            <ClipboardCopy className="size-5" strokeWidth={2} />
           </button>
         </div>
       </div>

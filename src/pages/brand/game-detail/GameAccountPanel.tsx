@@ -1,4 +1,4 @@
-import { Download, PlayCircle, Plus, Upload, User } from "lucide-react";
+import { CirclePlay, Download, Plus, Upload, User } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -81,7 +81,7 @@ function GameAccountPanel({ game }: GameAccountPanelProps) {
             target="_blank"
             to="/games"
           >
-            <PlayCircle className="size-[18px]" strokeWidth={3} />
+            <CirclePlay className="size-[18px]" strokeWidth={3} />
             Play Now
           </Link>
         </div>
