@@ -29,17 +29,29 @@ function ProfileInfoSection({ onSignOut, user }: ProfileInfoSectionProps) {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
           <label className="mb-2.5 ml-1 block text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-white/55" htmlFor="username">Username</label>
-          <div className="relative">
-            <User className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-slate-400" />
-            <input className="w-full cursor-not-allowed rounded-xl border border-border bg-transparent py-3 pl-12 pr-4 text-sm text-slate-900 opacity-80 outline-none transition focus:border-blue-500/70 focus:ring-2 focus:ring-blue-500/25 dark:border-blue-400/15 dark:text-white" id="username" readOnly type="text" value={getUsername(user?.name)} />
-          </div>
+         <div className="group relative">
+  <User className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-slate-400 transition-colors group-focus-within:text-blue-500" />
+  <input
+    className="w-full cursor-not-allowed rounded-xl border border-border bg-transparent py-3 pl-12 pr-4 text-sm text-slate-900 opacity-80 outline-none transition focus:border-blue-500/70 focus:ring-2 focus:ring-blue-500/25 dark:border-blue-400/15 dark:text-white"
+    id="username"
+    readOnly
+    type="text"
+    value={getUsername(user?.name)}
+  />
+</div>
         </div>
         <div>
           <label className="mb-2.5 ml-1 block text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-white/55" htmlFor="email">Email</label>
-          <div className="relative">
-            <Mail className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-slate-400" />
-            <input className="w-full cursor-not-allowed rounded-xl border border-border bg-transparent py-3 pl-12 pr-4 text-sm text-slate-900 opacity-80 outline-none transition focus:border-blue-500/70 focus:ring-2 focus:ring-blue-500/25 dark:border-blue-400/15 dark:text-white" id="email" readOnly type="email" value={user?.email || ""} />
-          </div>
+         <div className="group relative">
+  <Mail className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-slate-400 transition-colors group-focus-within:text-blue-500" />
+  <input
+    className="w-full cursor-not-allowed rounded-xl border border-border bg-transparent py-3 pl-12 pr-4 text-sm text-slate-900 opacity-80 outline-none transition focus:border-blue-500/70 focus:ring-2 focus:ring-blue-500/25 dark:border-blue-400/15 dark:text-white"
+    id="email"
+    readOnly
+    type="email"
+    value={user?.email || ""}
+  />
+</div>
         </div>
       </div>
     </section>

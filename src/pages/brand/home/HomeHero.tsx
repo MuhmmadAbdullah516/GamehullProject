@@ -18,12 +18,12 @@ function HomeHero() {
           50,000+ players online worldwide
         </div>
 
-        <h1 className="mb-5 max-w-[47.5rem] text-5xl md:text-6xl lg:text-7xl font-black leading-none tracking-normal text-slate-900 transition-colors dark:text-white">
-          Play. Win.
-          <span className="block bg-gradient-to-r from-[#1d4ed8] to-[#6d28d9] bg-clip-text text-transparent dark:from-[#60a5fa] dark:to-[#a78bfa]">
-            Cash Out Instantly.
-          </span>
-        </h1>
+        <h1 className="text-[clamp(38px,6vw,70px)] font-black leading-[1.05] tracking-[-0.04em] mb-5 transition-colors duration-200 text-text dark:text-text-dark">
+  Play. Win.<br />
+  <span className="bg-gradient-to-r from-[#1d4ed8] to-[#6d28d9] dark:from-[#60a5fa] dark:to-[#a78bfa] bg-clip-text text-transparent">
+    Cash Out Instantly.
+  </span>
+</h1>
 
         <p className="mx-auto mb-10 max-w-[31.25rem] text-lg leading-relaxed text-slate-500 transition-colors dark:text-white/55">
           The fastest-paying online casino. 60+ games, real jackpots, and instant withdrawals.

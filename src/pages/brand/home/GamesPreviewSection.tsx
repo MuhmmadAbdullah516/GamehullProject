@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import {useAuth} from "@/hooks/auth/use-auth"
 
 import { Button } from "@/components/ui/button";
 import { gameImages, gameTagStyles } from "@/data/game-assets";
@@ -7,6 +8,7 @@ import type { GamesPreviewSectionProps } from "@/types/home";
 import { sectionRevealClass, smoothCardClass } from "./home-styles";
 
 function GamesPreviewSection({ games }: GamesPreviewSectionProps) {
+  const {isAuthenticated} = useAuth()
   return (
     <section className={`${sectionRevealClass} relative overflow-hidden border-t border-slate-900/10 bg-[#f8fbff] py-14 md:py-24 transition-colors duration-300 ease-out dark:border-blue-400/15 dark:bg-[#06101f]`}>
       <div className="pointer-events-none absolute left-1/2 -top-[6.25rem] h-[25rem] w-[56.25rem] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(37,99,235,0.1)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse,rgba(59,130,246,0.12)_0%,transparent_70%)]" />
@@ -42,7 +44,7 @@ function GamesPreviewSection({ games }: GamesPreviewSectionProps) {
                 <h3 className="m-0 mb-1.5 text-base font-bold tracking-normal text-slate-900 transition-colors dark:text-white">{game.name}</h3>
                 <p className="m-0 mb-4 line-clamp-2 text-xs leading-relaxed text-slate-600 opacity-80 transition-colors dark:text-zinc-400">{game.description}</p>
                 <Button asChild className="mt-auto !h-auto w-full rounded-full bg-blue-600 py-2.5 text-sm font-bold text-white shadow-md shadow-blue-600/10 transition-all hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 dark:hover:bg-blue-500">
-                  <Link to={`/games/${game.slug}`}><span>Play Now</span><ArrowRight className="h-[14px] w-[14px]" strokeWidth={2.5} /></Link>
+                  <Link to={`/games/${game.slug}`}><span>{isAuthenticated ? "Play Now":"Login to Play"}</span><ArrowRight className="h-[14px] w-[14px]" strokeWidth={2.5} /></Link>
                 </Button>
               </div>
             </article>

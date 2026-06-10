@@ -54,7 +54,7 @@ function LoginPage() {
             </p>
           ) : null}
 
-          <Button className="mt-7" disabled={isSubmitting} size="auth" type="submit" variant="auth">
+          <Button className="" disabled={isSubmitting} size="auth" type="submit" variant="auth">
             {isSubmitting ? "Signing in..." : "Sign In"}
           </Button>
         </form>
