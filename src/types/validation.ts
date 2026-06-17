@@ -8,12 +8,32 @@ import type {
   verifyOtpSchema,
 } from "@/schemas/auth-schema";
 import type { passwordUpdateSchema } from "@/schemas/profile-schema";
+import type { createUserSchema } from "@/schemas/user-schema";
+import type { gameSchema } from "@/schemas/game-schema";
 
-export type LoginErrors = Partial<Record<keyof z.infer<typeof loginSchema>, string>>;
-export type RegisterErrors = Partial<Record<keyof z.infer<typeof registerSchema>, string>>;
-export type ForgetPasswordErrors = Partial<Record<keyof z.infer<typeof forgetPasswordSchema>, string>>;
-export type VerifyOtpErrors = Partial<Record<keyof z.infer<typeof verifyOtpSchema>, string>>;
-export type ResetPasswordErrors = Partial<Record<keyof z.infer<typeof resetPasswordSchema>, string>>;
+export type LoginErrors = Partial<
+  Record<keyof z.infer<typeof loginSchema>, string>
+>;
+export type RegisterErrors = Partial<
+  Record<keyof z.infer<typeof registerSchema>, string>
+>;
+export type ForgetPasswordErrors = Partial<
+  Record<keyof z.infer<typeof forgetPasswordSchema>, string>
+>;
+export type VerifyOtpErrors = Partial<
+  Record<keyof z.infer<typeof verifyOtpSchema>, string>
+>;
+export type ResetPasswordErrors = Partial<
+  Record<keyof z.infer<typeof resetPasswordSchema>, string>
+>;
 
 export type PasswordUpdateFields = z.infer<typeof passwordUpdateSchema>;
-export type PasswordUpdateErrors = Partial<Record<keyof PasswordUpdateFields, string>>;
+export type PasswordUpdateErrors = Partial<
+  Record<keyof PasswordUpdateFields, string>
+>;
+
+export type CreateUserFields = z.infer<typeof createUserSchema>;
+export type CreateUserErrors = Partial<Record<keyof CreateUserFields, string>>;
+
+export type GameFields = z.infer<typeof gameSchema>;
+export type GameErrors = Partial<Record<keyof GameFields, string>>;

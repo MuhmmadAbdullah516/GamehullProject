@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 
 import MainLayout from '@/layout/mainlayout'
 import ProtectedRoute from './protected-route'
+import AdminRoutes from '@/admin/routes/admin-route'
 
 const ForgetPasswordPage = lazy(() => import('@/pages/auth/forget'))
 const LoginPage = lazy(() => import('@/pages/auth/login'))
@@ -49,8 +50,12 @@ function AppRoutes() {
             <Route path="profile" element={<ProfilePage />} />
             <Route path="transactions" element={<TransactionsPage />} />
             <Route path="cashout" element={<CashoutPage />} />
+            
           </Route>
+          
         </Route>
+
+        <Route path="/admin/*" element={<AdminRoutes />} />
 
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
