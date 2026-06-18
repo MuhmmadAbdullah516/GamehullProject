@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
-import { ArrowLeft, User, ChevronDown } from "lucide-react";
+import { ArrowLeft, User, ChevronDown, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -14,9 +14,11 @@ import type { CreateUserFields } from "@/types/validation";
 import UserStatusBadge from "./components/UserStatusBadge";
 
 const inputClass =
-  "w-full px-4 py-3 bg-gray-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:text-slate-200 transition-all";
+  "w-full px-4 py-3 bg-gray-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/40 dark:text-slate-200 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-600";
 const labelClass =
   "block text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2";
+const triggerClass =
+  "group w-full px-4 py-3 bg-gray-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-full text-sm text-left text-slate-700 dark:text-slate-200 transition-all flex items-center justify-between gap-2 hover:border-blue-400/60 dark:hover:border-blue-500/40 focus:outline-none focus:ring-2 focus:ring-blue-500/40 cursor-pointer";
 const ROLE_INFO = [
   {
     r: "Player" as UserRole,
@@ -27,6 +29,12 @@ const ROLE_INFO = [
     desc: "Can manage players and process transactions.",
   },
   { r: "Admin" as UserRole, desc: "Full access to all admin panel features." },
+];
+
+const STATUS_OPTIONS: { label: string; value: string }[] = [
+  { label: "Active",  value: "Active"  },
+  { label: "Pending", value: "Pending" },
+  { label: "Banned",  value: "Banned"  },
 ];
 
 const UserForm = () => {
@@ -41,6 +49,7 @@ const UserForm = () => {
   const [role, setRole] = useState<UserRole>("Player");
   const [status, setStatus] = useState<UserStatus>("Active");
   const [balance, setBalance] = useState("");
+  const [statusOpen, setStatusOpen] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -123,7 +132,7 @@ const UserForm = () => {
         <button
           type="button"
           onClick={() => navigate("/admin/users")}
-          className="p-2.5 rounded-xl hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-slate-200 dark:hover:border-slate-700 transition-all text-slate-500 cursor-pointer"
+          className="p-2.5 rounded-full hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-slate-200 dark:hover:border-slate-700 transition-all text-slate-500 cursor-pointer"
         >
           <ArrowLeft className="w-5 h-5" />
         </button>
@@ -186,19 +195,39 @@ const UserForm = () => {
                 <label htmlFor="status" className={labelClass}>
                   Status
                 </label>
-                <div className="relative">
-                  <select
-                    id="status"
-                    value={status}
-                    onChange={(e) => setStatus(e.target.value as UserStatus)}
-                    className={`${inputClass} appearance-none pr-10 cursor-pointer dark:bg-slate-900`}
+                <DropdownMenu open={statusOpen} onOpenChange={setStatusOpen}>
+                  <DropdownMenuTrigger asChild>
+                    <button id="status" type="button" className={triggerClass}>
+                      <span>{status}</span>
+                      <ChevronDown
+                        className={`w-4 h-4 shrink-0 transition-all duration-200 text-slate-400 group-hover:text-blue-400 ${
+                          statusOpen ? "rotate-180 text-blue-400" : ""
+                        }`}
+                      />
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent
+                    align="start"
+                    sideOffset={6}
+                    className="min-w-[var(--radix-dropdown-menu-trigger-width)]"
                   >
-                    <option value="Active">Active</option>
-                    <option value="Pending">Pending</option>
-                    <option value="Banned">Banned</option>
-                  </select>
-                  <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 pointer-events-none" />
-                </div>
+                    {STATUS_OPTIONS.map((opt) => (
+                      <DropdownMenuItem
+                        key={opt.value}
+                        onClick={() => {
+                          setStatus(opt.value as UserStatus);
+                          setStatusOpen(false);
+                        }}
+                        className="flex items-center justify-between gap-3 px-3 py-2"
+                      >
+                        <span>{opt.label}</span>
+                        {opt.value === status && (
+                          <Check className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                        )}
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
               <div>
                 <label htmlFor="balance" className={labelClass}>
@@ -222,7 +251,7 @@ const UserForm = () => {
                   <div
                     key={r}
                     onClick={() => setRole(r)}
-                    className={`p-4 rounded-xl border-2 cursor-pointer transition-all ${role === r ? "border-blue-500 bg-blue-50 dark:bg-blue-900/20" : "border-slate-100 dark:border-slate-700 hover:border-slate-200 dark:hover:border-slate-600"}`}
+                    className={`p-4 rounded-2xl border-2 cursor-pointer transition-all ${role === r ? "border-blue-500 bg-blue-50 dark:bg-blue-900/20" : "border-slate-100 dark:border-slate-700 hover:border-slate-200 dark:hover:border-slate-600"}`}
                   >
                     <p
                       className={`text-sm font-bold mb-1.5 ${role === r ? "text-blue-600" : "text-slate-600 dark:text-slate-400"}`}
@@ -236,7 +265,7 @@ const UserForm = () => {
                 ))}
               </div>
             </div>
-            <div className="flex flex-col md:justify-end gap-3 pt-4 border-t border-slate-100 dark:border-slate-700">
+            <div className="flex flex-col md:flex-row md:justify-end gap-3 pt-4 border-t border-slate-100 dark:border-slate-700">
               <Button
                 type="button"
                 variant="outline"

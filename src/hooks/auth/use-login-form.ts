@@ -44,7 +44,13 @@ export function useLoginForm() {
         user: response.data.user,
       });
       toast.success("Signed in successfully.");
-      navigate(redirectTo, { replace: true });
+
+      // Admin users go to admin panel, regular users go to their intended page
+      if (response.data.user.role === "admin") {
+        navigate("/admin", { replace: true });
+      } else {
+        navigate(redirectTo, { replace: true });
+      }
     } catch {
       toast.error("Invalid email or password.");
     } finally {

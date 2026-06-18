@@ -8,7 +8,7 @@ type Props = {
   onPageChange: (page: number) => void;
 };
 
-const UserPagination = ({
+const ContactMessagesPagination = ({
   currentPage,
   totalPages,
   totalItems,
@@ -30,8 +30,8 @@ const UserPagination = ({
   const btnDisabled = "opacity-40 cursor-not-allowed";
 
   return (
-    <div className=" flex items-center justify-between px-5 py-3 border-t border-gray-100 dark:border-gray-700">
-      <p className="text-xs text-gray-500 dark:text-gray-400  ">
+    <div className="flex items-center justify-between px-5 py-3 border-t border-gray-100 dark:border-gray-700">
+      <p className="text-xs text-gray-500 dark:text-gray-400">
         Showing{" "}
         <span className="font-semibold text-gray-700 dark:text-gray-300">
           {start}–{end}
@@ -40,7 +40,7 @@ const UserPagination = ({
         <span className="font-semibold text-gray-700 dark:text-gray-300">
           {totalItems}
         </span>{" "}
-        users
+        messages
       </p>
       <div className="flex items-center gap-1">
         <button
@@ -73,4 +73,4 @@ const UserPagination = ({
   );
 };
 
-export default UserPagination;
+export default ContactMessagesPagination;

@@ -8,7 +8,7 @@ type Props = {
   onPageChange: (page: number) => void;
 };
 
-const UserPagination = ({
+const reviewPagination = ({
   currentPage,
   totalPages,
   totalItems,
@@ -16,12 +16,10 @@ const UserPagination = ({
   onPageChange,
 }: Props) => {
   if (totalPages <= 1) return null;
-
   const start = (currentPage - 1) * Math.ceil(totalItems / totalPages) + 1;
   const end = start + itemsOnPage - 1;
 
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
-
   const btnBase =
     "h-8 w-8 rounded-full text-xs font-bold transition-colors flex items-center justify-center cursor-pointer";
   const btnActive = "bg-blue-600 text-white shadow-sm shadow-blue-500/30";
@@ -30,8 +28,8 @@ const UserPagination = ({
   const btnDisabled = "opacity-40 cursor-not-allowed";
 
   return (
-    <div className=" flex items-center justify-between px-5 py-3 border-t border-gray-100 dark:border-gray-700">
-      <p className="text-xs text-gray-500 dark:text-gray-400  ">
+    <div className="flex items-center justify-between px-5 py-3 border-t border-gray-100 dark:border-gray-700">
+      <p className="text-xs text-gray-500 dark:text-gray-400">
         Showing{" "}
         <span className="font-semibold text-gray-700 dark:text-gray-300">
           {start}–{end}
@@ -40,8 +38,9 @@ const UserPagination = ({
         <span className="font-semibold text-gray-700 dark:text-gray-300">
           {totalItems}
         </span>{" "}
-        users
+        Review
       </p>
+
       <div className="flex items-center gap-1">
         <button
           onClick={() => onPageChange(currentPage - 1)}
@@ -73,4 +72,4 @@ const UserPagination = ({
   );
 };
 
-export default UserPagination;
+export default reviewPagination

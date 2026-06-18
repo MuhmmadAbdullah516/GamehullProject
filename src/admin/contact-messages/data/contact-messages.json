@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "name": "Alice Smith",
+    "email": "alice@example.com",
+    "subject": "Question about withdrawals",
+    "message": "Hi, I requested a withdrawal 2 hours ago and it is still pending. Can you please check? Thanks!",
+    "status": "Unread",
+    "date": "Jun 17, 2026 14:10"
+  },
+  {
+    "id": "2",
+    "name": "John Doe",
+    "email": "john@example.com",
+    "subject": "Juwa game error",
+    "message": "I was playing Juwa slots and the game froze during free spins. The balance was deducted but I did not get my spins.",
+    "status": "Read",
+    "date": "Jun 16, 2026 18:22"
+  },
+  {
+    "id": "3",
+    "name": "Michael Brown",
+    "email": "michael@example.com",
+    "subject": "Partnership request",
+    "message": "Hello, we are an affiliate network interested in promoting GameHull. Who can we talk to about rates?",
+    "status": "Replied",
+    "date": "Jun 15, 2026 11:05"
+  },
+  {
+    "id": "4",
+    "name": "Sarah Jenkins",
+    "email": "sarah@example.com",
+    "subject": "Verification help",
+    "message": "How long does it take to verify my documents? I uploaded them yesterday.",
+    "status": "Unread",
+    "date": "Jun 15, 2026 09:30"
+  },
+  {
+    "id": "5",
+    "name": "David Wilson",
+    "email": "david@example.com",
+    "subject": "Reset password issue",
+    "message": "I requested a password reset email but I am not receiving it. I checked my spam folder.",
+    "status": "Read",
+    "date": "Jun 14, 2026 15:44"
+  },
+  {
+    "id": "6",
+    "name": "Emma Watson",
+    "email": "emma@example.com",
+    "subject": "Promotional bonus",
+    "message": "Is there any active welcome promo code for new signups?",
+    "status": "Replied",
+    "date": "Jun 13, 2026 10:12"
+  }
+]

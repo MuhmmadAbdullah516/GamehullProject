@@ -16,7 +16,7 @@ const GamePagination = ({ currentPage, totalPages, totalItems, itemsOnPage, onPa
 
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
-  const btnBase = "h-8 w-8 rounded-lg text-xs font-bold transition-colors flex items-center justify-center cursor-pointer";
+  const btnBase = "h-8 w-8 rounded-full text-xs font-bold transition-colors flex items-center justify-center cursor-pointer";
   const btnActive = "bg-blue-600 text-white shadow-sm shadow-blue-500/30";
   const btnInactive = "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700";
   const btnDisabled = "opacity-40 cursor-not-allowed";

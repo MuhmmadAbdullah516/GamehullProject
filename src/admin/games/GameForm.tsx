@@ -65,7 +65,7 @@ const GameForm = () => {
   return (
     <div className="p-6 lg:p-8 space-y-6">
       <div className="flex items-center gap-4">
-        <button type="button" onClick={() => navigate("/admin/games")} className="p-2.5 rounded-xl hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-slate-200 dark:hover:border-slate-700 transition-all text-slate-500 cursor-pointer">
+        <button type="button" onClick={() => navigate("/admin/games")} className="p-2.5 rounded-full hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-slate-200 dark:hover:border-slate-700 transition-all text-slate-500 cursor-pointer">
           <ArrowLeft className="w-5 h-5" />
         </button>
         <div>

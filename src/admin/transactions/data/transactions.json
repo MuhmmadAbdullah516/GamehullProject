@@ -1,0 +1,134 @@
+[
+  {
+    "id": "1",
+    "userName": "Sami Khan",
+    "userEmail": "engr.abdulsami77@gmail.com",
+    "type": "Deposit",
+    "amount": "$234.00",
+    "status": "Completed",
+    "gamePlatform": "Fire Kirin",
+    "reference": "GH-20260519-FA357FDD",
+    "date": "May 18, 2026 15:53"
+  },
+  {
+    "id": "2",
+    "userName": "Unknown User",
+    "userEmail": "",
+    "type": "Withdraw",
+    "amount": "$764.00",
+    "status": "Completed",
+    "gamePlatform": "Ultra Panda",
+    "reference": "GH-20260519-CCF011CF",
+    "date": "May 18, 2026 14:15"
+  },
+  {
+    "id": "3",
+    "userName": "Sami Khan",
+    "userEmail": "engr.abdulsami77@gmail.com",
+    "type": "Deposit",
+    "amount": "$786.00",
+    "status": "Failed",
+    "gamePlatform": "Orion Stars",
+    "reference": "GH-20260519-691430D5",
+    "date": "May 18, 2026 14:15"
+  },
+  {
+    "id": "4",
+    "userName": "Alice Johnson",
+    "userEmail": "alice@example.com",
+    "type": "Deposit",
+    "amount": "$500.00",
+    "status": "Completed",
+    "gamePlatform": "Juwa",
+    "reference": "GH-20260519-B12A84E3",
+    "date": "May 17, 2026 10:30"
+  },
+  {
+    "id": "5",
+    "userName": "Bob Martinez",
+    "userEmail": "bob@example.com",
+    "type": "Withdraw",
+    "amount": "$200.00",
+    "status": "Pending",
+    "gamePlatform": "Vegas Sweeps",
+    "reference": "GH-20260519-D93C72A1",
+    "date": "May 17, 2026 09:15"
+  },
+  {
+    "id": "6",
+    "userName": "Carol Smith",
+    "userEmail": "carol@example.com",
+    "type": "Bonus",
+    "amount": "$50.00",
+    "status": "Completed",
+    "gamePlatform": "Milky Way",
+    "reference": "GH-20260518-E48F19C2",
+    "date": "May 16, 2026 18:24"
+  },
+  {
+    "id": "7",
+    "userName": "David Lee",
+    "userEmail": "david@example.com",
+    "type": "Deposit",
+    "amount": "$1,000.00",
+    "status": "Failed",
+    "gamePlatform": "Panda Master",
+    "reference": "GH-20260518-F59A83D4",
+    "date": "May 16, 2026 11:45"
+  },
+  {
+    "id": "8",
+    "userName": "Eva Brown",
+    "userEmail": "eva@example.com",
+    "type": "Refund",
+    "amount": "$75.00",
+    "status": "Cancelled",
+    "gamePlatform": "Cash Machine",
+    "reference": "GH-20260517-A28B39E5",
+    "date": "May 15, 2026 16:12"
+  },
+  {
+    "id": "9",
+    "userName": "Frank Wilson",
+    "userEmail": "frank@example.com",
+    "type": "Withdraw",
+    "amount": "$350.00",
+    "status": "Completed",
+    "gamePlatform": "River Sweeps",
+    "reference": "GH-20260517-C39D48F6",
+    "date": "May 15, 2026 14:02"
+  },
+  {
+    "id": "10",
+    "userName": "Grace Kim",
+    "userEmail": "grace@example.com",
+    "type": "Deposit",
+    "amount": "$800.00",
+    "status": "Completed",
+    "gamePlatform": "Golden Dragon",
+    "reference": "GH-20260516-B48E59C7",
+    "date": "May 14, 2026 19:40"
+  },
+  {
+    "id": "11",
+    "userName": "Henry Davis",
+    "userEmail": "henry@example.com",
+    "type": "Bonus",
+    "amount": "$25.00",
+    "status": "Pending",
+    "gamePlatform": "Star Casino",
+    "reference": "GH-20260516-D59F60D8",
+    "date": "May 14, 2026 08:33"
+  },
+  {
+    "id": "12",
+    "userName": "Isla Turner",
+    "userEmail": "isla@example.com",
+    "type": "Deposit",
+    "amount": "$150.00",
+    "status": "Completed",
+    "gamePlatform": "Lucky Tiger",
+    "reference": "GH-20260515-A18B29C3",
+    "date": "May 13, 2026 12:05"
+  }
+]

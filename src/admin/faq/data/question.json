@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "order": 1,
+    "question": "How do I create an account?",
+    "answer": "Click 'Sign Up' at the top of the page. Fill in your name, email address, and password. Your account will be created instantly with no approval process required.",
+    "preview": "Click 'Sign Up' at the top of the page. Fill in your name..."
+  },
+  {
+    "id": 2,
+    "order": 2,
+    "question": "What payment methods do you accept?",
+    "answer": "We accept Cash App, Venmo, Zelle, PayPal, debit cards, credit cards, and cryptocurrency. All deposits are processed quickly and securely.",
+    "preview": "We accept Cash App, Venmo, Zelle, PayPal, and crypt..."
+  },
+  {
+    "id": 3,
+    "order": 3,
+    "question": "How long do withdrawals take?",
+    "answer": "Most withdrawals are processed within 10 to 20 minutes. Processing times may vary depending on the selected payment method.",
+    "preview": "Most withdrawals are processed within 10–20 minutes..."
+  },
+  {
+    "id": 4,
+    "order": 4,
+    "question": "What games are available?",
+    "answer": "We offer Fire Kirin, Juwa, Orion Stars, Ultra Panda, Vegas Sweeps, Vblink, Game Vault, Golden Treasure, and many other popular gaming platforms.",
+    "preview": "We offer Fire Kirin, Juwa, Ultra Panda, Vegas Sweeps..."
+  },
+  {
+    "id": 5,
+    "order": 5,
+    "question": "Is my money safe?",
+    "answer": "Yes. We use advanced encryption and security measures to protect your account, personal information, and financial transactions.",
+    "preview": "Yes. Your funds are held securely and all transactions..."
+  },
+  {
+    "id": 6,
+    "order": 6,
+    "question": "How does the referral program work?",
+    "answer": "Share your referral link with friends. When they register and play using your link, you earn commissions based on their activity.",
+    "preview": "Share your unique affiliate link. When someone signs..."
+  },
+  {
+    "id": 7,
+    "order": 7,
+    "question": "Can I play on mobile devices?",
+    "answer": "Yes. Our platform is fully optimized for mobile phones and tablets.",
+    "preview": "Yes. Our platform is fully optimized for mobile..."
+  },
+  {
+    "id": 8,
+    "order": 8,
+    "question": "How do I reset my password?",
+    "answer": "Use the 'Forgot Password' option on the login page and follow the instructions sent to your email.",
+    "preview": "Use the 'Forgot Password' option on the login page..."
+  },
+  {
+    "id": 9,
+    "order": 9,
+    "question": "Are there any deposit limits?",
+    "answer": "Minimum and maximum deposit amounts depend on the payment method you choose.",
+    "preview": "Minimum and maximum deposit amounts depend on..."
+  },
+  {
+    "id": 10,
+    "order": 10,
+    "question": "Can I have multiple accounts?",
+    "answer": "No. Only one account is allowed per user to maintain fairness and security.",
+    "preview": "No. Only one account is allowed per user..."
+  },
+  {
+    "id": 11,
+    "order": 11,
+    "question": "How can I contact customer support?",
+    "answer": "You can contact us through live chat, email, or the support page available on the website.",
+    "preview": "You can contact us through live chat, email..."
+  },
+  {
+    "id": 12,
+    "order": 12,
+    "question": "Do you offer bonuses or promotions?",
+    "answer": "Yes. We regularly provide welcome bonuses, special promotions, and loyalty rewards.",
+    "preview": "Yes. We regularly provide welcome bonuses..."
+  },
+  {
+    "id": 13,
+    "order": 13,
+    "question": "Why is my withdrawal pending?",
+    "answer": "Withdrawals may be pending due to verification checks or payment provider processing times.",
+    "preview": "Withdrawals may be pending due to verification..."
+  },
+  {
+    "id": 14,
+    "order": 14,
+    "question": "Can I change my account information?",
+    "answer": "Yes. Most profile information can be updated from your account settings.",
+    "preview": "Yes. Most profile information can be updated..."
+  },
+  {
+    "id": 15,
+    "order": 15,
+    "question": "Is there a loyalty or VIP program?",
+    "answer": "Yes. VIP members receive exclusive rewards, priority support, and special promotions.",
+    "preview": "Yes. VIP members receive exclusive rewards..."
+  }
+]

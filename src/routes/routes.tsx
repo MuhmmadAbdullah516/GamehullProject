@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 
 import MainLayout from '@/layout/mainlayout'
 import ProtectedRoute from './protected-route'
+import AdminProtectedRoute from './admin-protected-route'
 import AdminRoutes from '@/admin/routes/admin-route'
 
 const ForgetPasswordPage = lazy(() => import('@/pages/auth/forget'))
@@ -25,6 +26,7 @@ const TransactionsPage = lazy(() => import('@/pages/brand/transactions'))
 const CashoutPage = lazy(() => import('@/pages/brand/cashout'))
 const ResponsiblePage = lazy(() => import('@/pages/brand/responsible'))
 const SupportPage = lazy(() => import('@/pages/brand/support'))
+
 
 const pageFallback = (
   <div className="min-h-screen bg-[#050913]" aria-busy="true" aria-live="polite" />
@@ -55,8 +57,9 @@ function AppRoutes() {
           
         </Route>
 
-        <Route path="/admin/*" element={<AdminRoutes />} />
-
+        <Route element={<AdminProtectedRoute />}>
+          <Route path="/admin/*" element={<AdminRoutes />} />
+        </Route>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot-password" element={<ForgetPasswordPage />} />

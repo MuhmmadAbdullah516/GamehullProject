@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Search, Filter, Plus, Trash } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,10 +18,14 @@ const Games = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [gameToDelete, setGameToDelete] = useState<GameCard | null>(null);
+  const processedRef = useRef(false);
 
   useEffect(() => {
+    if (processedRef.current) return;
     const state = location.state as { action?: string; game?: GameCard } | null;
     if (!state?.action || !state?.game) return;
+    processedRef.current = true;
+
     if (state.action === "add") {
       setGames((prev) => [state.game!, ...prev]);
       toast.success(`${state.game.name} has been created successfully.`);
@@ -64,7 +68,7 @@ const Games = () => {
             Manage your brand's gaming catalog — {games.length} total platforms.
           </p>
         </div>
-        <Button onClick={() => navigate("/admin/games/new")} className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-5 py-4 flex items-center gap-2 cursor-pointer text-sm shadow-lg shadow-blue-500/20">
+        <Button onClick={() => navigate("/admin/games/new")} className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-5 py-5 flex items-center gap-2 cursor-pointer text-sm shadow-lg shadow-blue-500/20">
           <Plus className="w-4 h-4" /> Add New Game
         </Button>
       </div>
@@ -74,7 +78,7 @@ const Games = () => {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
           <input type="text" placeholder="Search by name, slug, tag..." value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:text-gray-200"
+            className="w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:text-gray-200 placeholder:text-slate-400 dark:placeholder:text-slate-600"
           />
         </div>
         <Button variant="outline" className="flex items-center gap-2 border-gray-200 dark:border-gray-700 dark:text-gray-300 cursor-pointer text-sm">
@@ -123,10 +127,10 @@ const Games = () => {
               Are you sure you want to delete the game <span className="font-semibold text-gray-800 dark:text-gray-200">{gameToDelete?.name}</span>? This action cannot be undone.
             </p>
             <div className="flex gap-3 w-full">
-              <Button variant="outline" onClick={() => setGameToDelete(null)} className="flex-1 rounded-xl cursor-pointer">
+              <Button variant="outline" onClick={() => setGameToDelete(null)} className="flex-1 rounded-full cursor-pointer">
                 Cancel
               </Button>
-              <Button onClick={handleConfirmDelete} className="flex-1 bg-red-600 hover:bg-red-700 text-white rounded-xl cursor-pointer">
+              <Button onClick={handleConfirmDelete} className="flex-1 bg-red-600 hover:bg-red-700 text-white rounded-full cursor-pointer">
                 Delete
               </Button>
             </div>

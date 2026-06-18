@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Search, Filter, UserPlus, Trash } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,13 +18,17 @@ const Users = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [userToDelete, setUserToDelete] = useState<AdminUser | null>(null);
+  const processedRef = useRef(false);
 
   useEffect(() => {
+    if (processedRef.current) return;
     const state = location.state as {
       action?: string;
       user?: AdminUser;
     } | null;
     if (!state?.action || !state?.user) return;
+    processedRef.current = true;
+
     if (state.action === "add") {
       setUsers((prev) => [state.user!, ...prev]);
       toast.success(`${state.user.name} has been created successfully.`);
@@ -35,7 +39,7 @@ const Users = () => {
       toast.success(`${state.user.name} has been updated successfully.`);
     }
     window.history.replaceState({}, "");
-  }, []);
+  }, [location.state]);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -91,7 +95,7 @@ const Users = () => {
             placeholder="Search by name or email..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:text-gray-200"
+            className="w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:text-gray-200 placeholder:text-slate-400 dark:placeholder:text-slate-600"
           />
         </div>
         <Button
@@ -170,13 +174,13 @@ const Users = () => {
               <Button
                 variant="outline"
                 onClick={() => setUserToDelete(null)}
-                className="flex-1 rounded-xl cursor-pointer"
+                className="flex-1 rounded-full cursor-pointer"
               >
                 Cancel
               </Button>
               <Button
                 onClick={handleConfirmDelete}
-                className="flex-1 bg-red-600 hover:bg-red-700 text-white rounded-xl cursor-pointer"
+                className="flex-1 bg-red-600 hover:bg-red-700 text-white rounded-full cursor-pointer"
               >
                 Delete
               </Button>
