@@ -1,7 +1,22 @@
-import axios from "axios";
+import axios, {
+  AxiosError,
+  type AxiosRequestConfig,
+  type AxiosRequestHeaders,
+  type AxiosResponse,
+  type InternalAxiosRequestConfig,
+} from "axios";
 
 export const AUTH_TOKEN_STORAGE_KEY = "gamehull-auth-token";
 const MOCK_USERS_DB_KEY = "gamehull-mock-users-db";
+
+type MockUser = {
+  email: string;
+  name: string;
+  username: string;
+  password: string;
+  balance: number;
+  role: "admin" | "user";
+};
 
 export const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
@@ -30,11 +45,39 @@ if (!import.meta.env.VITE_API_BASE_URL) {
     role: "admin" as const,
   };
 
+  const createMockAxiosError = <T extends { message: string }>(
+    status: number,
+    data: T,
+    statusText = "Error",
+  ): AxiosError<T> => {
+    const err = new Error(data.message) as AxiosError<T>;
+    const response: AxiosResponse<T> = {
+      data,
+      status,
+      statusText,
+      headers: {},
+      config: {} as InternalAxiosRequestConfig,
+    };
+    err.response = response;
+    return err;
+  };
+
+  const makeMockResponse = <T, R extends AxiosResponse<T> = AxiosResponse<T>>(
+    data: T,
+  ): R =>
+    ({
+      status: 200,
+      statusText: "OK",
+      headers: {},
+      config: {} as InternalAxiosRequestConfig,
+      data,
+    }) as unknown as R;
+
   // Helper to get users from simulated DB (auto-seeds admin)
-  const getMockUsers = () => {
+  const getMockUsers = (): Record<string, MockUser> => {
     try {
       const data = localStorage.getItem(MOCK_USERS_DB_KEY);
-      const users = data ? JSON.parse(data) : {};
+      const users = data ? (JSON.parse(data) as Record<string, MockUser>) : {};
       // Always ensure the admin account exists
       if (!users[ADMIN_ACCOUNT.email]) {
         users[ADMIN_ACCOUNT.email] = ADMIN_ACCOUNT;
@@ -47,12 +90,16 @@ if (!import.meta.env.VITE_API_BASE_URL) {
   };
 
   // Helper to save users to simulated DB
-  const saveMockUsers = (users: any) => {
+  const saveMockUsers = (users: Record<string, MockUser>) => {
     localStorage.setItem(MOCK_USERS_DB_KEY, JSON.stringify(users));
   };
 
   // Intercept api.post calls and return simulated JWT response payloads
-  api.post = async function (url: string, data?: any): Promise<any> {
+  api.post = async function <
+    T = any,
+    R = AxiosResponse<T, unknown, {}>,
+    D = any,
+  >(url: string, data?: D, config?: AxiosRequestConfig<D>): Promise<R> {
     // Simulate network delay (200 milliseconds) for realistic UI loading states
     await new Promise((resolve) => setTimeout(resolve, 200));
 
@@ -63,21 +110,15 @@ if (!import.meta.env.VITE_API_BASE_URL) {
       const { email, fullName, password, username } = data || {};
 
       if (!email || !password || !fullName || !username) {
-        const err = new Error("Bad Request") as any;
-        err.response = {
-          status: 400,
-          data: { message: "All fields are required." },
-        };
-        throw err;
+        throw createMockAxiosError(400, {
+          message: "All fields are required.",
+        });
       }
 
       if (users[email.toLowerCase()]) {
-        const err = new Error("Conflict") as any;
-        err.response = {
-          status: 409,
-          data: { message: "This email address is already registered." },
-        };
-        throw err;
+        throw createMockAxiosError(409, {
+          message: "This email address is already registered.",
+        });
       }
 
       // Store new account credentials with the default wallet balance
@@ -98,22 +139,16 @@ if (!import.meta.env.VITE_API_BASE_URL) {
         JSON.stringify({ email: newUser.email, exp: Date.now() + 3600000 }),
       );
 
-      return {
-        status: 200,
-        statusText: "OK",
-        headers: {},
-        config: {},
-        data: {
-          token,
-          user: {
-            email: newUser.email,
-            name: newUser.name,
-            username: newUser.username,
-            balance: newUser.balance,
-            role: newUser.role,
-          },
+      return makeMockResponse({
+        token,
+        user: {
+          email: newUser.email,
+          name: newUser.name,
+          username: newUser.username,
+          balance: newUser.balance,
+          role: newUser.role,
         },
-      };
+      });
     }
 
     // 2. LOGIN SIMULATION
@@ -122,55 +157,37 @@ if (!import.meta.env.VITE_API_BASE_URL) {
       const user = users[email?.toLowerCase()];
 
       if (!user || user.password !== password) {
-        const err = new Error("Unauthorized") as any;
-        err.response = {
-          status: 401,
-          data: { message: "Invalid email or password." },
-        };
-        throw err;
+        throw createMockAxiosError(401, {
+          message: "Invalid email or password.",
+        });
       }
 
       const token = btoa(
         JSON.stringify({ email: user.email, exp: Date.now() + 3600000 }),
       );
 
-      return {
-        status: 200,
-        statusText: "OK",
-        headers: {},
-        config: {},
-        data: {
-          token,
-          user: {
-            email: user.email,
-            name: user.name,
-            username: user.username,
-            balance: user.balance === 5000 ? 4.0 : user.balance,
-            role: user.role || "user",
-          },
+      return makeMockResponse({
+        token,
+        user: {
+          email: user.email,
+          name: user.name,
+          username: user.username,
+          balance: user.balance === 5000 ? 4.0 : user.balance,
+          role: user.role || "user",
         },
-      };
+      });
     }
 
     // 3. FORGOT PASSWORD SIMULATION
     if (url === "/auth/forgot-password") {
       const { email } = data || {};
       if (!users[email?.toLowerCase()]) {
-        const err = new Error("Not Found") as any;
-        err.response = {
-          status: 404,
-          data: { message: "No account found with this email." },
-        };
-        throw err;
+        throw createMockAxiosError(404, {
+          message: "No account found with this email.",
+        });
       }
 
-      return {
-        status: 200,
-        statusText: "OK",
-        headers: {},
-        config: {},
-        data: { message: "OTP sent to your email." },
-      };
+      return makeMockResponse({ message: "OTP sent to your email." });
     }
 
     // 4. OTP VERIFICATION SIMULATION
@@ -178,21 +195,12 @@ if (!import.meta.env.VITE_API_BASE_URL) {
       const { otp } = data || {};
       // Accept '1234' as correct OTP for this simulation
       if (otp !== "1234") {
-        const err = new Error("Bad Request") as any;
-        err.response = {
-          status: 400,
-          data: { message: "Invalid verification code. Please enter '1234'." },
-        };
-        throw err;
+        throw createMockAxiosError(400, {
+          message: "Invalid verification code. Please enter '1234'.",
+        });
       }
 
-      return {
-        status: 200,
-        statusText: "OK",
-        headers: {},
-        config: {},
-        data: { message: "OTP verified successfully." },
-      };
+      return makeMockResponse({ message: "OTP verified successfully." });
     }
 
     // 5. RESET PASSWORD SIMULATION
@@ -202,40 +210,25 @@ if (!import.meta.env.VITE_API_BASE_URL) {
       const user = users[key];
 
       if (!user) {
-        const err = new Error("Not Found") as any;
-        err.response = {
-          status: 404,
-          data: { message: "No account found with this email." },
-        };
-        throw err;
+        throw createMockAxiosError(404, {
+          message: "No account found with this email.",
+        });
       }
 
       if (!password || password.length < 8) {
-        const err = new Error("Bad Request") as any;
-        err.response = {
-          status: 400,
-          data: { message: "Password must be at least 8 characters." },
-        };
-        throw err;
+        throw createMockAxiosError(400, {
+          message: "Password must be at least 8 characters.",
+        });
       }
 
       users[key] = { ...user, password };
       saveMockUsers(users);
 
-      return {
-        status: 200,
-        statusText: "OK",
-        headers: {},
-        config: {},
-        data: { message: "Password updated successfully." },
-      };
+      return makeMockResponse({ message: "Password updated successfully." });
     }
 
-    const err = new Error("Not Found") as any;
-    err.response = {
-      status: 404,
-      data: { message: `Route ${url} not found.` },
-    };
-    throw err;
+    throw createMockAxiosError(404, {
+      message: `Route ${url} not found.`,
+    });
   };
 }
