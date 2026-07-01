@@ -1,7 +1,6 @@
 import axios, {
   AxiosError,
   type AxiosRequestConfig,
-  type AxiosRequestHeaders,
   type AxiosResponse,
   type InternalAxiosRequestConfig,
 } from "axios";
@@ -99,7 +98,7 @@ if (!import.meta.env.VITE_API_BASE_URL) {
     T = any,
     R = AxiosResponse<T, unknown, {}>,
     D = any,
-  >(url: string, data?: D, config?: AxiosRequestConfig<D>): Promise<R> {
+  >(url: string, data?: D, _config?: AxiosRequestConfig<D>): Promise<R> {
     // Simulate network delay (200 milliseconds) for realistic UI loading states
     await new Promise((resolve) => setTimeout(resolve, 200));
 
@@ -107,7 +106,7 @@ if (!import.meta.env.VITE_API_BASE_URL) {
 
     // 1. REGISTRATION SIMULATION
     if (url === "/auth/register") {
-      const { email, fullName, password, username } = data || {};
+      const { email, fullName, password, username } = (data as any) || {};
 
       if (!email || !password || !fullName || !username) {
         throw createMockAxiosError(400, {
@@ -148,12 +147,12 @@ if (!import.meta.env.VITE_API_BASE_URL) {
           balance: newUser.balance,
           role: newUser.role,
         },
-      });
+      }) as any;
     }
 
     // 2. LOGIN SIMULATION
     if (url === "/auth/login") {
-      const { email, password } = data || {};
+      const { email, password } = (data as any) || {};
       const user = users[email?.toLowerCase()];
 
       if (!user || user.password !== password) {
@@ -175,24 +174,24 @@ if (!import.meta.env.VITE_API_BASE_URL) {
           balance: user.balance === 5000 ? 4.0 : user.balance,
           role: user.role || "user",
         },
-      });
+      }) as any;
     }
 
     // 3. FORGOT PASSWORD SIMULATION
     if (url === "/auth/forgot-password") {
-      const { email } = data || {};
+      const { email } = (data as any) || {};
       if (!users[email?.toLowerCase()]) {
         throw createMockAxiosError(404, {
           message: "No account found with this email.",
         });
       }
 
-      return makeMockResponse({ message: "OTP sent to your email." });
+      return makeMockResponse({ message: "OTP sent to your email." }) as any;
     }
 
     // 4. OTP VERIFICATION SIMULATION
     if (url === "/auth/verify-otp") {
-      const { otp } = data || {};
+      const { otp } = (data as any) || {};
       // Accept '1234' as correct OTP for this simulation
       if (otp !== "1234") {
         throw createMockAxiosError(400, {
@@ -200,12 +199,12 @@ if (!import.meta.env.VITE_API_BASE_URL) {
         });
       }
 
-      return makeMockResponse({ message: "OTP verified successfully." });
+      return makeMockResponse({ message: "OTP verified successfully." }) as any;
     }
 
     // 5. RESET PASSWORD SIMULATION
     if (url === "/auth/reset-password") {
-      const { email, password } = data || {};
+      const { email, password } = (data as any) || {};
       const key = email?.toLowerCase();
       const user = users[key];
 
@@ -224,7 +223,7 @@ if (!import.meta.env.VITE_API_BASE_URL) {
       users[key] = { ...user, password };
       saveMockUsers(users);
 
-      return makeMockResponse({ message: "Password updated successfully." });
+      return makeMockResponse({ message: "Password updated successfully." }) as any;
     }
 
     throw createMockAxiosError(404, {

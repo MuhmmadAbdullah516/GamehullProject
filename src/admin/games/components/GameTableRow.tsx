@@ -1,4 +1,4 @@
-import { Edit, Trash, MoreVertical } from "lucide-react";
+import { Edit, Trash } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { GameCard } from "@/types/games";
 import { gameImages } from "@/data/game-assets";

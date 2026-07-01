@@ -17,6 +17,6 @@ export const reviewSchema = z.object({
       .max(5, "Rating must be at most 5 stars")
   ),
   status: z.enum(["Published", "Pending"], {
-    errorMap: () => ({ message: "Status must be Published or Pending" }),
+    message: "Status must be Published or Pending",
   }),
 });

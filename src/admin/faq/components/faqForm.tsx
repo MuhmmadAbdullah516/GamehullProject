@@ -45,7 +45,7 @@ const FaqForm = () => {
     const dataToValidate: FaqFields = {
       question,
       answer,
-      order,
+      order: Number(order),
     };
 
     const result = faqSchema.safeParse(dataToValidate);

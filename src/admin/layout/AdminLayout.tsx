@@ -1,6 +1,6 @@
 import AdminHeader from "./AdminHeader";
 import AdminSidebar from "@/admin/layout/AdminSidebar";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 const AdminLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
